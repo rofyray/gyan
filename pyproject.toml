@@ -1,0 +1,59 @@
+# pyproject.toml for the GYAN World Cup model.
+# Abstract dependencies live here; the fully pinned lock is in requirements.txt.
+# Versions reflect the latest releases as of June 2026 (verified against PyPI).
+
+[build-system]
+requires = ["hatchling"]            # lightweight, standards-compliant build backend
+build-backend = "hatchling.build"
+
+[project]
+name = "gyan"
+version = "0.1.0"
+description = "GYAN: Goal-model, Yield-weighted Aggregation, simulatioN. An ensemble World Cup forecasting model."
+readme = "README.md"
+requires-python = ">=3.12"          # project targets Python 3.12+ on Apple Silicon
+license = { text = "MIT" }
+authors = [{ name = "GYAN project" }]
+
+# Runtime dependencies. The numpy upper bound (<2.5) is REQUIRED by numba 0.65.1,
+# which declares numpy<2.5. Do not raise numpy past 2.4.x until numba supports it.
+dependencies = [
+    "numpy>=2.4,<2.5",          # arrays; capped by numba 0.65.1 (numpy<2.5)
+    "pandas>=3.0,<3.1",         # dataframes and IO
+    "pyarrow>=24.0",            # parquet engine (pandas 3.x prefers pyarrow)
+    "scipy>=1.17,<1.18",        # optimisation (L-BFGS-B, SLSQP) and stats
+    "statsmodels>=0.14,<0.15",  # OLS for the socioeconomic expert
+    "penaltyblog>=1.11",        # Dixon-Coles, bivariate Poisson, RPS helpers
+    "numba>=0.65,<0.66",        # JIT for the Monte-Carlo hot loops
+    "joblib>=1.5",              # parallel map across CPU cores
+    "tqdm>=4.68",               # progress bars
+    "pydantic>=2.13,<3.0",      # config/data validation
+    "httpx>=0.28",              # HTTP client for API pulls (Polymarket, Kalshi, odds)
+    "beautifulsoup4>=4.14",     # HTML parsing for scraping squads/Elo
+    "lxml>=6.1",                # fast parser backend for beautifulsoup4 and pandas
+    "soccerdata>=1.9",          # optional football data scraping (FBref etc.)
+    "scikit-learn>=1.9",        # optional random-forest ability covariate, calibration
+    "matplotlib>=3.10",         # plotting
+    "seaborn>=0.13",            # statistical plotting helpers
+    "python-json-logger>=4.1",  # structured JSON logging for run records
+    "requests>=2.34",           # simple HTTP fallback where httpx is overkill
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=9.0",       # unit testing
+    "pytest-cov>=7.1",   # coverage reporting
+    "ruff>=0.6",          # linting and formatting (optional but recommended)
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/gyan"]   # src layout: the importable package is src/gyan
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]            # where pytest looks for tests
+addopts = "-q -p no:rerunfailures" # quiet output; avoid unrelated socket-using plugin
+filterwarnings = ["error"]       # turn warnings into errors to catch issues early
+
+[tool.ruff]
+line-length = 100                # generous line length for commented code
+target-version = "py312"         # match the project Python target

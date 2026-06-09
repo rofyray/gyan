@@ -1,0 +1,30 @@
+# GYAN pinned dependency lock (exact versions verified on PyPI, June 2026).
+# Regenerate after any intentional upgrade with:  pip freeze > requirements.txt
+#
+# CONSTRAINT: numpy is held at 2.4.x because numba 0.65.1 declares numpy<2.5.
+# Raising numpy past 2.4 will break numba. Upgrade them together when numba
+# adds support for numpy 2.5.
+
+numpy==2.4.6
+pandas==3.0.3
+pyarrow==24.0.0
+scipy==1.17.1
+statsmodels==0.14.6
+penaltyblog==1.11.0
+numba==0.65.1
+joblib==1.5.3
+tqdm==4.68.1
+pydantic==2.13.4
+httpx==0.28.1
+beautifulsoup4==4.14.3
+lxml==6.1.1
+soccerdata==1.9.0
+scikit-learn==1.9.0
+matplotlib==3.10.9
+seaborn==0.13.2
+python-json-logger==4.1.0
+requests==2.34.2
+
+# Dev / test (install with: pip install -e ".[dev]")
+pytest==9.0.3
+pytest-cov==7.1.0

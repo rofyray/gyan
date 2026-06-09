@@ -1,0 +1,47 @@
+# Local Python environments.
+.venv/
+venv/
+env/
+.env
+.env.*
+
+# Python cache and test artifacts.
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+
+# Operating-system metadata.
+.DS_Store
+Thumbs.db
+
+# Build and packaging artifacts.
+build/
+dist/
+*.egg-info/
+
+# Notebook/runtime checkpoints.
+.ipynb_checkpoints/
+
+# Project-generated data artifacts.
+data/raw/*
+!data/raw/injuries_2026.csv
+data/interim/*
+data/processed/*
+
+# Project-generated logs and outputs.
+logs/
+outputs/
+
+# Coding Agent instructions and PRDs.
+PRD/
+AGENTS.md
+CLAUDE.md
