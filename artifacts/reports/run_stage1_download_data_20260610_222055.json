@@ -1,12 +1,10 @@
 {
-  "timestamp_utc": "2026-06-10T19:05:55.915628+00:00",
+  "timestamp_utc": "2026-06-10T22:20:45.673744+00:00",
   "stage": "stage1",
   "step": "download_data",
   "script_path": "./scripts/s1_download_data.py",
-  "git_commit": "eee0a29",
-  "git_tags": [
-    "gyan-v1.0-final"
-  ],
+  "git_commit": "0deecdd",
+  "git_tags": [],
   "python_version": "3.14.5",
   "package_versions": {
     "gyan": "0.1.0",
@@ -63,8 +61,8 @@
     },
     {
       "path": "./data/raw/d2_eloratings_world.tsv",
-      "sha256": "fd5bfebd23de530a5407ed223cf8ecb39fcea542220cf0a81215efe8ade4e85c",
-      "bytes": 30451
+      "sha256": "726a85e5feaef56e89aa306c68b0460bffdc047f4af5cfcc0bc6c391f492bec6",
+      "bytes": 30450
     },
     {
       "path": "./data/raw/d2_eloratings_teams.tsv",
@@ -78,13 +76,13 @@
     },
     {
       "path": "./data/raw/d2b_demetriodor_football_elo_ratings.html",
-      "sha256": "008ccf174765b690feb4b6e75a88d4e0edaf82a1faffaca5736fdbc4d922cd70",
-      "bytes": 240551
+      "sha256": "2e683d64678c873b02bef2b7b5af01eebae0ddb8c9d810f25657758d72a04339",
+      "bytes": 240598
     },
     {
       "path": "./data/raw/d2b_jgravier_soccer_elo.html",
-      "sha256": "ef6328f884f872084cbc157be5378d53ac44a9ebb1c15956c3536407ee00cc57",
-      "bytes": 253825
+      "sha256": "71fb6a65e220ec88df2bac9043ed5304a45d6bb98b595aaa4a4f1b9e849c4f62",
+      "bytes": 253872
     },
     {
       "path": "./data/raw/d3_spi_matches_intl.csv",
@@ -118,8 +116,8 @@
     },
     {
       "path": "./data/raw/d4_transfermarkt_national_team_values.html",
-      "sha256": "a4ea73b77c11ab4c95d80a3a4ced670343f86fbe6c51601f88d3d7bae52517cc",
-      "bytes": 167203
+      "sha256": "1c1ff8e3f9e2ea3bf670d713927565de8b23fb74a71c7f1b8c583de5bfc2f100",
+      "bytes": 166758
     },
     {
       "path": "./data/raw/d5_fifa_mens_ranking.html",
@@ -133,18 +131,18 @@
     },
     {
       "path": "./data/raw/d6_wikipedia_2026_world_cup_squads.html",
-      "sha256": "e43108b16216acd1de01320d1a78afc0eec7e649a51fe644302f330813130b9b",
+      "sha256": "f2ad7c41c59fd445f48c224acaa54663a24591f30c6bd300c78730bc31e8af9a",
       "bytes": 1892924
     },
     {
       "path": "./data/raw/d6_espn_2026_world_cup_squad_lists.html",
-      "sha256": "32a01b39cda7145befa1aa8d85169b742c89e1cbe39811789948f95a6548fc22",
-      "bytes": 348337
+      "sha256": "4fb7e40da8ff8d9dd270ef233fdba6292d7b8d04c57c4bc163bbac1c8ae86846",
+      "bytes": 348680
     },
     {
       "path": "./data/raw/d7_wikipedia_2026_world_cup.html",
-      "sha256": "877244a1a57723b8be6c52f1eb96f4ec6d8f108e6daa5113ec68f3bf8075eb60",
-      "bytes": 1433938
+      "sha256": "7a217d5f17b32907942474799caeb854859f7b14ea7a217bf86c5442eb8c9c18",
+      "bytes": 1434205
     },
     {
       "path": "./data/raw/d7_fifa_official_2026_world_cup.html",
@@ -158,8 +156,8 @@
     },
     {
       "path": "./data/raw/d7_wikipedia_2026_world_cup_knockout_stage.html",
-      "sha256": "94f16c4ff2c3402a1bf88bfe3961c51d301743931e5332a51a701cbce93acddc",
-      "bytes": 386524
+      "sha256": "b633c70c307f09147a4dae03f5c57e0ed9901206eebd3f471b415c5391b7559b",
+      "bytes": 386188
     },
     {
       "path": "./data/raw/d8_hoffmann_ging_ramasamy_2002.pdf",
@@ -193,21 +191,22 @@
     },
     {
       "path": "./data/raw/d12_country_average_yearly_temperature_wikipedia.html",
-      "sha256": "913b57cabf0b876d3a33ab129aec1ff27372b002724d90d0366aa6059ba8d8b0",
-      "bytes": 234673
+      "sha256": "1cab2a3081cfe43049e8a3dfd0e6f631fd4166af75cf5814f498825f17b3dde5",
+      "bytes": 234600
     }
   ],
   "params": {
-    "n_source_files": 32
+    "n_source_files": 32,
+    "force_refresh": true
   },
   "metrics": {
-    "n_downloaded": 0,
-    "n_cached": 32,
+    "n_downloaded": 32,
+    "n_cached": 0,
     "n_failed": 0,
     "n_failed_required": 0
   },
   "outputs": [
-    "./logs/stage1_download_data_20260610_190555.log",
+    "./logs/stage1_download_data_20260610_222045.log",
     "./data/raw/d1_martj42_results.csv",
     "./data/raw/d1_martj42_shootouts.csv",
     "./data/raw/d1_martj42_former_names.csv",
@@ -244,5 +243,5 @@
   ],
   "output_artifacts": [],
   "status": "ok",
-  "duration_seconds": 0.134948
+  "duration_seconds": 9.743055
 }

@@ -1,12 +1,10 @@
 {
-  "timestamp_utc": "2026-06-10T19:09:33.480882+00:00",
+  "timestamp_utc": "2026-06-10T22:29:57.735579+00:00",
   "stage": "stage2",
   "step": "run_simulation",
   "script_path": "./scripts/s2_run_simulation.py",
-  "git_commit": "eee0a29",
-  "git_tags": [
-    "gyan-v1.0-final"
-  ],
+  "git_commit": "0deecdd",
+  "git_tags": [],
   "python_version": "3.14.5",
   "package_versions": {
     "gyan": "0.1.0",
@@ -83,8 +81,8 @@
     "deterministic_same_worker_count": true,
     "seed_stable_across_worker_counts": true,
     "alternate_worker_count": 1,
-    "simulation_seconds": 32.066045207961,
-    "draws_per_second": 3118.563556916995,
+    "simulation_seconds": 32.2538399999612,
+    "draws_per_second": 3100.4060291773103,
     "knockout_upsets": 1088376,
     "knockout_decisive_matches": 3089605,
     "knockout_upset_rate": 0.35227027403179373,
@@ -151,9 +149,9 @@
     "upset_table_rows": 2
   },
   "outputs": [
-    "./logs/stage2_run_simulation_20260610_190933.log",
-    "./outputs/tables/team_advancement_probs_engineonly_2026_20260610_190933.parquet",
-    "./outputs/tables/team_advancement_probs_engineonly_2026_20260610_190933.csv",
+    "./logs/stage2_run_simulation_20260610_222957.log",
+    "./outputs/tables/team_advancement_probs_engineonly_2026_20260610_222957.parquet",
+    "./outputs/tables/team_advancement_probs_engineonly_2026_20260610_222957.csv",
     "./outputs/tables/team_advancement_probs_engineonly_2026_latest.csv",
     "./outputs/tables/upset_rate_engineonly_2026.csv",
     "./outputs/figures/mc_convergence.png",
@@ -165,12 +163,12 @@
   ],
   "output_artifacts": [
     {
-      "path": "./outputs/tables/team_advancement_probs_engineonly_2026_20260610_190933.parquet",
+      "path": "./outputs/tables/team_advancement_probs_engineonly_2026_20260610_222957.parquet",
       "sha256": "2ce522da5cc26ac516e9eac1706763746898fb729b3d88eb648d2359036d75ae",
       "bytes": 7638
     },
     {
-      "path": "./outputs/tables/team_advancement_probs_engineonly_2026_20260610_190933.csv",
+      "path": "./outputs/tables/team_advancement_probs_engineonly_2026_20260610_222957.csv",
       "sha256": "b4a3855843c539a7a82cecccc29024fb9ab715cbd45c9170d87eb8f736d0c6c3",
       "bytes": 2730
     },
@@ -191,7 +189,7 @@
     },
     {
       "path": "./outputs/figures/mc_convergence.pdf",
-      "sha256": "0231b4f62e5969723a50d5fe3063455ccac7c37084d1bcb630b14a9d31ca886d",
+      "sha256": "7dc208e6eaeab63e3ab190731ea25a9b0358a3b533bef8b0a54aad753e696249",
       "bytes": 16456
     },
     {
@@ -206,15 +204,15 @@
     },
     {
       "path": "./outputs/figures/engine_stage_probability_heatmap.pdf",
-      "sha256": "67be54cfc602ea424cdb13133ce12f7a31a27d49aedcf4e4b16f232bce4d8ae0",
+      "sha256": "052e7be966b278ae7087b2fa5b4cb5d0a1c7f8fec08ed168464d550df84d127e",
       "bytes": 27007
     },
     {
       "path": "./outputs/reports/stage2_summary.md",
-      "sha256": "f5de9a66d77a7d1406c8e064cd4fb9c9f9decf269964720209d92457c914eab0",
+      "sha256": "6857f1c8e6da15d60c78299f95b0cc989f022e2e7bd145fe62682e2a31661e4f",
       "bytes": 2455
     }
   ],
   "status": "ok",
-  "duration_seconds": 34.075471
+  "duration_seconds": 34.43903
 }

@@ -1,12 +1,10 @@
 {
-  "timestamp_utc": "2026-06-10T19:06:14.221519+00:00",
+  "timestamp_utc": "2026-06-10T22:21:10.086373+00:00",
   "stage": "stage1",
   "step": "build_socioeconomic",
   "script_path": "./scripts/s1_build_socioeconomic.py",
-  "git_commit": "eee0a29",
-  "git_tags": [
-    "gyan-v1.0-final"
-  ],
+  "git_commit": "0deecdd",
+  "git_tags": [],
   "python_version": "3.14.5",
   "package_versions": {
     "gyan": "0.1.0",
@@ -53,8 +51,8 @@
     },
     {
       "path": "./data/raw/d12_country_average_yearly_temperature_wikipedia.html",
-      "sha256": "913b57cabf0b876d3a33ab129aec1ff27372b002724d90d0366aa6059ba8d8b0",
-      "bytes": 234673
+      "sha256": "1cab2a3081cfe43049e8a3dfd0e6f631fd4166af75cf5814f498825f17b3dde5",
+      "bytes": 234600
     },
     {
       "path": "./outputs/tables/elo_current_ratings_from_d1.csv",
@@ -81,7 +79,7 @@
     "r_squared_diagnosis": "OLS target is current final Elo because FIFA points are an augmented predictor; the PRD reference R^2 values are therefore diagnostic, not directly comparable. Country mean annual temperature is used directly as the documented D12 climate feature."
   },
   "outputs": [
-    "./logs/stage1_build_socioeconomic_20260610_190614.log",
+    "./logs/stage1_build_socioeconomic_20260610_222110.log",
     "./data/processed/socioeconomic_features.parquet",
     "./outputs/tables/socioeconomic_features.csv"
   ],
@@ -125,5 +123,5 @@
       }
     }
   },
-  "duration_seconds": 0.18594
+  "duration_seconds": 0.179141
 }

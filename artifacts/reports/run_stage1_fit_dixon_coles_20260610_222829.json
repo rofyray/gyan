@@ -1,12 +1,10 @@
 {
-  "timestamp_utc": "2026-06-10T19:06:26.134960+00:00",
+  "timestamp_utc": "2026-06-10T22:26:44.987842+00:00",
   "stage": "stage1",
   "step": "fit_dixon_coles",
   "script_path": "./scripts/s1_fit_dixon_coles.py",
-  "git_commit": "eee0a29",
-  "git_tags": [
-    "gyan-v1.0-final"
-  ],
+  "git_commit": "0deecdd",
+  "git_tags": [],
   "python_version": "3.14.5",
   "package_versions": {
     "gyan": "0.1.0",
@@ -77,10 +75,10 @@
     }
   },
   "outputs": [
-    "./logs/stage1_fit_dixon_coles_20260610_190626.log",
-    "./data/processed/dixon_coles_params_20260610_190626.json",
-    "./data/processed/dixon_coles_params_dixon_coles_20260610_190626.json",
-    "./data/processed/dixon_coles_params_plain_poisson_20260610_190626.json",
+    "./logs/stage1_fit_dixon_coles_20260610_222644.log",
+    "./data/processed/dixon_coles_params_20260610_222644.json",
+    "./data/processed/dixon_coles_params_dixon_coles_20260610_222644.json",
+    "./data/processed/dixon_coles_params_plain_poisson_20260610_222644.json",
     "./data/processed/dixon_coles_params_dixon_coles_latest.json",
     "./data/processed/dixon_coles_params_plain_poisson_latest.json",
     "./data/processed/dixon_coles_params_latest.json",
@@ -90,17 +88,17 @@
   ],
   "output_artifacts": [
     {
-      "path": "./data/processed/dixon_coles_params_20260610_190626.json",
+      "path": "./data/processed/dixon_coles_params_20260610_222644.json",
       "sha256": "8fd5e5c0763f079ddbf0e21fc566c387140e04116c03e7e8faa478784ff9312d",
       "bytes": 28627
     },
     {
-      "path": "./data/processed/dixon_coles_params_dixon_coles_20260610_190626.json",
+      "path": "./data/processed/dixon_coles_params_dixon_coles_20260610_222644.json",
       "sha256": "8fd5e5c0763f079ddbf0e21fc566c387140e04116c03e7e8faa478784ff9312d",
       "bytes": 28627
     },
     {
-      "path": "./data/processed/dixon_coles_params_plain_poisson_20260610_190626.json",
+      "path": "./data/processed/dixon_coles_params_plain_poisson_20260610_222644.json",
       "sha256": "944cd646c85ad6c99e5cb50f17405190ba5202312d275bd744eb795113887de8",
       "bytes": 28593
     },
@@ -126,7 +124,7 @@
     },
     {
       "path": "./outputs/figures/attack_defense_top20.pdf",
-      "sha256": "e5266df5eea71aa9aeb88af186105e7848b98f2d285fc2e909b294ce0de2c749",
+      "sha256": "a3949c792899de7df60750d1b61818c6d00a99827fdf3624543797430cc54f38",
       "bytes": 19599
     },
     {
@@ -136,5 +134,5 @@
     }
   ],
   "status": "ok",
-  "duration_seconds": 103.393142
+  "duration_seconds": 104.85681
 }

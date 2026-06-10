@@ -41,7 +41,7 @@ data/processed/*
 logs/
 outputs/
 
-# Coding Agent instructions and PRDs.
+# Coding Agent instructions, PRDs and notes.
 PRD/
 AGENTS.md
 CLAUDE.md

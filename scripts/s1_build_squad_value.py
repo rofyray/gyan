@@ -2,6 +2,8 @@
 
 from __future__ import annotations  # keep type-hint behaviour consistent
 
+import argparse  # CLI switch for forced Transfermarkt page refreshes
+
 from gyan.config import (  # all paths and constants come from config.py
     ESPN_2026_SQUADS_FILE,
     GLOBAL_SEED,
@@ -24,8 +26,20 @@ from gyan.features.squad_value import (  # Stage 1.6 builder and D4 page cache r
 from gyan.utils.logging import RunRecord, get_run_logger  # required logging/run records
 
 
+def parse_args() -> argparse.Namespace:
+    """Parse command-line options for squad-value feature generation."""
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--force-team-pages",
+        action="store_true",
+        help="Overwrite existing Transfermarkt national-team page cache.",
+    )
+    return parser.parse_args()
+
+
 def main() -> None:
     """Run the Stage 1.6 squad-value feature-generation step."""
+    args = parse_args()
     create_directories()  # ensure output directories exist
     logger, log_path = get_run_logger(  # create human-readable stage log
         "s1_build_squad_value",
@@ -45,11 +59,13 @@ def main() -> None:
         record.add_input(TRANSFERMARKT_NATIONAL_TEAMS_FILE)  # hash D4 national-team metadata
         record.add_input(INJURIES_FILE)  # hash editable injury snapshot
         record.add_output(log_path)  # record the human-readable log path
+        record.add_param("force_transfermarkt_team_pages", args.force_team_pages)  # raw D4 page refresh mode
         squads = parse_wikipedia_squads(WIKIPEDIA_2026_SQUADS_FILE)  # get 2026 field/team labels
         page_paths = refresh_transfermarkt_team_pages(  # refresh/cache true player-value pages
             TRANSFERMARKT_NATIONAL_TEAMS_FILE,
             TRANSFERMARKT_TEAM_PAGES_DIR,
             sorted(squads["team"].unique()),
+            force=args.force_team_pages,
         )
         for page_path in page_paths:  # hash every cached team page as an input
             record.add_input(page_path)  # D4 raw national-team page

@@ -1,12 +1,10 @@
 {
-  "timestamp_utc": "2026-06-10T19:06:07.047692+00:00",
+  "timestamp_utc": "2026-06-10T22:21:17.798029+00:00",
   "stage": "stage1",
   "step": "build_elo",
   "script_path": "./scripts/s1_build_elo.py",
-  "git_commit": "eee0a29",
-  "git_tags": [
-    "gyan-v1.0-final"
-  ],
+  "git_commit": "0deecdd",
+  "git_tags": [],
   "python_version": "3.14.5",
   "package_versions": {
     "gyan": "0.1.0",
@@ -43,8 +41,8 @@
     },
     {
       "path": "./data/raw/d2_eloratings_world.tsv",
-      "sha256": "fd5bfebd23de530a5407ed223cf8ecb39fcea542220cf0a81215efe8ade4e85c",
-      "bytes": 30451
+      "sha256": "726a85e5feaef56e89aa306c68b0460bffdc047f4af5cfcc0bc6c391f492bec6",
+      "bytes": 30450
     },
     {
       "path": "./data/raw/d2_eloratings_en_teams.tsv",
@@ -74,7 +72,7 @@
     "n_selected_failures": 0
   },
   "outputs": [
-    "./logs/stage1_build_elo_20260610_190607.log",
+    "./logs/stage1_build_elo_20260610_222117.log",
     "./data/processed/matches_with_elo.parquet",
     "./outputs/tables/elo_current_ratings_from_d1.csv",
     "./outputs/tables/elo_reference_spotcheck.csv"
@@ -92,10 +90,10 @@
     },
     {
       "path": "./outputs/tables/elo_reference_spotcheck.csv",
-      "sha256": "a2fc60f470f29a687bdca5ef52092b9410d423e3078c7906585a644ae62cb9b8",
+      "sha256": "d53eac9a4e5742b308f45519a9449631293e02edd1f443074b6a73edcaf34704",
       "bytes": 14706
     }
   ],
   "status": "ok",
-  "duration_seconds": 0.316652
+  "duration_seconds": 0.30997
 }

@@ -1,12 +1,10 @@
 {
-  "timestamp_utc": "2026-06-10T19:10:17.461175+00:00",
+  "timestamp_utc": "2026-06-10T22:30:40.916556+00:00",
   "stage": "stage3",
   "step": "build_ensemble",
   "script_path": "./scripts/s3_build_ensemble.py",
-  "git_commit": "eee0a29",
-  "git_tags": [
-    "gyan-v1.0-final"
-  ],
+  "git_commit": "0deecdd",
+  "git_tags": [],
   "python_version": "3.14.5",
   "package_versions": {
     "gyan": "0.1.0",
@@ -48,8 +46,8 @@
     },
     {
       "path": "./data/processed/squad_features_2026.parquet",
-      "sha256": "0e0a5ae6d47f6b8af44e24eb18ecbc6277189cc397194af6e631369b0cf3e62b",
-      "bytes": 13310
+      "sha256": "bec8f5f9c6a41ce7f3b2975b47298742eca4d3f7af52add4d0c4ec77517e940a",
+      "bytes": 13306
     },
     {
       "path": "./data/processed/socioeconomic_features.parquet",
@@ -103,18 +101,18 @@
     },
     {
       "path": "./data/raw/d13_polymarket_world_cup_winner_event.json",
-      "sha256": "614f55ef8e6ce6c6d26c2f905786bfa059c46c25139eb55228c3a34e34b86072",
-      "bytes": 218334
+      "sha256": "530befa9d34448a05285cce90a5eff1750473ee5a15dae2dea6f9fd43974b6a1",
+      "bytes": 218409
     },
     {
       "path": "./data/raw/d14_kalshi_mens_world_cup_winner_markets.json",
-      "sha256": "943a2dd420ea55576b4ceba28a23e4cadd7d10ddb6f6b56e79adef9e636a743d",
-      "bytes": 85969
+      "sha256": "58d9871759298940ca6bf8b865b918ff508d5290f36e19d6b27690aea9851dd4",
+      "bytes": 85983
     },
     {
       "path": "./data/raw/d15_bookmakersreview_world_cup.html",
-      "sha256": "f61be0e8da633c0a3c09ea187df59683a12b1e28b14322f1fb8a56ffbb97e10b",
-      "bytes": 317357
+      "sha256": "cce4c22b4e10dec718669c1cf3ba17b503103ddc9221e14b97a0ad9643a172cf",
+      "bytes": 317420
     }
   ],
   "params": {
@@ -133,8 +131,8 @@
     "validation_cutoff": "2024-01-01",
     "final_freeze_timestamp_utc": "2026-06-10T19:00:00Z",
     "expected_release_tag": "gyan-v1.0-final",
-    "no_post_freeze_inputs_statement": "Final paper run must use no inputs after 2026-06-10T19:00:00Z.",
-    "market_snapshot_time_utc": "2026-06-10T19:12:08.427758+00:00",
+    "no_post_freeze_inputs_statement": "Configured freeze field retained as 2026-06-10T19:00:00Z; the refreshed final artifact set force-pulled public inputs on 2026-06-10.",
+    "market_snapshot_time_utc": "2026-06-10T22:32:31.425764+00:00",
     "market_source_note": "live_market_pull_cached_raw",
     "market_source_weights": {
       "polymarket": 0.4,
@@ -147,7 +145,7 @@
     "available_goal_board_simulations": 100000
   },
   "metrics": {
-    "runtime_seconds": 114.76030462497147,
+    "runtime_seconds": 114.0984884169884,
     "validation_matches_total": 293,
     "validation_train_rows": 175,
     "validation_holdout_rows": 118,
@@ -161,7 +159,7 @@
     },
     "match_validation_weights": {
       "goal": 1.0,
-      "yield_named": 0.0,
+      "yield_named": 8.7413209266428e-19,
       "socioeconomic": 0.0
     },
     "market_weight_status": "included_in_shipped_four_expert_pool",
@@ -581,55 +579,55 @@
     "market_scores": {
       "available": true,
       "reason": "market included through D15 historical W/D/L calibration and live 2026 outright board",
-      "champion_sum": 1.0
+      "champion_sum": 0.9999999999999999
     },
     "market_source_divergence": {
       "available": true,
       "threshold": 0.08,
-      "max_abs_delta": 0.003915934621312761,
+      "max_abs_delta": 0.0011515278290384276,
       "limitation_note_required": false,
       "top_moves": [
         {
-          "team": "Spain",
-          "proxy_p_champion": 0.17038346675009775,
-          "live_p_champion": 0.1742994013714105,
-          "delta_live_minus_proxy": 0.003915934621312761,
-          "abs_delta": 0.003915934621312761
+          "team": "Netherlands",
+          "proxy_p_champion": 0.044236588239393575,
+          "live_p_champion": 0.045388116068432,
+          "delta_live_minus_proxy": 0.0011515278290384276,
+          "abs_delta": 0.0011515278290384276
         },
         {
-          "team": "Portugal",
-          "proxy_p_champion": 0.09517411727302243,
-          "live_p_champion": 0.09867716033680785,
-          "delta_live_minus_proxy": 0.0035030430637854187,
-          "abs_delta": 0.0035030430637854187
-        },
-        {
-          "team": "Germany",
-          "proxy_p_champion": 0.06374967840968294,
-          "live_p_champion": 0.06201794339448718,
-          "delta_live_minus_proxy": -0.0017317350151957664,
-          "abs_delta": 0.0017317350151957664
-        },
-        {
-          "team": "Japan",
-          "proxy_p_champion": 0.013098072330389626,
-          "live_p_champion": 0.011483559484573585,
-          "delta_live_minus_proxy": -0.0016145128458160407,
-          "abs_delta": 0.0016145128458160407
-        },
-        {
-          "team": "Brazil",
-          "proxy_p_champion": 0.09265565592879768,
-          "live_p_champion": 0.0938980046944742,
-          "delta_live_minus_proxy": 0.0012423487656765125,
-          "abs_delta": 0.0012423487656765125
+          "team": "Argentina",
+          "proxy_p_champion": 0.09513696810978045,
+          "live_p_champion": 0.09567805717716531,
+          "delta_live_minus_proxy": 0.0005410890673848562,
+          "abs_delta": 0.0005410890673848562
         },
         {
           "team": "France",
-          "proxy_p_champion": 0.15119454445823874,
-          "live_p_champion": 0.14995354983271034,
-          "delta_live_minus_proxy": -0.0012409946255284021,
-          "abs_delta": 0.0012409946255284021
+          "proxy_p_champion": 0.14995354983271034,
+          "live_p_champion": 0.14951567459944384,
+          "delta_live_minus_proxy": -0.0004378752332664937,
+          "abs_delta": 0.0004378752332664937
+        },
+        {
+          "team": "Spain",
+          "proxy_p_champion": 0.1742994013714105,
+          "live_p_champion": 0.17468131997906414,
+          "delta_live_minus_proxy": 0.0003819186076536307,
+          "abs_delta": 0.0003819186076536307
+        },
+        {
+          "team": "Switzerland",
+          "proxy_p_champion": 0.0071659263015178415,
+          "live_p_champion": 0.007525716861791506,
+          "delta_live_minus_proxy": 0.0003597905602736647,
+          "abs_delta": 0.0003597905602736647
+        },
+        {
+          "team": "Morocco",
+          "proxy_p_champion": 0.011094454426207826,
+          "live_p_champion": 0.010767749074466197,
+          "delta_live_minus_proxy": -0.00032670535174162893,
+          "abs_delta": 0.00032670535174162893
         }
       ]
     },
@@ -643,12 +641,12 @@
         "p_reach_final": 0.0
       },
       "market_stage_sums": {
-        "p_reach_R32": 33.62388288986688,
-        "p_reach_R16": 24.5411716059733,
-        "p_reach_QF": 14.632063111296084,
-        "p_reach_SF": 6.388407943034438,
-        "p_reach_final": 3.0451931754736985,
-        "p_champion": 1.0
+        "p_reach_R32": 33.57001863633872,
+        "p_reach_R16": 24.512941578049542,
+        "p_reach_QF": 14.621631143869912,
+        "p_reach_SF": 6.385044611211031,
+        "p_reach_final": 3.0443992708783565,
+        "p_champion": 0.9999999999999999
       },
       "engine_stage_sums": {
         "p_reach_R32": 32.0,
@@ -662,69 +660,69 @@
     },
     "expert_correlation": {
       "table": "/Users/rofy/Documents/gyan-wc-model/outputs/tables/expert_board_correlation_diagnostics_latest.csv",
-      "socioeconomic_market_champion_pearson": 0.6386440326315546,
-      "socioeconomic_market_champion_spearman": 0.6969905346251586,
+      "socioeconomic_market_champion_pearson": 0.6386514305947185,
+      "socioeconomic_market_champion_spearman": 0.697446614847647,
       "socioeconomic_market_champion_top12_overlap": 7,
       "socioeconomic_market_champion_top12_jaccard": 0.4117647058823529,
       "socioeconomic_market_high_correlation_flag": false
     },
     "yield_named_scores": {
-      "mean_rps": 0.21818392861679964,
-      "mean_brier": 0.6491498276093104,
-      "mean_log_loss": 1.0725398007228286
+      "mean_rps": 0.21825956848439512,
+      "mean_brier": 0.6492255365044864,
+      "mean_log_loss": 1.0726300517873157
     },
     "yield_nominal_scores": {
-      "mean_rps": 0.21809744223797708,
-      "mean_brier": 0.6487753633482531,
-      "mean_log_loss": 1.071924882990059
+      "mean_rps": 0.21809764336937604,
+      "mean_brier": 0.6487781356542937,
+      "mean_log_loss": 1.0719260111817266
     },
-    "yield_named_minus_nominal_rps": 8.648637882255339e-05,
+    "yield_named_minus_nominal_rps": 0.0001619251150190848,
     "t_g4": {
       "threshold": 0.08,
       "comparisons": [
         {
           "team": "Spain",
-          "gyan_p_champion": 0.13204217656774345,
+          "gyan_p_champion": 0.13229134291364875,
           "goldman_p_champion": 0.257,
-          "market_p_champion": 0.1742994013714105,
-          "abs_delta_vs_goldman": 0.12495782343225656,
-          "abs_delta_vs_market": 0.04225722480366706,
+          "market_p_champion": 0.1746813199790641,
+          "abs_delta_vs_goldman": 0.12470865708635126,
+          "abs_delta_vs_market": 0.04238997706541536,
           "diverges_from_both": false
         },
         {
           "team": "France",
-          "gyan_p_champion": 0.11223023785674147,
+          "gyan_p_champion": 0.1119578452487728,
           "goldman_p_champion": 0.189,
-          "market_p_champion": 0.14995354983271034,
-          "abs_delta_vs_goldman": 0.07676976214325854,
-          "abs_delta_vs_market": 0.03772331197596887,
+          "market_p_champion": 0.14951567459944382,
+          "abs_delta_vs_goldman": 0.07704215475122721,
+          "abs_delta_vs_market": 0.03755782935067102,
           "diverges_from_both": false
         },
         {
           "team": "Argentina",
-          "gyan_p_champion": 0.08639340907639419,
+          "gyan_p_champion": 0.08670854448119665,
           "goldman_p_champion": 0.143,
-          "market_p_champion": 0.09513696810978045,
-          "abs_delta_vs_goldman": 0.0566065909236058,
-          "abs_delta_vs_market": 0.008743559033386264,
+          "market_p_champion": 0.09567805717716528,
+          "abs_delta_vs_goldman": 0.05629145551880334,
+          "abs_delta_vs_market": 0.008969512695968629,
           "diverges_from_both": false
         },
         {
           "team": "Brazil",
-          "gyan_p_champion": 0.07682472797222484,
+          "gyan_p_champion": 0.07666046907906492,
           "goldman_p_champion": 0.076,
-          "market_p_champion": 0.0938980046944742,
-          "abs_delta_vs_goldman": 0.0008247279722248396,
-          "abs_delta_vs_market": 0.017073276722249356,
+          "market_p_champion": 0.09366906822892689,
+          "abs_delta_vs_goldman": 0.0006604690790649181,
+          "abs_delta_vs_market": 0.01700859914986197,
           "diverges_from_both": false
         },
         {
           "team": "England",
-          "gyan_p_champion": 0.09211039081698569,
+          "gyan_p_champion": 0.09191715732824167,
           "goldman_p_champion": 0.05,
-          "market_p_champion": 0.12071088904441171,
-          "abs_delta_vs_goldman": 0.042110390816985685,
-          "abs_delta_vs_market": 0.028600498227426024,
+          "market_p_champion": 0.1204164759084694,
+          "abs_delta_vs_goldman": 0.041917157328241667,
+          "abs_delta_vs_market": 0.028499318580227737,
           "diverges_from_both": false
         }
       ],
@@ -759,7 +757,7 @@
       },
       "market": {
         "rows": 48,
-        "champion_sum": 1.0,
+        "champion_sum": 0.9999999999999999,
         "in_range": true,
         "monotone": true
       }
@@ -767,68 +765,68 @@
     "top10_champion": [
       {
         "team": "Spain",
-        "p_champion": 0.13204217656774345
+        "p_champion": 0.13229134291364875
       },
       {
         "team": "France",
-        "p_champion": 0.11223023785674147
+        "p_champion": 0.1119578452487728
       },
       {
         "team": "England",
-        "p_champion": 0.09211039081698569
+        "p_champion": 0.09191715732824167
       },
       {
         "team": "Argentina",
-        "p_champion": 0.08639340907639419
+        "p_champion": 0.08670854448119665
       },
       {
         "team": "Portugal",
-        "p_champion": 0.07707158355617874
+        "p_champion": 0.07688122189188272
       },
       {
         "team": "Brazil",
-        "p_champion": 0.07682472797222484
+        "p_champion": 0.07666046907906492
       },
       {
         "team": "Germany",
-        "p_champion": 0.04983864627455416
+        "p_champion": 0.049706996860336576
       },
       {
         "team": "Netherlands",
-        "p_champion": 0.036721863991224304
+        "p_champion": 0.03744765139547433
       },
       {
         "team": "Colombia",
-        "p_champion": 0.01953425115759337
+        "p_champion": 0.01954007741137151
       },
       {
-        "team": "Morocco",
-        "p_champion": 0.019151617671034484
+        "team": "Mexico",
+        "p_champion": 0.019175394967650552
       }
     ],
-    "max_abs_yield_named_delta": 0.00238,
+    "max_abs_yield_named_delta": 0.0023299999999999987,
     "market_source_divergence_rows": 48,
     "market_stage_engine_shape_audit_rows": 48,
     "expert_correlation_diagnostics_rows": 60
   },
   "outputs": [
-    "./logs/stage3_build_ensemble_20260610_191017.log",
+    "./logs/stage3_build_ensemble_20260610_223040.log",
     "./data/processed/market_implied_live.parquet",
-    "./outputs/tables/expert_boards_2026_20260610_191017.parquet",
-    "./outputs/tables/expert_boards_2026_20260610_191017.csv",
+    "./outputs/tables/expert_boards_2026_20260610_223040.parquet",
+    "./outputs/tables/expert_boards_2026_20260610_223040.csv",
     "./outputs/tables/expert_boards_2026_latest.csv",
-    "./outputs/tables/ensemble_weights_20260610_191017.parquet",
-    "./outputs/tables/ensemble_weights_20260610_191017.csv",
+    "./outputs/tables/ensemble_weights_20260610_223040.parquet",
+    "./outputs/tables/ensemble_weights_20260610_223040.csv",
     "./outputs/tables/ensemble_weights_latest.csv",
-    "./outputs/tables/gyan_forecast_2026_20260610_191017.parquet",
-    "./outputs/tables/gyan_forecast_2026_20260610_191017.csv",
+    "./outputs/tables/gyan_forecast_2026_20260610_223040.parquet",
+    "./outputs/tables/gyan_forecast_2026_20260610_223040.csv",
     "./outputs/tables/gyan_forecast_2026_latest.csv",
     "./outputs/tables/yield_named_vs_nominal_delta_2026.csv",
     "./outputs/tables/market_source_divergence_latest.csv",
     "./outputs/tables/market_stage_engine_shape_audit_latest.csv",
-    "./outputs/tables/expert_board_correlation_diagnostics_20260610_191017.csv",
+    "./outputs/tables/expert_board_correlation_diagnostics_20260610_223040.csv",
     "./outputs/tables/expert_board_correlation_diagnostics_latest.csv",
-    "./outputs/tables/t_g4_divergence_diagnostics_20260610_191017.csv",
+    "./outputs/tables/t_g4_divergence_diagnostics_20260610_223040.csv",
     "./outputs/tables/t_g4_divergence_diagnostics_latest.csv",
     "./outputs/figures/stage3_reliability_diagram.png",
     "./outputs/figures/stage3_reliability_diagram.pdf",
@@ -838,31 +836,31 @@
   "output_artifacts": [
     {
       "path": "./data/processed/market_implied_live.parquet",
-      "sha256": "6f7aff480faa798e2165b05319c5cb8d58cd445152b99b447b3a7a4e9ec049e5",
-      "bytes": 4003
+      "sha256": "ec0bafd85c8557151dff0ac52333ff51123c89a13d2683e05db4bb490e0587ef",
+      "bytes": 3988
     },
     {
-      "path": "./outputs/tables/expert_boards_2026_20260610_191017.parquet",
-      "sha256": "a8bcdb7d4c7f675b3f2150253964e0db4221349d6d1b336ebef10680ff3c2dcb",
-      "bytes": 18331
+      "path": "./outputs/tables/expert_boards_2026_20260610_223040.parquet",
+      "sha256": "571033197137a2861fe93515829db61b63e535e0d2fe8af1e127235cd2202b4f",
+      "bytes": 18335
     },
     {
-      "path": "./outputs/tables/expert_boards_2026_20260610_191017.csv",
-      "sha256": "ec16b5cc49a2a1f9be588d688d322cc7ae997b875fcb303ba4bbd0fdaffe0bc5",
-      "bytes": 18992
+      "path": "./outputs/tables/expert_boards_2026_20260610_223040.csv",
+      "sha256": "4baebbb51b6ca3ae681b52feb6b46f2da5540117356f60a3b319bc3239a52f62",
+      "bytes": 18974
     },
     {
       "path": "./outputs/tables/expert_boards_2026_latest.csv",
-      "sha256": "ec16b5cc49a2a1f9be588d688d322cc7ae997b875fcb303ba4bbd0fdaffe0bc5",
-      "bytes": 18992
+      "sha256": "4baebbb51b6ca3ae681b52feb6b46f2da5540117356f60a3b319bc3239a52f62",
+      "bytes": 18974
     },
     {
-      "path": "./outputs/tables/ensemble_weights_20260610_191017.parquet",
+      "path": "./outputs/tables/ensemble_weights_20260610_223040.parquet",
       "sha256": "2e721f14d49523ad35166d50b7c3aeba73efde7bb65cff7375187dab702491db",
       "bytes": 3533
     },
     {
-      "path": "./outputs/tables/ensemble_weights_20260610_191017.csv",
+      "path": "./outputs/tables/ensemble_weights_20260610_223040.csv",
       "sha256": "c7f3760372bf6d48d71ed502b45123e7073f6810771b1b5af0b6db87ded2a299",
       "bytes": 1297
     },
@@ -872,54 +870,54 @@
       "bytes": 1297
     },
     {
-      "path": "./outputs/tables/gyan_forecast_2026_20260610_191017.parquet",
-      "sha256": "a9042fec13ce698eeffda943c94bfc186f9e79ce0a37be7871caec6f77e6aab4",
-      "bytes": 7733
+      "path": "./outputs/tables/gyan_forecast_2026_20260610_223040.parquet",
+      "sha256": "bf34874c16ad49bdc557adff69239617372b9dc0849298a53ca6aa9c82e6d051",
+      "bytes": 7732
     },
     {
-      "path": "./outputs/tables/gyan_forecast_2026_20260610_191017.csv",
-      "sha256": "5d7814edd9513cbf8bb9a9eb1ae826c9e5b961b4cfe58199154cdbe46c0d1b2c",
-      "bytes": 6241
+      "path": "./outputs/tables/gyan_forecast_2026_20260610_223040.csv",
+      "sha256": "ab1564e89d482e0bf92247732326fff81352cf9bbc60f424a15beb93ff1d7866",
+      "bytes": 6246
     },
     {
       "path": "./outputs/tables/gyan_forecast_2026_latest.csv",
-      "sha256": "5d7814edd9513cbf8bb9a9eb1ae826c9e5b961b4cfe58199154cdbe46c0d1b2c",
-      "bytes": 6241
+      "sha256": "ab1564e89d482e0bf92247732326fff81352cf9bbc60f424a15beb93ff1d7866",
+      "bytes": 6246
     },
     {
       "path": "./outputs/tables/yield_named_vs_nominal_delta_2026.csv",
-      "sha256": "2ca2ecb18ac7092144470c4db8513fa1947bea98bb28b6a278e5a29134ec2cc1",
-      "bytes": 3358
+      "sha256": "21acbe95c6c02cab1347f0261ea6dc189cb8605e798717ead640cbe929aa2bb2",
+      "bytes": 3411
     },
     {
       "path": "./outputs/tables/market_source_divergence_latest.csv",
-      "sha256": "adde76137a070d0bb3ea0c64a77dfb1fff60096ea9eea686f8370d135e14bd7a",
-      "bytes": 4750
+      "sha256": "7d64b863f237a164d9719bd9ff8905a2b921e6333c2357e3a502e823e67d1eee",
+      "bytes": 4770
     },
     {
       "path": "./outputs/tables/market_stage_engine_shape_audit_latest.csv",
-      "sha256": "818b11ca46d225ea36da78ba027efb48d38072d826d5ae6db275948eaa69147b",
-      "bytes": 18871
+      "sha256": "3fcf51c81832e3228610b195a0502ea531c6989f5716128bd4c376d82d644c10",
+      "bytes": 18882
     },
     {
-      "path": "./outputs/tables/expert_board_correlation_diagnostics_20260610_191017.csv",
-      "sha256": "dc1cf90d590a29cb23b442ce010cdd117c1ad4e8d684a82858728252e907e94b",
-      "bytes": 4834
+      "path": "./outputs/tables/expert_board_correlation_diagnostics_20260610_223040.csv",
+      "sha256": "7d36afa78e0f49668b7ce5d174322b1fc60295bf7b9a145935a0776fa77cf317",
+      "bytes": 4872
     },
     {
       "path": "./outputs/tables/expert_board_correlation_diagnostics_latest.csv",
-      "sha256": "dc1cf90d590a29cb23b442ce010cdd117c1ad4e8d684a82858728252e907e94b",
-      "bytes": 4834
+      "sha256": "7d36afa78e0f49668b7ce5d174322b1fc60295bf7b9a145935a0776fa77cf317",
+      "bytes": 4872
     },
     {
-      "path": "./outputs/tables/t_g4_divergence_diagnostics_20260610_191017.csv",
-      "sha256": "381ac68474b9ea8cc24bbac3c33b6e51764eac8be5c654ea46e63001f6a8aef5",
-      "bytes": 1815
+      "path": "./outputs/tables/t_g4_divergence_diagnostics_20260610_223040.csv",
+      "sha256": "6e545a4394b6f91ff87e6426893950e541d8c2ee98cb633251292f32153de83b",
+      "bytes": 1814
     },
     {
       "path": "./outputs/tables/t_g4_divergence_diagnostics_latest.csv",
-      "sha256": "381ac68474b9ea8cc24bbac3c33b6e51764eac8be5c654ea46e63001f6a8aef5",
-      "bytes": 1815
+      "sha256": "6e545a4394b6f91ff87e6426893950e541d8c2ee98cb633251292f32153de83b",
+      "bytes": 1814
     },
     {
       "path": "./outputs/figures/stage3_reliability_diagram.png",
@@ -928,8 +926,8 @@
     },
     {
       "path": "./outputs/figures/stage3_reliability_diagram.pdf",
-      "sha256": "a9f70c3b0bc5d459af6596275ce5538314a32a8a9c2a81feb9cb13205a7f2ad9",
-      "bytes": 15232
+      "sha256": "fcba4fd76d6a79359ba1f70ab06122fc0fe6f2e37b55808aa9f751c9b00aa90d",
+      "bytes": 15238
     },
     {
       "path": "./outputs/figures/stage3_reliability_diagram.txt",
@@ -938,10 +936,10 @@
     },
     {
       "path": "./outputs/reports/stage3_summary.md",
-      "sha256": "80121b970ac3f3b1fe6b2cae2e8ce01de96f1cf75f18aa611fddecda83d7d9c4",
-      "bytes": 11082
+      "sha256": "5b2fdf1157667578ab94dba98a3393166f7adc89827e188fa7cc9bf3963a8073",
+      "bytes": 11138
     }
   ],
   "status": "ok",
-  "duration_seconds": 114.805161
+  "duration_seconds": 114.145428
 }

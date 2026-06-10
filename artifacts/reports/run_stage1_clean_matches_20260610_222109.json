@@ -1,12 +1,10 @@
 {
-  "timestamp_utc": "2026-06-10T19:06:01.791093+00:00",
+  "timestamp_utc": "2026-06-10T22:21:09.052881+00:00",
   "stage": "stage1",
   "step": "clean_matches",
   "script_path": "./scripts/s1_clean_matches.py",
-  "git_commit": "eee0a29",
-  "git_tags": [
-    "gyan-v1.0-final"
-  ],
+  "git_commit": "0deecdd",
+  "git_tags": [],
   "python_version": "3.14.5",
   "package_versions": {
     "gyan": "0.1.0",
@@ -59,11 +57,11 @@
     "negative_goal_cells": 0
   },
   "outputs": [
-    "./logs/stage1_clean_matches_20260610_190601.log",
+    "./logs/stage1_clean_matches_20260610_222109.log",
     "./data/interim/matches_clean.parquet",
     "./data/interim/team_name_map.csv"
   ],
   "output_artifacts": [],
   "status": "ok",
-  "duration_seconds": 0.184818
+  "duration_seconds": 0.163272
 }

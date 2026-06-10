@@ -1,12 +1,10 @@
 {
-  "timestamp_utc": "2026-06-10T19:09:28.957701+00:00",
+  "timestamp_utc": "2026-06-10T22:29:48.926953+00:00",
   "stage": "stage2",
   "step": "build_structure",
   "script_path": "./scripts/s2_build_structure.py",
-  "git_commit": "eee0a29",
-  "git_tags": [
-    "gyan-v1.0-final"
-  ],
+  "git_commit": "0deecdd",
+  "git_tags": [],
   "python_version": "3.14.5",
   "package_versions": {
     "gyan": "0.1.0",
@@ -38,13 +36,13 @@
   "inputs": [
     {
       "path": "./data/raw/d7_wikipedia_2026_world_cup.html",
-      "sha256": "877244a1a57723b8be6c52f1eb96f4ec6d8f108e6daa5113ec68f3bf8075eb60",
-      "bytes": 1433938
+      "sha256": "7a217d5f17b32907942474799caeb854859f7b14ea7a217bf86c5442eb8c9c18",
+      "bytes": 1434205
     },
     {
       "path": "./data/raw/d7_wikipedia_2026_world_cup_knockout_stage.html",
-      "sha256": "94f16c4ff2c3402a1bf88bfe3961c51d301743931e5332a51a701cbce93acddc",
-      "bytes": 386524
+      "sha256": "b633c70c307f09147a4dae03f5c57e0ed9901206eebd3f471b415c5391b7559b",
+      "bytes": 386188
     },
     {
       "path": "./data/raw/d7_fifa_official_2026_world_cup.html",
@@ -73,7 +71,7 @@
     "official_fifa_pdf_anchor_fixtures_checked": 8
   },
   "outputs": [
-    "./logs/stage2_build_structure_20260610_190928.log",
+    "./logs/stage2_build_structure_20260610_222948.log",
     "./data/processed/groups_2026.parquet",
     "./data/processed/schedule_2026.parquet",
     "./data/processed/bracket_pairings_2026.json"
@@ -96,5 +94,5 @@
     }
   ],
   "status": "ok",
-  "duration_seconds": 0.395506
+  "duration_seconds": 0.414516
 }

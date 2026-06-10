@@ -1,0 +1,15 @@
+team,gyan_p_champion,goldman_p_champion,pele_p_champion,market_p_champion,market_benchmark_source,market_snapshot_time_utc,market_source_note,interpretation
+Spain,0.1322913429136487,0.257,0.185,0.17468131997906414,stage3_refreshed_live_market_vector,2026-06-10T22:32:31.425764+00:00,live_market_pull_cached_raw,GYAN is lower under the shipped four-expert historical-RPS pool.
+France,0.1119578452487728,0.189,0.17,0.14951567459944384,stage3_refreshed_live_market_vector,2026-06-10T22:32:31.425764+00:00,live_market_pull_cached_raw,GYAN is lower under the shipped four-expert historical-RPS pool.
+England,0.0919171573282416,0.05,0.104,0.12041647590846943,stage3_refreshed_live_market_vector,2026-06-10T22:32:31.425764+00:00,live_market_pull_cached_raw,Broadly aligned with published benchmark range.
+Argentina,0.0867085444811966,0.143,,0.09567805717716531,stage3_refreshed_live_market_vector,2026-06-10T22:32:31.425764+00:00,live_market_pull_cached_raw,Broadly aligned with published benchmark range.
+Portugal,0.0768812218918827,,,0.09839093178466493,stage3_refreshed_live_market_vector,2026-06-10T22:32:31.425764+00:00,live_market_pull_cached_raw,Broadly aligned with published benchmark range.
+Brazil,0.0766604690790649,0.076,,0.0936690682289269,stage3_refreshed_live_market_vector,2026-06-10T22:32:31.425764+00:00,live_market_pull_cached_raw,Broadly aligned with published benchmark range.
+Germany,0.0497069968603365,,,0.061869925243592826,stage3_refreshed_live_market_vector,2026-06-10T22:32:31.425764+00:00,live_market_pull_cached_raw,Broadly aligned with published benchmark range.
+Netherlands,0.0374476513954743,,,0.045388116068432,stage3_refreshed_live_market_vector,2026-06-10T22:32:31.425764+00:00,live_market_pull_cached_raw,Broadly aligned with published benchmark range.
+Colombia,0.0195400774113715,,,0.012670455321648611,stage3_refreshed_live_market_vector,2026-06-10T22:32:31.425764+00:00,live_market_pull_cached_raw,Broadly aligned with published benchmark range.
+Mexico,0.0191753949676505,,,0.010448900971298207,stage3_refreshed_live_market_vector,2026-06-10T22:32:31.425764+00:00,live_market_pull_cached_raw,Broadly aligned with published benchmark range.
+Morocco,0.0189796896880359,,,0.010767749074466197,stage3_refreshed_live_market_vector,2026-06-10T22:32:31.425764+00:00,live_market_pull_cached_raw,Broadly aligned with published benchmark range.
+Belgium,0.0177751056510179,,,0.014679444269887024,stage3_refreshed_live_market_vector,2026-06-10T22:32:31.425764+00:00,live_market_pull_cached_raw,Broadly aligned with published benchmark range.
+United States,0.0159800522637577,,,0.013261156819997417,stage3_refreshed_live_market_vector,2026-06-10T22:32:31.425764+00:00,live_market_pull_cached_raw,Broadly aligned with published benchmark range.
+Norway,0.0157725381077406,,,0.016406743077280368,stage3_refreshed_live_market_vector,2026-06-10T22:32:31.425764+00:00,live_market_pull_cached_raw,Broadly aligned with published benchmark range.

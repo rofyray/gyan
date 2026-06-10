@@ -22,16 +22,16 @@ World Cup backtests.
 
 ## Final Run
 
-The final run artifacts in this repository are from the June 10, 2026 run tagged
-`20260610_191222`.
+The final run artifacts in this repository are from the June 10, 2026 refreshed
+run tagged `20260610_223240`.
 
 | Field | Value |
 |---|---|
-| Release tag | `gyan-v1.0-final` |
-| Git commit in run records | `eee0a29` |
+| Expected release tag | `gyan-v1.0-final` |
+| Git commit in run records | `0deecdd` |
 | Global seed | `20260611` |
 | Configured input freeze | `2026-06-10T19:00:00Z` |
-| Stage 3 market snapshot | `2026-06-10T19:12:08.427758+00:00` |
+| Stage 3 market snapshot | `2026-06-10T22:32:31.425764+00:00` |
 | Stage 2 simulations | 100,000 |
 | Stage 3 feature-expert simulations | 100,000 |
 | Stage 4 validation | pass |
@@ -39,22 +39,22 @@ The final run artifacts in this repository are from the June 10, 2026 run tagged
 The final run was started after the configured 19:00 UTC freeze time. The run
 records therefore preserve the configured freeze field and the actual refreshed
 source hashes/timestamps. The Stage 3 market vector is timestamped at
-`2026-06-10T19:12:08.427758+00:00`; that timestamp and the raw-source SHA-256
+`2026-06-10T22:32:31.425764+00:00`; that timestamp and the raw-source SHA-256
 hashes define the market state used by the final board.
 
 ## Final Artifacts
 
 | Artifact | Path |
 |---|---|
-| Final prediction board | `artifacts/tables/gyan_2026_predictions_20260610_191222.csv` |
+| Final prediction board | `artifacts/tables/gyan_2026_predictions_20260610_223240.csv` |
 | Latest forecast alias | `artifacts/tables/gyan_forecast_2026_latest.csv` |
-| Full modal bracket table | `artifacts/tables/modal_bracket_2026_20260610_191222.csv` |
-| Backtest metrics | `artifacts/tables/backtest_metrics_20260610_191222.csv` |
-| Ablation table | `artifacts/tables/ablation_20260610_191222.csv` |
-| Benchmark comparison | `artifacts/tables/benchmark_2026_20260610_191222.csv` |
-| Stage 4 validation | `artifacts/reports/stage4_output_validation_20260610_191222.json` |
-| Stage 3 run record | `artifacts/reports/run_stage3_build_ensemble_20260610_191212.json` |
-| Stage 4 run record | `artifacts/reports/run_stage4_evaluation_20260610_191224.json` |
+| Full modal bracket table | `artifacts/tables/modal_bracket_2026_20260610_223240.csv` |
+| Backtest metrics | `artifacts/tables/backtest_metrics_20260610_223240.csv` |
+| Ablation table | `artifacts/tables/ablation_20260610_223240.csv` |
+| Benchmark comparison | `artifacts/tables/benchmark_2026_20260610_223240.csv` |
+| Stage 4 validation | `artifacts/reports/stage4_output_validation_20260610_223240.json` |
+| Stage 3 run record | `artifacts/reports/run_stage3_build_ensemble_20260610_223235.json` |
+| Stage 4 run record | `artifacts/reports/run_stage4_evaluation_20260610_223242.json` |
 | Paper draft | `paper/manuscript.md` |
 | Reproducibility appendix | `paper/reproducibility.md` |
 
@@ -65,21 +65,21 @@ are in `artifacts/`.
 
 | Rank | Team | Champion probability |
 |---:|---|---:|
-| 1 | Spain | 13.20% |
-| 2 | France | 11.22% |
-| 3 | England | 9.21% |
-| 4 | Argentina | 8.64% |
-| 5 | Portugal | 7.71% |
-| 6 | Brazil | 7.68% |
-| 7 | Germany | 4.98% |
-| 8 | Netherlands | 3.67% |
+| 1 | Spain | 13.23% |
+| 2 | France | 11.20% |
+| 3 | England | 9.19% |
+| 4 | Argentina | 8.67% |
+| 5 | Portugal | 7.69% |
+| 6 | Brazil | 7.67% |
+| 7 | Germany | 4.97% |
+| 8 | Netherlands | 3.74% |
 | 9 | Colombia | 1.95% |
-| 10 | Morocco | 1.92% |
-| 11 | Mexico | 1.90% |
+| 10 | Mexico | 1.92% |
+| 11 | Morocco | 1.90% |
 | 12 | Belgium | 1.78% |
 
 The final board has 48 unique teams, probabilities in `[0, 1]`, monotone stage
-probabilities, and champion probability sum `0.9999999999999978`.
+probabilities, and champion probability sum `0.9999999999999979`.
 
 ## Modal Bracket
 
@@ -98,7 +98,7 @@ Final modal path:
 | Final | Spain vs England | Spain | England |
 
 The full Round-of-32 through final table is
-`artifacts/tables/modal_bracket_2026_20260610_191222.csv`. It includes each
+`artifacts/tables/modal_bracket_2026_20260610_223240.csv`. It includes each
 match's two teams, winner, loser, and both teams' final champion probabilities.
 
 The deterministic group placements implied by that bracket are:
@@ -217,26 +217,26 @@ Stage 3 used raw live market files with these SHA-256 prefixes:
 
 | Source | Path | SHA-256 prefix |
 |---|---|---:|
-| Polymarket | `data/raw/d13_polymarket_world_cup_winner_event.json` | `614f55ef8e6c` |
-| Kalshi | `data/raw/d14_kalshi_mens_world_cup_winner_markets.json` | `943a2dd420ea` |
-| Bookmaker live | `data/raw/d15_bookmakersreview_world_cup.html` | `f61be0e8da63` |
+| Polymarket | `data/raw/d13_polymarket_world_cup_winner_event.json` | `530befa9d344` |
+| Kalshi | `data/raw/d14_kalshi_mens_world_cup_winner_markets.json` | `58d987175929` |
+| Bookmaker live | `data/raw/d15_bookmakersreview_world_cup.html` | `cce4c22b4e10` |
 | Historical outrights | `data/raw/d15_historical_world_cup_outrights.csv` | `d20037fb79fd` |
 
 ## Run Records
 
 | Stage | Script | Final run record |
 |---|---|---|
-| Stage 1 download | `scripts/s1_download_data.py` | `artifacts/reports/run_stage1_download_data_20260610_190556.json` |
-| Stage 1 clean matches | `scripts/s1_clean_matches.py` | `artifacts/reports/run_stage1_clean_matches_20260610_190601.json` |
-| Stage 1 Elo | `scripts/s1_build_elo.py` | `artifacts/reports/run_stage1_build_elo_20260610_190607.json` |
-| Stage 1 socioeconomic | `scripts/s1_build_socioeconomic.py` | `artifacts/reports/run_stage1_build_socioeconomic_20260610_190614.json` |
-| Stage 1 squad value | `scripts/s1_build_squad_value.py` | `artifacts/reports/run_stage1_build_squad_value_20260610_190619.json` |
-| Stage 1 goal fit | `scripts/s1_fit_dixon_coles.py` | `artifacts/reports/run_stage1_fit_dixon_coles_20260610_190809.json` |
-| Stage 1 validation | `scripts/s1_validate_engine.py` | `artifacts/reports/run_stage1_validate_engine_20260610_190918.json` |
-| Stage 2 structure | `scripts/s2_build_structure.py` | `artifacts/reports/run_stage2_build_structure_20260610_190929.json` |
-| Stage 2 simulation | `scripts/s2_run_simulation.py --n-sims 100000` | `artifacts/reports/run_stage2_run_simulation_20260610_191007.json` |
-| Stage 3 ensemble | `scripts/s3_build_ensemble.py --n-sims 100000` | `artifacts/reports/run_stage3_build_ensemble_20260610_191212.json` |
-| Stage 4 evaluation | `scripts/s4_backtest.py` | `artifacts/reports/run_stage4_evaluation_20260610_191224.json` |
+| Stage 1 download | `scripts/s1_download_data.py --force` | `artifacts/reports/run_stage1_download_data_20260610_222055.json` |
+| Stage 1 clean matches | `scripts/s1_clean_matches.py` | `artifacts/reports/run_stage1_clean_matches_20260610_222109.json` |
+| Stage 1 Elo | `scripts/s1_build_elo.py` | `artifacts/reports/run_stage1_build_elo_20260610_222118.json` |
+| Stage 1 socioeconomic | `scripts/s1_build_socioeconomic.py` | `artifacts/reports/run_stage1_build_socioeconomic_20260610_222110.json` |
+| Stage 1 squad value | `scripts/s1_build_squad_value.py --force-team-pages` | `artifacts/reports/run_stage1_build_squad_value_20260610_222633.json` |
+| Stage 1 goal fit | `scripts/s1_fit_dixon_coles.py` | `artifacts/reports/run_stage1_fit_dixon_coles_20260610_222829.json` |
+| Stage 1 validation | `scripts/s1_validate_engine.py` | `artifacts/reports/run_stage1_validate_engine_20260610_222939.json` |
+| Stage 2 structure | `scripts/s2_build_structure.py` | `artifacts/reports/run_stage2_build_structure_20260610_222949.json` |
+| Stage 2 simulation | `scripts/s2_run_simulation.py --n-sims 100000` | `artifacts/reports/run_stage2_run_simulation_20260610_223032.json` |
+| Stage 3 ensemble | `scripts/s3_build_ensemble.py --n-sims 100000` | `artifacts/reports/run_stage3_build_ensemble_20260610_223235.json` |
+| Stage 4 evaluation | `scripts/s4_backtest.py` | `artifacts/reports/run_stage4_evaluation_20260610_223242.json` |
 
 ## Repository Layout
 

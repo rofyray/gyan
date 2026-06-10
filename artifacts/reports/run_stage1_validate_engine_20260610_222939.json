@@ -1,12 +1,10 @@
 {
-  "timestamp_utc": "2026-06-10T19:08:14.228028+00:00",
+  "timestamp_utc": "2026-06-10T22:28:36.441116+00:00",
   "stage": "stage1",
   "step": "validate_engine",
   "script_path": "./scripts/s1_validate_engine.py",
-  "git_commit": "eee0a29",
-  "git_tags": [
-    "gyan-v1.0-final"
-  ],
+  "git_commit": "0deecdd",
+  "git_tags": [],
   "python_version": "3.14.5",
   "package_versions": {
     "gyan": "0.1.0",
@@ -90,15 +88,15 @@
     "mean_rps_delta_model_minus_spi": 0.00281304387329759
   },
   "outputs": [
-    "./logs/stage1_validate_engine_20260610_190814.log",
-    "./outputs/tables/engine_validation_20260610_190814.csv",
+    "./logs/stage1_validate_engine_20260610_222836.log",
+    "./outputs/tables/engine_validation_20260610_222836.csv",
     "./outputs/tables/engine_validation_latest.csv",
     "./outputs/tables/engine_validation_spi_benchmark_latest.csv",
     "./outputs/tables/engine_draw_calibration_latest.csv"
   ],
   "output_artifacts": [
     {
-      "path": "./outputs/tables/engine_validation_20260610_190814.csv",
+      "path": "./outputs/tables/engine_validation_20260610_222836.csv",
       "sha256": "6f4342ea367ad2bb4db149d03fa988b91b5296b13ef49e0a90fa86bd803f6e79",
       "bytes": 752503
     },
@@ -152,5 +150,5 @@
     "reference_date": "2021-12-31",
     "fit_rho": false
   },
-  "duration_seconds": 64.596943
+  "duration_seconds": 62.905474
 }

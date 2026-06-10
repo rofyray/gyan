@@ -225,9 +225,20 @@ def refresh_transfermarkt_team_pages(
             last_error: Exception | None = None  # track transient failures
             for attempt in range(3):  # retry occasional 5xx responses
                 try:
-                    url = str(row.url).replace("www.transfermarkt.co.uk", "www.transfermarkt.com")  # stable host
-                    response = client.get(url)  # fetch TM national-team page
-                    response.raise_for_status()  # fail loudly on blocked/invalid pages
+                    source_url = str(row.url)  # registry URL may be the only healthy regional host
+                    fallback_url = source_url.replace("www.transfermarkt.co.uk", "www.transfermarkt.com")
+                    urls = [source_url] if fallback_url == source_url else [source_url, fallback_url]
+                    response = None  # assigned by the first healthy host
+                    for url in urls:
+                        try:
+                            response = client.get(url)  # fetch TM national-team page
+                            response.raise_for_status()  # fail loudly on blocked/invalid pages
+                            break  # keep the first successful host response
+                        except Exception as exc:
+                            last_error = exc  # try the alternate host before retrying
+                            response = None  # no successful response yet
+                    if response is None:
+                        raise last_error if last_error is not None else RuntimeError("Transfermarkt request failed")
                     page_path.write_bytes(response.content)  # cache raw page
                     last_error = None  # success
                     break  # done with this page

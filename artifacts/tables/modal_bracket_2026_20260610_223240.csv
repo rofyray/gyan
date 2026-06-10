@@ -1,0 +1,33 @@
+match_id,stage,home_slot,away_slot,home_team,away_team,winner,loser,home_p_champion,away_p_champion,winner_p_champion,selection_rule
+73,R32,Runner-up Group A,Runner-up Group B,South Korea,Canada,Canada,South Korea,0.006430443078371,0.0080555664625041,0.0080555664625041,higher_gyan_p_champion
+74,R32,Winner Group E,3rd Group A/B/C/D/F,Germany,Paraguay,Germany,Paraguay,0.0497069968603365,0.0068463580161992,0.0497069968603365,higher_gyan_p_champion
+75,R32,Winner Group F,Runner-up Group C,Netherlands,Morocco,Netherlands,Morocco,0.0374476513954743,0.0189796896880359,0.0374476513954743,higher_gyan_p_champion
+76,R32,Winner Group C,Runner-up Group F,Brazil,Japan,Brazil,Japan,0.0766604690790649,0.0167689719402886,0.0766604690790649,higher_gyan_p_champion
+77,R32,Winner Group I,3rd Group C/D/F/G/H,France,Egypt,France,Egypt,0.1119578452487728,0.006637821093185,0.1119578452487728,higher_gyan_p_champion
+78,R32,Runner-up Group E,Runner-up Group I,Ecuador,Norway,Norway,Ecuador,0.0131122146882699,0.0157725381077406,0.0157725381077406,higher_gyan_p_champion
+79,R32,Winner Group A,3rd Group C/E/F/H/I,Mexico,Ivory Coast,Mexico,Ivory Coast,0.0191753949676505,0.0077365856517841,0.0191753949676505,higher_gyan_p_champion
+80,R32,Winner Group L,3rd Group E/H/I/J/K,England,Democratic Republic of the Congo,England,Democratic Republic of the Congo,0.0919171573282416,0.0055413416129979,0.0919171573282416,higher_gyan_p_champion
+81,R32,Winner Group D,3rd Group B/E/F/I/J,United States,Bosnia and Herzegovina,United States,Bosnia and Herzegovina,0.0159800522637577,0.0054751786085141,0.0159800522637577,higher_gyan_p_champion
+82,R32,Winner Group G,3rd Group A/E/H/I/J,Belgium,Czech Republic,Belgium,Czech Republic,0.0177751056510179,0.006247880200756,0.0177751056510179,higher_gyan_p_champion
+83,R32,Runner-up Group K,Runner-up Group L,Colombia,Croatia,Colombia,Croatia,0.0195400774113715,0.0123222938203307,0.0195400774113715,higher_gyan_p_champion
+84,R32,Winner Group H,Runner-up Group J,Spain,Algeria,Spain,Algeria,0.1322913429136487,0.0070023779360728,0.1322913429136487,higher_gyan_p_champion
+85,R32,Winner Group B,3rd Group E/F/G/I/J,Switzerland,Austria,Switzerland,Austria,0.0105598560160138,0.0069575932828411,0.0105598560160138,higher_gyan_p_champion
+86,R32,Winner Group J,Runner-up Group H,Argentina,Uruguay,Argentina,Uruguay,0.0867085444811966,0.0136345442460875,0.0867085444811966,higher_gyan_p_champion
+87,R32,Winner Group K,3rd Group D/E/I/J/L,Portugal,Senegal,Portugal,Senegal,0.0768812218918827,0.0114256216891636,0.0768812218918827,higher_gyan_p_champion
+88,R32,Runner-up Group D,Runner-up Group G,Turkey,Iran,Turkey,Iran,0.0127488925906286,0.0073969856555352,0.0127488925906286,higher_gyan_p_champion
+89,R16,Winner Match 74,Winner Match 77,Germany,France,France,Germany,0.0497069968603365,0.1119578452487728,0.1119578452487728,higher_gyan_p_champion
+90,R16,Winner Match 73,Winner Match 75,Canada,Netherlands,Netherlands,Canada,0.0080555664625041,0.0374476513954743,0.0374476513954743,higher_gyan_p_champion
+91,R16,Winner Match 76,Winner Match 78,Brazil,Norway,Brazil,Norway,0.0766604690790649,0.0157725381077406,0.0766604690790649,higher_gyan_p_champion
+92,R16,Winner Match 79,Winner Match 80,Mexico,England,England,Mexico,0.0191753949676505,0.0919171573282416,0.0919171573282416,higher_gyan_p_champion
+93,R16,Winner Match 83,Winner Match 84,Colombia,Spain,Spain,Colombia,0.0195400774113715,0.1322913429136487,0.1322913429136487,higher_gyan_p_champion
+94,R16,Winner Match 81,Winner Match 82,United States,Belgium,Belgium,United States,0.0159800522637577,0.0177751056510179,0.0177751056510179,higher_gyan_p_champion
+95,R16,Winner Match 86,Winner Match 88,Argentina,Turkey,Argentina,Turkey,0.0867085444811966,0.0127488925906286,0.0867085444811966,higher_gyan_p_champion
+96,R16,Winner Match 85,Winner Match 87,Switzerland,Portugal,Portugal,Switzerland,0.0105598560160138,0.0768812218918827,0.0768812218918827,higher_gyan_p_champion
+97,QF,Winner Match 89,Winner Match 90,France,Netherlands,France,Netherlands,0.1119578452487728,0.0374476513954743,0.1119578452487728,higher_gyan_p_champion
+98,QF,Winner Match 93,Winner Match 94,Spain,Belgium,Spain,Belgium,0.1322913429136487,0.0177751056510179,0.1322913429136487,higher_gyan_p_champion
+99,QF,Winner Match 91,Winner Match 92,Brazil,England,England,Brazil,0.0766604690790649,0.0919171573282416,0.0919171573282416,higher_gyan_p_champion
+100,QF,Winner Match 95,Winner Match 96,Argentina,Portugal,Argentina,Portugal,0.0867085444811966,0.0768812218918827,0.0867085444811966,higher_gyan_p_champion
+101,SF,Winner Match 97,Winner Match 98,France,Spain,Spain,France,0.1119578452487728,0.1322913429136487,0.1322913429136487,higher_gyan_p_champion
+102,SF,Winner Match 99,Winner Match 100,England,Argentina,England,Argentina,0.0919171573282416,0.0867085444811966,0.0919171573282416,higher_gyan_p_champion
+103,third_place,Loser Match 101,Loser Match 102,France,Argentina,France,Argentina,0.1119578452487728,0.0867085444811966,0.1119578452487728,higher_gyan_p_champion
+104,final,Winner Match 101,Winner Match 102,Spain,England,Spain,England,0.1322913429136487,0.0919171573282416,0.1322913429136487,higher_gyan_p_champion

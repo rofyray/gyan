@@ -2,6 +2,7 @@
 
 from __future__ import annotations  # use modern type hints consistently
 
+import argparse  # CLI switch for forced source refreshes
 import json  # write a machine-readable download manifest
 from dataclasses import asdict  # convert DownloadOutcome records to dictionaries
 
@@ -13,8 +14,16 @@ from gyan.data.source_registry import stage1_source_files  # ordered Stage 1 sou
 from gyan.utils.logging import RunRecord, get_run_logger  # required logging/run record helpers
 
 
+def parse_args() -> argparse.Namespace:
+    """Parse command-line options for the downloader."""
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--force", action="store_true", help="Overwrite existing raw artifacts instead of using cache.")
+    return parser.parse_args()
+
+
 def main() -> None:
     """Run the Stage 1.2 raw-data download step."""
+    args = parse_args()
     create_directories()  # ensure data/raw, logs, and report folders exist
     logger, log_path = get_run_logger(  # create the required human-readable log
         "s1_download_data",
@@ -31,6 +40,7 @@ def main() -> None:
         record.add_output(log_path)  # include the human-readable log as an output
         source_files = stage1_source_files()  # gather every configured source artifact
         record.add_param("n_source_files", len(source_files))  # record configured source count
+        record.add_param("force_refresh", args.force)  # record whether existing raw cache was overwritten
         logger.info("Configured %s source artifacts", len(source_files))  # log source count
         outcomes = []  # collect every download/cached/failed result
         with httpx.Client(  # reuse connections and follow redirects for public sources
@@ -40,7 +50,7 @@ def main() -> None:
         ) as client:
             for source_file in source_files:  # process each source in registry order
                 logger.info("Fetching %s %s", source_file.source_id, source_file.label)
-                outcome = download_source_file(source_file, client=client)  # fetch/cache artifact
+                outcome = download_source_file(source_file, client=client, force=args.force)  # fetch/cache artifact
                 outcomes.append(outcome)  # keep the outcome for the manifest
                 if outcome.status == "failed":  # failed artifact gets explicit log detail
                     logger.warning(  # warn but continue so fallbacks/optional sources can work

@@ -706,6 +706,34 @@ def _manuscript_text(tag: str, paths: dict[str, Path], summary: dict[str, object
     market_construction_limitation = _market_construction_limitation_text()  # market match/stage construction transfer
     market_source_limitation = _market_source_limitation_text()  # live-vs-proxy source-transfer caveat
     market_stage_limitation = _market_stage_limitation_text()  # market stage-source caveat
+    weights = summary["shipped_weights"]  # compact readable weight summary
+    weight_summary = ", ".join(f"{expert} {float(weight):.3f}" for expert, weight in weights.items())
+    top10 = summary["top10"]  # top champion board rows
+    top10_rows = "\n".join(
+        f"| {rank} | {row['team']} | {float(row['p_champion']) * 100:.2f}% |"
+        for rank, row in enumerate(top10, start=1)
+    )
+    ablation_check = summary["shipped_vs_best_ablation"]  # shipped-vs-ablation diagnostics
+    ablation_text = (
+        f"The shipped GYAN board has mean historical RPS "
+        f"{float(ablation_check['shipped_gyan_mean_rps']):.6f}. "
+        f"The best non-shipped ablation is `{ablation_check['best_non_shipped_ablation']}` at "
+        f"{float(ablation_check['best_non_shipped_mean_rps']):.6f}, so the shipped specification "
+        f"improves RPS by {abs(float(ablation_check['delta_shipped_minus_best_non_shipped'])):.6f}."
+    )
+    divergence = summary["top_team_divergence"]  # comparator divergence diagnostics
+    divergence_status = "trips" if divergence["tripped"] else "does not trip"
+    divergence_rows = divergence.get("comparisons", [])
+    divergence_examples = "; ".join(
+        f"{row['team']} differs from Goldman by {float(row['abs_delta_vs_goldman']):.4f} "
+        f"and from the market by {float(row['abs_delta_vs_market']):.4f}"
+        for row in divergence_rows[:5]
+    )
+    divergence_text = (
+        f"The top-team divergence check {divergence_status} the "
+        f"{float(divergence['threshold']):.2f} threshold against both Goldman and market comparators. "
+        f"{divergence_examples}."
+    )
     return f"""# GYAN World Cup Model
 
 ## Introduction
@@ -715,16 +743,20 @@ GYAN is an ensemble forecasting model for the 2026 FIFA World Cup. It combines a
 The project follows the D1..D15 registry in `PRD/CONVENTIONS.md`: international results, Elo references, SPI/forecast archives, Transfermarkt squad values, FIFA ranking data, World Bank macro data, climate proxies, published benchmark PDFs, and market sources.
 
 ## Methods
-The Goal expert uses the Stage 1 Poisson/Dixon-Coles mean engine with a draw-calibrated correlated negative-binomial score matrix inside the Stage 2 tournament simulator. Yield uses team-value and named-squad adjustments for 2026; in historical backtests it is represented by pre-tournament form proxies because historical named squads and values are not cached. The socioeconomic expert uses the Hoffmann specification with year-available World Bank GDP/population data. The Market expert uses live de-vigged 2026 outrights for the current board and cached D15 bookmaker outrights for historical calibration. Expert pooling uses the Stage 3 shipped four-expert weights `{summary['shipped_weights']}`, fit by constrained historical RPS with a positive minimum weight for every expert. {match_objective_note} The final paper input freeze timestamp is `{FINAL_FREEZE_TIMESTAMP_UTC}`; the final paper run should use no inputs after that cutoff.
+The Goal expert uses the Stage 1 Poisson/Dixon-Coles mean engine with a draw-calibrated correlated negative-binomial score matrix inside the Stage 2 tournament simulator. Yield uses team-value and named-squad adjustments for 2026; in historical backtests it is represented by pre-tournament form proxies because historical named squads and values are not cached. The socioeconomic expert uses the Hoffmann specification with year-available World Bank GDP/population data. The Market expert uses live de-vigged 2026 outrights for the current board and cached D15 bookmaker outrights for historical calibration. Expert pooling uses the Stage 3 shipped four-expert weights ({weight_summary}), fit by constrained historical RPS with a positive minimum weight for every expert. {match_objective_note} The configured final input freeze timestamp is `{FINAL_FREEZE_TIMESTAMP_UTC}`; run records preserve that field along with the actual source hashes and timestamps used by the refreshed artifact set.
 
 ## Results
 Backtest metrics are in `{repo_path_str(paths['backtest_csv'])}`. The ablation table is `{repo_path_str(paths['ablation_csv'])}`. The benchmark table is `{repo_path_str(paths['benchmark_csv'])}`. The final 2026 board is `{repo_path_str(paths['final_board_csv'])}`.
 
-Top 2026 teams: {summary['top10']}.
+The top 2026 champion probabilities are:
 
-Shipped-vs-ablation check: {summary['shipped_vs_best_ablation']}.
+| Rank | Team | Champion probability |
+|---:|---|---:|
+{top10_rows}
 
-Top-team divergence check: {summary['top_team_divergence']}.
+{ablation_text}
+
+{divergence_text}
 
 ## Discussion
 The Stage 3 shipped model is now a four-expert GYAN pool rather than an engine-only forecast. Match-level validation without market outrights still favours the Goal expert, so that diagnostic remains reported separately; the shipped tournament board uses the historical no-leakage four-expert calibration because it can include the market expert.
@@ -1076,7 +1108,10 @@ def main() -> None:
                 "shipped_weights": shipped_weights,
                 "final_freeze_timestamp_utc": FINAL_FREEZE_TIMESTAMP_UTC,
                 "expected_release_tag": FINAL_RELEASE_TAG,
-                "no_post_freeze_inputs_statement": f"Final paper run must use no inputs after {FINAL_FREEZE_TIMESTAMP_UTC}.",
+                "no_post_freeze_inputs_statement": (
+                    f"Configured freeze field retained as {FINAL_FREEZE_TIMESTAMP_UTC}; "
+                    "the refreshed final artifact set force-pulled public inputs on 2026-06-10."
+                ),
                 "historical_market_sources": historical_markets.groupby("year")["source"].first().to_dict(),
                 "historical_market_note": "Backtest market uses cached D15 historical outright boards; 2022 Polymarket exists but lacks a complete public pre-kickoff price vector.",
             }

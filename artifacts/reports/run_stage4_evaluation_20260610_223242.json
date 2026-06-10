@@ -1,12 +1,10 @@
 {
-  "timestamp_utc": "2026-06-10T19:12:22.624874+00:00",
+  "timestamp_utc": "2026-06-10T22:32:40.677895+00:00",
   "stage": "stage4",
   "step": "evaluation",
   "script_path": "./scripts/s4_backtest.py",
-  "git_commit": "eee0a29",
-  "git_tags": [
-    "gyan-v1.0-final"
-  ],
+  "git_commit": "0deecdd",
+  "git_tags": [],
   "python_version": "3.14.5",
   "package_versions": {
     "gyan": "0.1.0",
@@ -58,23 +56,23 @@
     },
     {
       "path": "./outputs/tables/gyan_forecast_2026_latest.csv",
-      "sha256": "5d7814edd9513cbf8bb9a9eb1ae826c9e5b961b4cfe58199154cdbe46c0d1b2c",
-      "bytes": 6241
+      "sha256": "ab1564e89d482e0bf92247732326fff81352cf9bbc60f424a15beb93ff1d7866",
+      "bytes": 6246
     },
     {
       "path": "./data/processed/market_implied_live.parquet",
-      "sha256": "6f7aff480faa798e2165b05319c5cb8d58cd445152b99b447b3a7a4e9ec049e5",
-      "bytes": 4003
+      "sha256": "ec0bafd85c8557151dff0ac52333ff51123c89a13d2683e05db4bb490e0587ef",
+      "bytes": 3988
     },
     {
       "path": "./outputs/tables/expert_board_correlation_diagnostics_latest.csv",
-      "sha256": "dc1cf90d590a29cb23b442ce010cdd117c1ad4e8d684a82858728252e907e94b",
-      "bytes": 4834
+      "sha256": "7d36afa78e0f49668b7ce5d174322b1fc60295bf7b9a145935a0776fa77cf317",
+      "bytes": 4872
     },
     {
       "path": "./outputs/tables/expert_boards_2026_latest.csv",
-      "sha256": "ec16b5cc49a2a1f9be588d688d322cc7ae997b875fcb303ba4bbd0fdaffe0bc5",
-      "bytes": 18992
+      "sha256": "4baebbb51b6ca3ae681b52feb6b46f2da5540117356f60a3b319bc3239a52f62",
+      "bytes": 18974
     },
     {
       "path": "./outputs/tables/ensemble_weights_latest.csv",
@@ -111,7 +109,7 @@
     },
     "final_freeze_timestamp_utc": "2026-06-10T19:00:00Z",
     "expected_release_tag": "gyan-v1.0-final",
-    "no_post_freeze_inputs_statement": "Final paper run must use no inputs after 2026-06-10T19:00:00Z.",
+    "no_post_freeze_inputs_statement": "Configured freeze field retained as 2026-06-10T19:00:00Z; the refreshed final artifact set force-pulled public inputs on 2026-06-10.",
     "historical_market_sources": {
       "2014": "zeileis_2014_bookmaker_consensus_22_books",
       "2018": "zeileis_2018_bookmaker_consensus_26_books",
@@ -120,7 +118,7 @@
     "historical_market_note": "Backtest market uses cached D15 historical outright boards; 2022 Polymarket exists but lacks a complete public pre-kickoff price vector."
   },
   "metrics": {
-    "runtime_seconds": 1.4532794160186313,
+    "runtime_seconds": 1.484134999976959,
     "leakage_audits": {
       "2014": {
         "passed": true,
@@ -188,47 +186,47 @@
       "comparisons": [
         {
           "team": "Spain",
-          "gyan_p_champion": 0.1320421765677434,
+          "gyan_p_champion": 0.1322913429136487,
           "goldman_p_champion": 0.257,
-          "market_p_champion": 0.1742994013714105,
-          "abs_delta_vs_goldman": 0.12495782343225662,
-          "abs_delta_vs_market": 0.042257224803667115,
+          "market_p_champion": 0.1746813199790641,
+          "abs_delta_vs_goldman": 0.12470865708635132,
+          "abs_delta_vs_market": 0.04238997706541542,
           "diverges_from_both": false
         },
         {
           "team": "France",
-          "gyan_p_champion": 0.1122302378567414,
+          "gyan_p_champion": 0.1119578452487728,
           "goldman_p_champion": 0.189,
-          "market_p_champion": 0.1499535498327103,
-          "abs_delta_vs_goldman": 0.0767697621432586,
-          "abs_delta_vs_market": 0.03772331197596891,
+          "market_p_champion": 0.1495156745994438,
+          "abs_delta_vs_goldman": 0.07704215475122721,
+          "abs_delta_vs_market": 0.03755782935067099,
           "diverges_from_both": false
         },
         {
           "team": "England",
-          "gyan_p_champion": 0.0921103908169856,
+          "gyan_p_champion": 0.0919171573282416,
           "goldman_p_champion": 0.05,
-          "market_p_champion": 0.1207108890444117,
-          "abs_delta_vs_goldman": 0.0421103908169856,
-          "abs_delta_vs_market": 0.028600498227426094,
+          "market_p_champion": 0.1204164759084694,
+          "abs_delta_vs_goldman": 0.0419171573282416,
+          "abs_delta_vs_market": 0.028499318580227806,
           "diverges_from_both": false
         },
         {
           "team": "Argentina",
-          "gyan_p_champion": 0.0863934090763941,
+          "gyan_p_champion": 0.0867085444811966,
           "goldman_p_champion": 0.143,
-          "market_p_champion": 0.0951369681097804,
-          "abs_delta_vs_goldman": 0.056606590923605885,
-          "abs_delta_vs_market": 0.008743559033386292,
+          "market_p_champion": 0.0956780571771653,
+          "abs_delta_vs_goldman": 0.05629145551880339,
+          "abs_delta_vs_market": 0.008969512695968698,
           "diverges_from_both": false
         },
         {
           "team": "Brazil",
-          "gyan_p_champion": 0.0768247279722248,
+          "gyan_p_champion": 0.0766604690790649,
           "goldman_p_champion": 0.076,
-          "market_p_champion": 0.0938980046944742,
-          "abs_delta_vs_goldman": 0.000824727972224798,
-          "abs_delta_vs_market": 0.017073276722249398,
+          "market_p_champion": 0.0936690682289269,
+          "abs_delta_vs_goldman": 0.0006604690790649043,
+          "abs_delta_vs_market": 0.017008599149861997,
           "diverges_from_both": false
         }
       ],
@@ -236,17 +234,17 @@
       "tripped_teams": [],
       "france": {
         "team": "France",
-        "gyan_p_champion": 0.1122302378567414,
+        "gyan_p_champion": 0.1119578452487728,
         "goldman_p_champion": 0.189,
-        "market_p_champion": 0.1499535498327103,
-        "abs_delta_vs_goldman": 0.0767697621432586,
-        "abs_delta_vs_market": 0.03772331197596891,
+        "market_p_champion": 0.1495156745994438,
+        "abs_delta_vs_goldman": 0.07704215475122721,
+        "abs_delta_vs_market": 0.03755782935067099,
         "diverges_from_both": false
       },
       "france_blocker_resolved": true
     },
     "output_validation": {
-      "tag": "20260610_191222",
+      "tag": "20260610_223240",
       "checks": {
         "final_board_has_48_unique_teams": true,
         "final_board_probabilities_in_range": true,
@@ -262,7 +260,7 @@
       },
       "all_passed": true,
       "details": {
-        "champion_probability_sum": 0.9999999999999978,
+        "champion_probability_sum": 0.9999999999999982,
         "max_final_board_vs_latest_forecast_abs_diff": 0.0,
         "benchmark_max_abs_diff": 0.0,
         "backtest_model_coverage": {
@@ -332,202 +330,202 @@
     "top10_champion": [
       {
         "team": "Spain",
-        "p_champion": 0.1320421765677434
+        "p_champion": 0.1322913429136487
       },
       {
         "team": "France",
-        "p_champion": 0.1122302378567414
+        "p_champion": 0.1119578452487728
       },
       {
         "team": "England",
-        "p_champion": 0.0921103908169856
+        "p_champion": 0.0919171573282416
       },
       {
         "team": "Argentina",
-        "p_champion": 0.0863934090763941
+        "p_champion": 0.0867085444811966
       },
       {
         "team": "Portugal",
-        "p_champion": 0.0770715835561787
+        "p_champion": 0.0768812218918827
       },
       {
         "team": "Brazil",
-        "p_champion": 0.0768247279722248
+        "p_champion": 0.0766604690790649
       },
       {
         "team": "Germany",
-        "p_champion": 0.0498386462745541
+        "p_champion": 0.0497069968603365
       },
       {
         "team": "Netherlands",
-        "p_champion": 0.0367218639912243
+        "p_champion": 0.0374476513954743
       },
       {
         "team": "Colombia",
-        "p_champion": 0.0195342511575933
+        "p_champion": 0.0195400774113715
       },
       {
-        "team": "Morocco",
-        "p_champion": 0.0191516176710344
+        "team": "Mexico",
+        "p_champion": 0.0191753949676505
       }
     ],
-    "champion_probability_sum": 0.9999999999999978
+    "champion_probability_sum": 0.9999999999999982
   },
   "outputs": [
-    "./logs/stage4_evaluation_20260610_191222.log",
-    "./outputs/tables/backtest_metrics_20260610_191222.csv",
-    "./outputs/tables/ablation_20260610_191222.csv",
-    "./outputs/tables/backtest_calibration_20260610_191222.csv",
-    "./outputs/figures/backtest_calibration_20260610_191222.png",
-    "./outputs/figures/backtest_calibration_20260610_191222.pdf",
-    "./outputs/figures/backtest_calibration_20260610_191222.txt",
-    "./outputs/figures/ablation_20260610_191222.png",
-    "./outputs/figures/ablation_20260610_191222.pdf",
-    "./outputs/figures/ablation_20260610_191222.txt",
-    "./outputs/tables/benchmark_2026_20260610_191222.csv",
-    "./outputs/tables/gyan_2026_predictions_20260610_191222.csv",
-    "./outputs/figures/benchmark_2026_20260610_191222.png",
-    "./outputs/figures/benchmark_2026_20260610_191222.pdf",
-    "./outputs/figures/benchmark_2026_20260610_191222.txt",
-    "./outputs/figures/gyan_2026_champion_top12_20260610_191222.png",
-    "./outputs/figures/gyan_2026_champion_top12_20260610_191222.pdf",
-    "./outputs/figures/gyan_2026_champion_top12_20260610_191222.txt",
-    "./outputs/tables/modal_bracket_2026_20260610_191222.csv",
-    "./outputs/figures/modal_bracket_2026_20260610_191222.png",
-    "./outputs/figures/modal_bracket_2026_20260610_191222.pdf",
-    "./outputs/figures/modal_bracket_2026_20260610_191222.txt",
-    "./outputs/reports/stage4_output_validation_20260610_191222.json",
+    "./logs/stage4_evaluation_20260610_223240.log",
+    "./outputs/tables/backtest_metrics_20260610_223240.csv",
+    "./outputs/tables/ablation_20260610_223240.csv",
+    "./outputs/tables/backtest_calibration_20260610_223240.csv",
+    "./outputs/figures/backtest_calibration_20260610_223240.png",
+    "./outputs/figures/backtest_calibration_20260610_223240.pdf",
+    "./outputs/figures/backtest_calibration_20260610_223240.txt",
+    "./outputs/figures/ablation_20260610_223240.png",
+    "./outputs/figures/ablation_20260610_223240.pdf",
+    "./outputs/figures/ablation_20260610_223240.txt",
+    "./outputs/tables/benchmark_2026_20260610_223240.csv",
+    "./outputs/tables/gyan_2026_predictions_20260610_223240.csv",
+    "./outputs/figures/benchmark_2026_20260610_223240.png",
+    "./outputs/figures/benchmark_2026_20260610_223240.pdf",
+    "./outputs/figures/benchmark_2026_20260610_223240.txt",
+    "./outputs/figures/gyan_2026_champion_top12_20260610_223240.png",
+    "./outputs/figures/gyan_2026_champion_top12_20260610_223240.pdf",
+    "./outputs/figures/gyan_2026_champion_top12_20260610_223240.txt",
+    "./outputs/tables/modal_bracket_2026_20260610_223240.csv",
+    "./outputs/figures/modal_bracket_2026_20260610_223240.png",
+    "./outputs/figures/modal_bracket_2026_20260610_223240.pdf",
+    "./outputs/figures/modal_bracket_2026_20260610_223240.txt",
+    "./outputs/reports/stage4_output_validation_20260610_223240.json",
     "./paper/manuscript.md",
     "./paper/reproducibility.md",
     "./outputs/reports/stage4_summary.md"
   ],
   "output_artifacts": [
     {
-      "path": "./outputs/tables/backtest_metrics_20260610_191222.csv",
+      "path": "./outputs/tables/backtest_metrics_20260610_223240.csv",
       "sha256": "b72a92ca3e39caeee74c07dca417093784e86594b211d9008f44ffcbe7d76771",
       "bytes": 2614
     },
     {
-      "path": "./outputs/tables/ablation_20260610_191222.csv",
+      "path": "./outputs/tables/ablation_20260610_223240.csv",
       "sha256": "89cdd04d9e94c2aed65dc918a85493e3eb5181ecb7c2376070647967bab6d05a",
       "bytes": 3955
     },
     {
-      "path": "./outputs/tables/backtest_calibration_20260610_191222.csv",
+      "path": "./outputs/tables/backtest_calibration_20260610_223240.csv",
       "sha256": "e4a1e99f400ac52ec1a6d2e8b25c57edcdabfa40109e97f4ebfca14615fc5d21",
       "bytes": 1217
     },
     {
-      "path": "./outputs/figures/backtest_calibration_20260610_191222.png",
+      "path": "./outputs/figures/backtest_calibration_20260610_223240.png",
       "sha256": "85c0e3e954c9c21c266e88b38c1022deaea63a0c218284db73f5366bdf81f2a7",
       "bytes": 154064
     },
     {
-      "path": "./outputs/figures/backtest_calibration_20260610_191222.pdf",
-      "sha256": "a90d6c254e8b9aa3480747740cbf5cad38d792a726bf99f5bf219cb8c5d89b30",
+      "path": "./outputs/figures/backtest_calibration_20260610_223240.pdf",
+      "sha256": "d0b0639f27af814c830504172cb3f7bf9ad777ae4a0d82a07b247332628ae727",
       "bytes": 14809
     },
     {
-      "path": "./outputs/figures/backtest_calibration_20260610_191222.txt",
+      "path": "./outputs/figures/backtest_calibration_20260610_223240.txt",
       "sha256": "45c99cd8b49cc4708b763e11115507c1a8091ce372fbce77b6622e9ebd67017a",
       "bytes": 134
     },
     {
-      "path": "./outputs/figures/ablation_20260610_191222.png",
+      "path": "./outputs/figures/ablation_20260610_223240.png",
       "sha256": "52424a3c8fb147d6d530fdcc4c2c8dff2d7a9ba307dc5939a1628772752f5df9",
       "bytes": 74706
     },
     {
-      "path": "./outputs/figures/ablation_20260610_191222.pdf",
-      "sha256": "3fda4741e8f419c5987d0b9f8d3f5803710c6cb2aa61163245e95e6ab62ec534",
+      "path": "./outputs/figures/ablation_20260610_223240.pdf",
+      "sha256": "e1836782ed3d2ca68f958df97994d5ffce1240b97db792ca9f4135e958f28779",
       "bytes": 13757
     },
     {
-      "path": "./outputs/figures/ablation_20260610_191222.txt",
+      "path": "./outputs/figures/ablation_20260610_223240.txt",
       "sha256": "1b56e6a574eb9697c4f537923b5b7059d831bc4b2c048236431afafa9e67656b",
       "bytes": 192
     },
     {
-      "path": "./outputs/tables/benchmark_2026_20260610_191222.csv",
-      "sha256": "41cb4c8545427684ecd108db6bc88924a40509f28db97eebb239f433ad854abc",
-      "bytes": 2958
+      "path": "./outputs/tables/benchmark_2026_20260610_223240.csv",
+      "sha256": "23d9ed157215942e88c012c58875c33cd81565706d0e52edc1bacdd9d7f9d877",
+      "bytes": 2957
     },
     {
-      "path": "./outputs/tables/gyan_2026_predictions_20260610_191222.csv",
-      "sha256": "666cc11324fc2a2c97dc7f6e4cfdc3847eec02c3c91db967f48fc6f5b48b126b",
-      "bytes": 5965
+      "path": "./outputs/tables/gyan_2026_predictions_20260610_223240.csv",
+      "sha256": "54fc558ca4da11575cdeb98ca14b9c4b4abff7e67b868a25bd995ffbb21bf6e5",
+      "bytes": 5969
     },
     {
-      "path": "./outputs/figures/benchmark_2026_20260610_191222.png",
-      "sha256": "29ca559e996a035f76c046715937a968bc2398a1c8e8e6851d221bf621ae2283",
-      "bytes": 149210
+      "path": "./outputs/figures/benchmark_2026_20260610_223240.png",
+      "sha256": "83959d7776d4dcf053ba9a36705277acc2b19fd55842c98bc27ba6f2df58e4a2",
+      "bytes": 149214
     },
     {
-      "path": "./outputs/figures/benchmark_2026_20260610_191222.pdf",
-      "sha256": "a0d04e3ceaa5732774cf9c01eb8b2e0560313f624b0791871eb75ec5687406b3",
+      "path": "./outputs/figures/benchmark_2026_20260610_223240.pdf",
+      "sha256": "22b028cfecd41e7dc6e919add63e935484308b694a3d594c0fbb2ca65afd9255",
       "bytes": 16848
     },
     {
-      "path": "./outputs/figures/benchmark_2026_20260610_191222.txt",
+      "path": "./outputs/figures/benchmark_2026_20260610_223240.txt",
       "sha256": "db4f1e23380e04bf2895491291d06035e22336d03b679ce581cef7d4c766ec89",
       "bytes": 184
     },
     {
-      "path": "./outputs/figures/gyan_2026_champion_top12_20260610_191222.png",
-      "sha256": "ca6ddba9bc3597e0e21e0326a6718dd3c877bc431de9547da31b0677d8b8661a",
-      "bytes": 95174
+      "path": "./outputs/figures/gyan_2026_champion_top12_20260610_223240.png",
+      "sha256": "774908a267b39f1017e322972f15656a0b3ebb39855d34540bf8f53d54bb89b6",
+      "bytes": 95175
     },
     {
-      "path": "./outputs/figures/gyan_2026_champion_top12_20260610_191222.pdf",
-      "sha256": "307e0c4c592d1b40811f1748c9eb3182c8bef6884d2da9844779b618822e936a",
-      "bytes": 15543
+      "path": "./outputs/figures/gyan_2026_champion_top12_20260610_223240.pdf",
+      "sha256": "4c4b9eabea730955c709e8b786e21ebbefb4e6af661d20cc4714c2bfed6b164a",
+      "bytes": 15538
     },
     {
-      "path": "./outputs/figures/gyan_2026_champion_top12_20260610_191222.txt",
+      "path": "./outputs/figures/gyan_2026_champion_top12_20260610_223240.txt",
       "sha256": "20dc56ba799da7681b0b06cc60ca9424c7bd7dcbeefdcb9600a8e0bf8afe0273",
       "bytes": 175
     },
     {
-      "path": "./outputs/tables/modal_bracket_2026_20260610_191222.csv",
-      "sha256": "874319e611a6a5379770205016643964bcfc3eef4a0c28aa2cb30655de6dce9a",
-      "bytes": 5155
+      "path": "./outputs/tables/modal_bracket_2026_20260610_223240.csv",
+      "sha256": "8051fcf765cb1e39f28bc47a46f1969a9323ed9263f47ad3a08a73107bfd0b95",
+      "bytes": 5158
     },
     {
-      "path": "./outputs/figures/modal_bracket_2026_20260610_191222.png",
-      "sha256": "eabd7732d7889b813a9b541e8cd2e610a18d435168014c9f5e93ac27d9ba36de",
-      "bytes": 442592
+      "path": "./outputs/figures/modal_bracket_2026_20260610_223240.png",
+      "sha256": "4b64746be336986c9dbd9ec852865b42dcd64ac7d4e46e8b158ddacad3879034",
+      "bytes": 442543
     },
     {
-      "path": "./outputs/figures/modal_bracket_2026_20260610_191222.pdf",
-      "sha256": "f4d7e74436ecd730956df6799262d0477926f7d5946a3b9534e6b7cffa2be0f1",
+      "path": "./outputs/figures/modal_bracket_2026_20260610_223240.pdf",
+      "sha256": "dacf56a4b442c2414374e13c001d14239c04237ede98f7385b1a76f57de59cde",
       "bytes": 32380
     },
     {
-      "path": "./outputs/figures/modal_bracket_2026_20260610_191222.txt",
+      "path": "./outputs/figures/modal_bracket_2026_20260610_223240.txt",
       "sha256": "5c9941d21011a45c406a8c42e4c64e9a139f96664e1136bdfa55181ebd0ce887",
       "bytes": 353
     },
     {
-      "path": "./outputs/reports/stage4_output_validation_20260610_191222.json",
-      "sha256": "331456bd962b8942525861f9634044cd92378e90dc8c80ac492a2e7b91a578fe",
+      "path": "./outputs/reports/stage4_output_validation_20260610_223240.json",
+      "sha256": "0f3a6ace24f8c5fe871295c79e783960ebb3e0e6cf50e3b1d3ae8e09527c7d56",
       "bytes": 2111
     },
     {
       "path": "./paper/manuscript.md",
-      "sha256": "b7b95a9450a98b65fb9772fef0d2edd8b365bd7c42d7e3361652cd8104a67bbe",
-      "bytes": 8692
+      "sha256": "abc955a9ffc520e09a197d9d0a544c669604177458ee0e2b3cb274d6237e81e9",
+      "bytes": 8698
     },
     {
       "path": "./paper/reproducibility.md",
-      "sha256": "03d2d9a49c1a1266ec124be8b913c1e8bb77a8c2c2426383ed28d6a8de1c6931",
+      "sha256": "33a70a3395735c90210b0065322a4c7c151b8c23b3bc2f0c7ec22d1509e1a9fa",
       "bytes": 1232
     },
     {
       "path": "./outputs/reports/stage4_summary.md",
-      "sha256": "cc0cf8f7c12a6750cc20a2424b5bfcad28a789b66db999fd894487c45d2c075e",
-      "bytes": 6260
+      "sha256": "72264d1c7bd78a2af74abe87a8fada434a85ce0a3264de23037173f9cb3d758a",
+      "bytes": 6261
     }
   ],
   "status": "ok",
-  "duration_seconds": 1.490144
+  "duration_seconds": 1.518599
 }

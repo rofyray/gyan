@@ -1,5 +1,5 @@
 {
-  "tag": "20260610_191222",
+  "tag": "20260610_223240",
   "checks": {
     "final_board_has_48_unique_teams": true,
     "final_board_probabilities_in_range": true,
@@ -15,7 +15,7 @@
   },
   "all_passed": true,
   "details": {
-    "champion_probability_sum": 0.9999999999999978,
+    "champion_probability_sum": 0.9999999999999982,
     "max_final_board_vs_latest_forecast_abs_diff": 0.0,
     "benchmark_max_abs_diff": 0.0,
     "backtest_model_coverage": {

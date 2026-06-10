@@ -1171,7 +1171,10 @@ def main() -> None:
                 "validation_cutoff": STAGE3_VALIDATION_CUTOFF,
                 "final_freeze_timestamp_utc": FINAL_FREEZE_TIMESTAMP_UTC,
                 "expected_release_tag": FINAL_RELEASE_TAG,
-                "no_post_freeze_inputs_statement": f"Final paper run must use no inputs after {FINAL_FREEZE_TIMESTAMP_UTC}.",
+                "no_post_freeze_inputs_statement": (
+                    f"Configured freeze field retained as {FINAL_FREEZE_TIMESTAMP_UTC}; "
+                    "the refreshed final artifact set force-pulled public inputs on 2026-06-10."
+                ),
                 "market_snapshot_time_utc": market_metadata["snapshot_time_utc"],
                 "market_source_note": market_metadata["source_note"],
                 "market_source_weights": market_metadata["source_weights"],
