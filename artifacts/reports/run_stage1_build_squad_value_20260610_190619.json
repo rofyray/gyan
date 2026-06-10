@@ -1,0 +1,356 @@
+{
+  "timestamp_utc": "2026-06-10T19:06:18.289576+00:00",
+  "stage": "stage1",
+  "step": "build_squad_value",
+  "script_path": "./scripts/s1_build_squad_value.py",
+  "git_commit": "eee0a29",
+  "git_tags": [
+    "gyan-v1.0-final"
+  ],
+  "python_version": "3.14.5",
+  "package_versions": {
+    "gyan": "0.1.0",
+    "numpy": "2.4.6",
+    "pandas": "3.0.3",
+    "pyarrow": "24.0.0",
+    "scipy": "1.17.1",
+    "statsmodels": "0.14.6",
+    "penaltyblog": "1.11.0",
+    "numba": "0.65.1",
+    "joblib": "1.5.3",
+    "scikit-learn": "1.9.0",
+    "matplotlib": "3.10.9",
+    "seaborn": "0.13.2",
+    "pydantic": "2.13.4",
+    "httpx": "0.28.1",
+    "requests": "2.34.2",
+    "beautifulsoup4": "4.14.3",
+    "lxml": "6.1.1",
+    "soccerdata": "1.9.0",
+    "python-json-logger": "4.1.0",
+    "pytest": "9.0.3",
+    "pytest-cov": "7.1.0",
+    "tqdm": "4.68.1"
+  },
+  "global_seed": 20260611,
+  "n_workers": null,
+  "n_simulations": null,
+  "inputs": [
+    {
+      "path": "./data/raw/d6_wikipedia_2026_world_cup_squads.html",
+      "sha256": "e43108b16216acd1de01320d1a78afc0eec7e649a51fe644302f330813130b9b",
+      "bytes": 1892924
+    },
+    {
+      "path": "./data/raw/d6_espn_2026_world_cup_squad_lists.html",
+      "sha256": "32a01b39cda7145befa1aa8d85169b742c89e1cbe39811789948f95a6548fc22",
+      "bytes": 348337
+    },
+    {
+      "path": "./data/raw/d4_transfermarkt_players.csv.gz",
+      "sha256": "8b0494d6141c18c23056069bd63c6f4e6b68baf5a74f4105605b6da9705c1bdf",
+      "bytes": 4029560
+    },
+    {
+      "path": "./data/raw/d4_transfermarkt_national_teams.csv.gz",
+      "sha256": "860f137dfc2e25b3eb423d61879d69a763d7f104dcad371941c2e135921045e7",
+      "bytes": 5549
+    },
+    {
+      "path": "./data/raw/injuries_2026.csv",
+      "sha256": "f376cb01e39dbf11a3fa18823970a309d0e52625ed6b987a8654568de0ec5685",
+      "bytes": 5007
+    },
+    {
+      "path": "./data/raw/d4_transfermarkt_national_team_pages/14162.html",
+      "sha256": "cfa272e08733387842e5d41956621eecc10bee8eaff9fecaebe02fdcda2169f7",
+      "bytes": 136032
+    },
+    {
+      "path": "./data/raw/d4_transfermarkt_national_team_pages/15737.html",
+      "sha256": "4a6a9fba1522576c2892af28621360d756a2c469c6599376397e0a6e49fef887",
+      "bytes": 133665
+    },
+    {
+      "path": "./data/raw/d4_transfermarkt_national_team_pages/3262.html",
+      "sha256": "6d80c61430248c24744993bd7484159cbf444ed2e03f8c0f52f8aa1972646d01",
+      "bytes": 153005
+    },
+    {
+      "path": "./data/raw/d4_transfermarkt_national_team_pages/3299.html",
+      "sha256": "cfb2bd6f9ac3ba3a94962b3c609cefa0597726e5ff6ed6bce5fd97441aca6ee4",
+      "bytes": 160798
+    },
+    {
+      "path": "./data/raw/d4_transfermarkt_national_team_pages/3300.html",
+      "sha256": "bd098b2bfd98e87d5f992520c3a6cab54220eeb34581c784030b90d3dacfd944",
+      "bytes": 151002
+    },
+    {
+      "path": "./data/raw/d4_transfermarkt_national_team_pages/3375.html",
+      "sha256": "be975594498108584f6fb7ba7c2939a170a863d2c78376535c267751f747eb48",
+      "bytes": 150836
+    },
+    {
+      "path": "./data/raw/d4_transfermarkt_national_team_pages/3377.html",
+      "sha256": "815e5d0e725c328bc48f8f83b4a04a8e21781d97eba024fad4660479dd962bf2",
+      "bytes": 156487
+    },
+    {
+      "path": "./data/raw/d4_transfermarkt_national_team_pages/3379.html",
+      "sha256": "176c11f05ff038dbdd2b7abcd4ddc270b490c452d176bf89ce0334acac3342a8",
+      "bytes": 153423
+    },
+    {
+      "path": "./data/raw/d4_transfermarkt_national_team_pages/3380.html",
+      "sha256": "1677d45d4f37e588113617a1fe8e2636646589b95123dfa944fa84326aa87963",
+      "bytes": 160374
+    },
+    {
+      "path": "./data/raw/d4_transfermarkt_national_team_pages/3381.html",
+      "sha256": "9e083541b2f15e5e6f3fc10c8a42087a6064c8598ab3b9869818a023d6d1161a",
+      "bytes": 146553
+    },
+    {
+      "path": "./data/raw/d4_transfermarkt_national_team_pages/3382.html",
+      "sha256": "d7c8fa8dae73e8c9cef3b14b2410ba0d19de1d7dc54e6e024b5af12f28107350",
+      "bytes": 153086
+    },
+    {
+      "path": "./data/raw/d4_transfermarkt_national_team_pages/3383.html",
+      "sha256": "d720dd7c84332034d36fafe0f7b4b91fa19b0865a3dc42178e938f0519c182ef",
+      "bytes": 165924
+    },
+    {
+      "path": "./data/raw/d4_transfermarkt_national_team_pages/3384.html",
+      "sha256": "28b46774e4a9cd639b8b7d49918bf50ec01b73acde1809c1a198cbb60da761cf",
+      "bytes": 153873
+    },
+    {
+      "path": "./data/raw/d4_transfermarkt_national_team_pages/3433.html",
+      "sha256": "4773e8d2f5a6a22cfa6e5b6e5e7b61bd262e6a19b842029649e31ce404a2c403",
+      "bytes": 146650
+    },
+    {
+      "path": "./data/raw/d4_transfermarkt_national_team_pages/3435.html",
+      "sha256": "f41193938885cca50e385d00997eb218d770c263ab4150321507ce8adb6e188c",
+      "bytes": 144192
+    },
+    {
+      "path": "./data/raw/d4_transfermarkt_national_team_pages/3437.html",
+      "sha256": "9717dec3797a6bece6b1e11d284bafad3d38dadddfd197ffdb834a212b5216de",
+      "bytes": 157247
+    },
+    {
+      "path": "./data/raw/d4_transfermarkt_national_team_pages/3439.html",
+      "sha256": "669a632ea7788e1b73149a6c67d692e8be1e5617fe0aa4d73780862fa8d53d93",
+      "bytes": 153652
+    },
+    {
+      "path": "./data/raw/d4_transfermarkt_national_team_pages/3440.html",
+      "sha256": "70d45ed7a3299bff4480d6fd6f5b100b050493467d5eae92ed525db4e11ce002",
+      "bytes": 165868
+    },
+    {
+      "path": "./data/raw/d4_transfermarkt_national_team_pages/3441.html",
+      "sha256": "c111884ec35528d6f4c97570215379147e48d4c6697b19657fbd8ff05350715e",
+      "bytes": 154347
+    },
+    {
+      "path": "./data/raw/d4_transfermarkt_national_team_pages/3445.html",
+      "sha256": "1a02bbb5c72bcc7a3d3bffa104d5040f86fd31c38d47c7b017cd7922006057c5",
+      "bytes": 147674
+    },
+    {
+      "path": "./data/raw/d4_transfermarkt_national_team_pages/3446.html",
+      "sha256": "21df07824385d75a167405713a8146f60a112893949a6b833f50dcfdc1713997",
+      "bytes": 147580
+    },
+    {
+      "path": "./data/raw/d4_transfermarkt_national_team_pages/3449.html",
+      "sha256": "9437b6d5ec5e06f6b816eb7d3784df2a81ea08d302288dfbad87827ae880be97",
+      "bytes": 170803
+    },
+    {
+      "path": "./data/raw/d4_transfermarkt_national_team_pages/3499.html",
+      "sha256": "0b459d377f8fdb10bc206a83309ba0ba341297997a243453f7a33073eb8f04d3",
+      "bytes": 152801
+    },
+    {
+      "path": "./data/raw/d4_transfermarkt_national_team_pages/3505.html",
+      "sha256": "9464bc3af97bdc0f1a3bf58068043d14122077db0d84ec6d244b8b11f84fca9a",
+      "bytes": 164145
+    },
+    {
+      "path": "./data/raw/d4_transfermarkt_national_team_pages/3510.html",
+      "sha256": "7289febe61662f7d3ae3c9ab98fcf1eddf441d77d6bb8535bb12cc4a70bc19c7",
+      "bytes": 153711
+    },
+    {
+      "path": "./data/raw/d4_transfermarkt_national_team_pages/3556.html",
+      "sha256": "1c123b3e7073b5b62fd46b3de4ea9a14b6ed20f13cbc7d02fa199b4fcd475d8b",
+      "bytes": 148197
+    },
+    {
+      "path": "./data/raw/d4_transfermarkt_national_team_pages/3557.html",
+      "sha256": "43bfbfc26d41dd6ab79fc42a89670e178812ee1c2e465ed6565555ecbe6ef759",
+      "bytes": 166850
+    },
+    {
+      "path": "./data/raw/d4_transfermarkt_national_team_pages/3560.html",
+      "sha256": "aa2d77707c4b2ca04e799f885471e5d1d9ac90a607b5e0573fbbf2b2c64ef481",
+      "bytes": 154468
+    },
+    {
+      "path": "./data/raw/d4_transfermarkt_national_team_pages/3563.html",
+      "sha256": "98e8383bea09715673a94b57907091e6c7149dd067db05255b992b42a445c780",
+      "bytes": 147294
+    },
+    {
+      "path": "./data/raw/d4_transfermarkt_national_team_pages/3575.html",
+      "sha256": "b6f57ecf5ec764dfd7328545d182031e7d7ef540881ab9a60a1546c124255585",
+      "bytes": 155988
+    },
+    {
+      "path": "./data/raw/d4_transfermarkt_national_team_pages/3577.html",
+      "sha256": "d87e47975276f36ca5affbd73e59aed89f028634f73569a6ad34af2a19057d2a",
+      "bytes": 155902
+    },
+    {
+      "path": "./data/raw/d4_transfermarkt_national_team_pages/3581.html",
+      "sha256": "e0013e1c8790b86157c3f82393d3690ac476895c9e08ee52244a3ef24a07ff01",
+      "bytes": 162991
+    },
+    {
+      "path": "./data/raw/d4_transfermarkt_national_team_pages/3582.html",
+      "sha256": "308b5800b5d4f666d64d0e28914597d319d82ae8a21de2830c833740d98bd498",
+      "bytes": 159602
+    },
+    {
+      "path": "./data/raw/d4_transfermarkt_national_team_pages/3589.html",
+      "sha256": "404997c07f0c2787b1b7ae144d97fab232bcb5f5c58eaba7696224030c1cff84",
+      "bytes": 159931
+    },
+    {
+      "path": "./data/raw/d4_transfermarkt_national_team_pages/3614.html",
+      "sha256": "669034cc1933746a81dbe561ff94df9d4ef976488f3c0778e352e14bda21286e",
+      "bytes": 155200
+    },
+    {
+      "path": "./data/raw/d4_transfermarkt_national_team_pages/3670.html",
+      "sha256": "83b100a204086fa459d9b7808ae7e039a2925417da597bfc6c0a56d60bb97ca4",
+      "bytes": 156511
+    },
+    {
+      "path": "./data/raw/d4_transfermarkt_national_team_pages/3672.html",
+      "sha256": "69a21803949749da2e1d1215fd547f41eb8b75fef7b5e2bc0764f95559e01c32",
+      "bytes": 160021
+    },
+    {
+      "path": "./data/raw/d4_transfermarkt_national_team_pages/3806.html",
+      "sha256": "2a1db8bba9eef3ad519d82883a3cbeb4a7f068c8722c5e1cdd68ab6bb0b69196",
+      "bytes": 151629
+    },
+    {
+      "path": "./data/raw/d4_transfermarkt_national_team_pages/3807.html",
+      "sha256": "998982da700056d7a9041ad3fcdb64bede86827ed527e11b1c595cdb3e987d55",
+      "bytes": 153833
+    },
+    {
+      "path": "./data/raw/d4_transfermarkt_national_team_pages/3816.html",
+      "sha256": "f5275bf502febb613bfc40531466721e45259f088c4011483a808ce962f9fece",
+      "bytes": 157378
+    },
+    {
+      "path": "./data/raw/d4_transfermarkt_national_team_pages/5750.html",
+      "sha256": "5ee425da9478aecce709990f938016c374bc4760f79b81170e66705341821709",
+      "bytes": 156193
+    },
+    {
+      "path": "./data/raw/d4_transfermarkt_national_team_pages/6303.html",
+      "sha256": "77af93dc332506b645ebbcee19cd7d4a46d0aca6f29426652944f4a98a3610a1",
+      "bytes": 162971
+    },
+    {
+      "path": "./data/raw/d4_transfermarkt_national_team_pages/9171.html",
+      "sha256": "da03c913d571a28d045876b23af5c8d7efc817b84f126be7d00d2901e587b3cf",
+      "bytes": 156152
+    },
+    {
+      "path": "./data/raw/d4_transfermarkt_national_team_pages/4311.html",
+      "sha256": "cceff165f50bfe56bda58792993a9af289b7c5b716027473d92589af17f773e6",
+      "bytes": 144703
+    },
+    {
+      "path": "./data/raw/d4_transfermarkt_national_team_pages/32364.html",
+      "sha256": "8e44e7ae11470debb3dda84e7ed8242f43efc7d391643b2cf5e89f6453ef32e8",
+      "bytes": 142253
+    },
+    {
+      "path": "./data/raw/d4_transfermarkt_national_team_pages/3854.html",
+      "sha256": "139d380a7febc490d056e30fc1bdf6ac5dc0d4801c6c816f00008a76864b74cf",
+      "bytes": 148967
+    },
+    {
+      "path": "./data/raw/d4_transfermarkt_national_team_pages/14161.html",
+      "sha256": "a8710d3f0da9f7cbd97556be1d387c2690220af73b64d5d869de16f6703758a3",
+      "bytes": 155608
+    },
+    {
+      "path": "./data/raw/d4_transfermarkt_national_team_pages/3591.html",
+      "sha256": "733837109d465df8953b400b5f9131b873efffbb4a41eeef5471bf8a0c855745",
+      "bytes": 153061
+    }
+  ],
+  "params": {
+    "uefa_value_discount": 0.3,
+    "player_value_method": "D4 individual Transfermarkt player market values from national-team pages/profile CSV"
+  },
+  "metrics": {
+    "teams": 48,
+    "named_players": 1246,
+    "teams_with_26_players": 46,
+    "min_named_players": 25,
+    "max_named_players": 26,
+    "direct_player_market_values_available": true,
+    "direct_player_market_value_rate": 0.9975922953451043,
+    "national_team_page_value_rate": 0.9534510433386838,
+    "player_profile_value_rate": 0.0016051364365971107,
+    "missing_player_value_rate": 0.002407704654895666,
+    "most_valuable_team": "France",
+    "most_valuable_squad_value_eur": 1433000000.0,
+    "total_injury_adjustment_eur": 289000000.0,
+    "total_pre_lock_lost_value_what_if_eur": 0.0
+  },
+  "outputs": [
+    "./logs/stage1_build_squad_value_20260610_190618.log",
+    "./data/processed/squad_features_2026.parquet",
+    "./outputs/tables/squad_features_2026.csv",
+    "./outputs/tables/squad_players_2026.csv",
+    "./outputs/tables/squad_injury_adjustments_2026.csv"
+  ],
+  "output_artifacts": [
+    {
+      "path": "./data/processed/squad_features_2026.parquet",
+      "sha256": "0e0a5ae6d47f6b8af44e24eb18ecbc6277189cc397194af6e631369b0cf3e62b",
+      "bytes": 13310
+    },
+    {
+      "path": "./outputs/tables/squad_features_2026.csv",
+      "sha256": "6e15ec719b9762221988f09e13f0dd7d10f4a9183b4c0f22e83baa1fdfd65bdf",
+      "bytes": 9500
+    },
+    {
+      "path": "./outputs/tables/squad_players_2026.csv",
+      "sha256": "bc8d56681e8ff2eaced2eb514b6dc346315df8248f6ad6a7208d8ccfdec9304e",
+      "bytes": 459078
+    },
+    {
+      "path": "./outputs/tables/squad_injury_adjustments_2026.csv",
+      "sha256": "cb45d49cf1ebaa12bd5165440d57787a35131e2b19f8818c0ed06a2d6d16c184",
+      "bytes": 2978
+    }
+  ],
+  "status": "ok",
+  "duration_seconds": 1.592533
+}

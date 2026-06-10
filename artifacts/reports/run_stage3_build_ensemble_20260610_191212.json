@@ -1,0 +1,947 @@
+{
+  "timestamp_utc": "2026-06-10T19:10:17.461175+00:00",
+  "stage": "stage3",
+  "step": "build_ensemble",
+  "script_path": "./scripts/s3_build_ensemble.py",
+  "git_commit": "eee0a29",
+  "git_tags": [
+    "gyan-v1.0-final"
+  ],
+  "python_version": "3.14.5",
+  "package_versions": {
+    "gyan": "0.1.0",
+    "numpy": "2.4.6",
+    "pandas": "3.0.3",
+    "pyarrow": "24.0.0",
+    "scipy": "1.17.1",
+    "statsmodels": "0.14.6",
+    "penaltyblog": "1.11.0",
+    "numba": "0.65.1",
+    "joblib": "1.5.3",
+    "scikit-learn": "1.9.0",
+    "matplotlib": "3.10.9",
+    "seaborn": "0.13.2",
+    "pydantic": "2.13.4",
+    "httpx": "0.28.1",
+    "requests": "2.34.2",
+    "beautifulsoup4": "4.14.3",
+    "lxml": "6.1.1",
+    "soccerdata": "1.9.0",
+    "python-json-logger": "4.1.0",
+    "pytest": "9.0.3",
+    "pytest-cov": "7.1.0",
+    "tqdm": "4.68.1"
+  },
+  "global_seed": 20260611,
+  "n_workers": 4,
+  "n_simulations": 100000,
+  "inputs": [
+    {
+      "path": "./data/processed/dixon_coles_params_latest.json",
+      "sha256": "9d3b10846f2558a9e5006a3888813f3f8b4e6a919a6072f190f4096a723d0861",
+      "bytes": 29626
+    },
+    {
+      "path": "./outputs/tables/team_advancement_probs_engineonly_2026_latest.csv",
+      "sha256": "b4a3855843c539a7a82cecccc29024fb9ab715cbd45c9170d87eb8f736d0c6c3",
+      "bytes": 2730
+    },
+    {
+      "path": "./data/processed/squad_features_2026.parquet",
+      "sha256": "0e0a5ae6d47f6b8af44e24eb18ecbc6277189cc397194af6e631369b0cf3e62b",
+      "bytes": 13310
+    },
+    {
+      "path": "./data/processed/socioeconomic_features.parquet",
+      "sha256": "df5fd5492aec870fae1c46e27ba8803053c75b043334b2a2ff5462e339e604d1",
+      "bytes": 45079
+    },
+    {
+      "path": "./data/processed/matches_with_elo.parquet",
+      "sha256": "803ae808e76c33cdea537a7acd69502034cf151b23d14eadcab51407c6f0e317",
+      "bytes": 850364
+    },
+    {
+      "path": "./outputs/tables/elo_current_ratings_from_d1.csv",
+      "sha256": "80a83aeb482e86ccf1abc583692eea34b3d4e2d9824a84deb33f91bc2d52ed49",
+      "bytes": 9576
+    },
+    {
+      "path": "./data/raw/d1_martj42_shootouts.csv",
+      "sha256": "e52e503badc11021d5d243ddf2288346f63ad028bf8de75ae9cfb72c5475d807",
+      "bytes": 28809
+    },
+    {
+      "path": "./data/raw/d11_world_bank_gdp_per_capita_ppp.json",
+      "sha256": "235cfaea47a6a71e7a134ad86a55f9f9b08d48940b25f153edd2e117775caa8d",
+      "bytes": 4167217
+    },
+    {
+      "path": "./data/raw/d11_world_bank_population.json",
+      "sha256": "2bb1839c140419b1cf1aebe61a140bed870917d2d2ba5a3d5afaa342cb50e3a0",
+      "bytes": 3526530
+    },
+    {
+      "path": "./data/raw/d15_historical_world_cup_outrights.csv",
+      "sha256": "d20037fb79fdacda8228bf7e64e115d19166e3020df164eac0a618b51ab66828",
+      "bytes": 7526
+    },
+    {
+      "path": "./data/processed/groups_2026.parquet",
+      "sha256": "8574cb89a2c5db4ceb39aa0a0191f07d231c5200ac4abbd882f68b4197fdaf29",
+      "bytes": 3472
+    },
+    {
+      "path": "./data/processed/schedule_2026.parquet",
+      "sha256": "56d443ed49c81630a70e0f51a3e6819a0e80c890baba51033e707a3798de5ccb",
+      "bytes": 8987
+    },
+    {
+      "path": "./data/processed/bracket_pairings_2026.json",
+      "sha256": "5f0bf7afa3c05647cc37ca9ef5b8ff625febf0820ac4e8ce190ef8a5782f3889",
+      "bytes": 79889
+    },
+    {
+      "path": "./data/raw/d13_polymarket_world_cup_winner_event.json",
+      "sha256": "614f55ef8e6ce6c6d26c2f905786bfa059c46c25139eb55228c3a34e34b86072",
+      "bytes": 218334
+    },
+    {
+      "path": "./data/raw/d14_kalshi_mens_world_cup_winner_markets.json",
+      "sha256": "943a2dd420ea55576b4ceba28a23e4cadd7d10ddb6f6b56e79adef9e636a743d",
+      "bytes": 85969
+    },
+    {
+      "path": "./data/raw/d15_bookmakersreview_world_cup.html",
+      "sha256": "f61be0e8da633c0a3c09ea187df59683a12b1e28b14322f1fb8a56ffbb97e10b",
+      "bytes": 317357
+    }
+  ],
+  "params": {
+    "expert_order": [
+      "goal",
+      "yield_named",
+      "socioeconomic",
+      "market"
+    ],
+    "match_validation_expert_order": [
+      "goal",
+      "yield_named",
+      "socioeconomic"
+    ],
+    "n_feature_expert_simulations": 100000,
+    "validation_cutoff": "2024-01-01",
+    "final_freeze_timestamp_utc": "2026-06-10T19:00:00Z",
+    "expected_release_tag": "gyan-v1.0-final",
+    "no_post_freeze_inputs_statement": "Final paper run must use no inputs after 2026-06-10T19:00:00Z.",
+    "market_snapshot_time_utc": "2026-06-10T19:12:08.427758+00:00",
+    "market_source_note": "live_market_pull_cached_raw",
+    "market_source_weights": {
+      "polymarket": 0.4,
+      "kalshi": 0.3,
+      "bookmaker": 0.3
+    },
+    "market_source_divergence_table": "/Users/rofy/Documents/gyan-wc-model/outputs/tables/market_source_divergence_latest.csv",
+    "market_stage_engine_shape_audit_table": "/Users/rofy/Documents/gyan-wc-model/outputs/tables/market_stage_engine_shape_audit_latest.csv",
+    "expert_correlation_diagnostics_table": "/Users/rofy/Documents/gyan-wc-model/outputs/tables/expert_board_correlation_diagnostics_latest.csv",
+    "available_goal_board_simulations": 100000
+  },
+  "metrics": {
+    "runtime_seconds": 114.76030462497147,
+    "validation_matches_total": 293,
+    "validation_train_rows": 175,
+    "validation_holdout_rows": 118,
+    "chosen_pool": "linear",
+    "pool_selection_reason": "linear_selected_log_rps_gain_0.000162_below_materiality_or_calibration_guard_failed",
+    "shipped_weights": {
+      "goal": 0.05000000000000003,
+      "yield_named": 0.05,
+      "socioeconomic": 0.24366553270263575,
+      "market": 0.6563344672973642
+    },
+    "match_validation_weights": {
+      "goal": 1.0,
+      "yield_named": 0.0,
+      "socioeconomic": 0.0
+    },
+    "market_weight_status": "included_in_shipped_four_expert_pool",
+    "threshold_actions": {
+      "T-G1": "market_included_with_historical_four_expert_rps_weight",
+      "T-G2": "socioeconomic_retained_by_historical_four_expert_rps_weight",
+      "T-G4": "none"
+    },
+    "match_validation_threshold_actions": {
+      "T-G1": "market_outrights_used_for_champion_benchmark_only",
+      "T-G2": "socioeconomic_weight_set_to_0_on_validation_guard",
+      "T-G4": "none"
+    },
+    "selected_scores": {
+      "in_sample_mean_rps": 0.19571454656013199,
+      "leave_one_tournament_out_mean_rps": 0.19850283992175224
+    },
+    "historical_weight_fit": {
+      "n_matches": 192,
+      "min_weight": 0.05,
+      "floor_policy": "implementation_addition_min_weight_0.05_to_keep_all_four_experts_active",
+      "floor_binding_experts": [
+        "goal",
+        "yield_named"
+      ],
+      "floor_rps_cost_vs_unconstrained": 0.00018423094033015452,
+      "ship_reason": "optimised_weights_loto_beats_equal",
+      "leave_one_tournament_out": {
+        "folds": [
+          {
+            "holdout_year": 2014,
+            "train_years": [
+              2018,
+              2022
+            ],
+            "n_holdout_matches": 64,
+            "optimised_holdout_rps": 0.18776603573245057,
+            "equal_holdout_rps": 0.19652066289767892,
+            "delta_optimised_minus_equal": -0.008754627165228346,
+            "train_optimised_weights": {
+              "goal": 0.050000000000000024,
+              "yield_named": 0.05000000000000001,
+              "socioeconomic": 0.30297019281165605,
+              "market": 0.5970298071883439
+            },
+            "optimizer": {
+              "success": true,
+              "message": "Optimization terminated successfully",
+              "nit": 13,
+              "fun": 0.20001739367344135,
+              "min_weight": 0.05
+            }
+          },
+          {
+            "holdout_year": 2018,
+            "train_years": [
+              2014,
+              2022
+            ],
+            "n_holdout_matches": 64,
+            "optimised_holdout_rps": 0.19429869081958234,
+            "equal_holdout_rps": 0.20312844608614544,
+            "delta_optimised_minus_equal": -0.0088297552665631,
+            "train_optimised_weights": {
+              "goal": 0.05000000000000005,
+              "yield_named": 0.05000000000000001,
+              "socioeconomic": 0.31060753321661627,
+              "market": 0.5893924667833836
+            },
+            "optimizer": {
+              "success": true,
+              "message": "Optimization terminated successfully",
+              "nit": 13,
+              "fun": 0.19684114882395487,
+              "min_weight": 0.05
+            }
+          },
+          {
+            "holdout_year": 2022,
+            "train_years": [
+              2014,
+              2018
+            ],
+            "n_holdout_matches": 64,
+            "optimised_holdout_rps": 0.21344379321322382,
+            "equal_holdout_rps": 0.2083530285809675,
+            "delta_optimised_minus_equal": 0.005090764632256328,
+            "train_optimised_weights": {
+              "goal": 0.05,
+              "yield_named": 0.17895288551511893,
+              "socioeconomic": 0.05,
+              "market": 0.7210471144848811
+            },
+            "optimizer": {
+              "success": true,
+              "message": "Optimization terminated successfully",
+              "nit": 9,
+              "fun": 0.18834814412814727,
+              "min_weight": 0.05
+            }
+          }
+        ],
+        "optimised_oos_rps": 0.19850283992175224,
+        "equal_oos_rps": 0.20266737918826394,
+        "delta_optimised_minus_equal": -0.0041645392665116965,
+        "optimised_beats_equal_oos": true,
+        "selected_oos_rps": 0.19850283992175224,
+        "selected_weight_set": "optimised"
+      },
+      "equal_scores": {
+        "in_sample_mean_rps": 0.20266737918826394,
+        "leave_one_tournament_out_mean_rps": 0.20266737918826394
+      },
+      "match_objective_profile": {
+        "objective": "mean_match_rps",
+        "historical_tournaments": [
+          2014,
+          2018,
+          2022
+        ],
+        "matches_by_year": {
+          "2014": 64,
+          "2018": 64,
+          "2022": 64
+        },
+        "matches_total": 192,
+        "group_stage_matches_by_year": {
+          "2014": 48,
+          "2018": 48,
+          "2022": 48
+        },
+        "knockout_matches_by_year": {
+          "2014": 16,
+          "2018": 16,
+          "2022": 16
+        },
+        "group_stage_matches": 144,
+        "knockout_matches": 48,
+        "group_stage_share": 0.75,
+        "knockout_share": 0.25,
+        "format_assumption": "2014/2018/2022 use the 32-team World Cup format with 48 group-stage and 16 knockout matches per tournament.",
+        "deployment_note": "Weights are calibrated to group-stage-heavy match-level RPS and then applied to a 2026 tournament board whose champion probabilities are sensitive to knockout dynamics, bracket paths, and variance; this can partially favor market/strength signals in the fitted weights."
+      },
+      "market_expert_construction": {
+        "historical_raw_input": "D15 bookmaker champion outrights only; no historical match-level market W/D/L prices are used.",
+        "historical_match_level_transform": "Normalised champion probabilities are converted to log-probability ratings with market_ratings_from_champion_probabilities, anchored to the pre-tournament Elo mean, then converted to W/D/L through rating_to_match_probs using the correlated negative-binomial score matrix.",
+        "historical_champion_scoring": "Historical champion probabilities are retained directly as champion_override when scoring tournament-level market performance.",
+        "live_2026_raw_input": "Live Polymarket/Kalshi/bookmaker champion probabilities are blended and de-vigged directly into the 2026 Market p_champion vector.",
+        "live_2026_stage_transform": "Live non-champion Market stages are reconstructed by board_from_champion_vector, scaling the Stage 2 engine path shape to the exact live champion vector.",
+        "transfer_assessment": "The transfer is consistent at the champion-probability primitive, but historical match-level RPS weights a market-strength hybrid and live 2026 non-champion stages are engine-shaped; describe the Market weight as champion-market-informed with structural transforms rather than raw match-price weight.",
+        "limitation_note_required": true
+      },
+      "leakage_audits": {
+        "2014": {
+          "passed": true,
+          "max_training_date": "2014-06-10",
+          "tournament_start": "2014-06-12",
+          "training_rows": 37861,
+          "tournament_rows": 64
+        },
+        "2018": {
+          "passed": true,
+          "max_training_date": "2018-06-12",
+          "tournament_start": "2018-06-14",
+          "training_rows": 41639,
+          "tournament_rows": 64
+        },
+        "2022": {
+          "passed": true,
+          "max_training_date": "2022-11-19",
+          "tournament_start": "2022-11-20",
+          "training_rows": 45699,
+          "tournament_rows": 64
+        }
+      },
+      "market_sources": {
+        "2014": "zeileis_2014_bookmaker_consensus_22_books",
+        "2018": "zeileis_2018_bookmaker_consensus_26_books",
+        "2022": "sportstatist_2022_william_hill_2022_09_01"
+      }
+    },
+    "historical_pool_options": {
+      "linear": {
+        "historical_rps_equal": 0.20266737918826394,
+        "historical_rps_unconstrained": 0.19553031561980183,
+        "historical_rps_optimised": 0.19571454656013199,
+        "ship_reason": "optimised_weights_loto_beats_equal",
+        "leave_one_tournament_out": {
+          "folds": [
+            {
+              "holdout_year": 2014,
+              "train_years": [
+                2018,
+                2022
+              ],
+              "n_holdout_matches": 64,
+              "optimised_holdout_rps": 0.18776603573245057,
+              "equal_holdout_rps": 0.19652066289767892,
+              "delta_optimised_minus_equal": -0.008754627165228346,
+              "train_optimised_weights": {
+                "goal": 0.050000000000000024,
+                "yield_named": 0.05000000000000001,
+                "socioeconomic": 0.30297019281165605,
+                "market": 0.5970298071883439
+              },
+              "optimizer": {
+                "success": true,
+                "message": "Optimization terminated successfully",
+                "nit": 13,
+                "fun": 0.20001739367344135,
+                "min_weight": 0.05
+              }
+            },
+            {
+              "holdout_year": 2018,
+              "train_years": [
+                2014,
+                2022
+              ],
+              "n_holdout_matches": 64,
+              "optimised_holdout_rps": 0.19429869081958234,
+              "equal_holdout_rps": 0.20312844608614544,
+              "delta_optimised_minus_equal": -0.0088297552665631,
+              "train_optimised_weights": {
+                "goal": 0.05000000000000005,
+                "yield_named": 0.05000000000000001,
+                "socioeconomic": 0.31060753321661627,
+                "market": 0.5893924667833836
+              },
+              "optimizer": {
+                "success": true,
+                "message": "Optimization terminated successfully",
+                "nit": 13,
+                "fun": 0.19684114882395487,
+                "min_weight": 0.05
+              }
+            },
+            {
+              "holdout_year": 2022,
+              "train_years": [
+                2014,
+                2018
+              ],
+              "n_holdout_matches": 64,
+              "optimised_holdout_rps": 0.21344379321322382,
+              "equal_holdout_rps": 0.2083530285809675,
+              "delta_optimised_minus_equal": 0.005090764632256328,
+              "train_optimised_weights": {
+                "goal": 0.05,
+                "yield_named": 0.17895288551511893,
+                "socioeconomic": 0.05,
+                "market": 0.7210471144848811
+              },
+              "optimizer": {
+                "success": true,
+                "message": "Optimization terminated successfully",
+                "nit": 9,
+                "fun": 0.18834814412814727,
+                "min_weight": 0.05
+              }
+            }
+          ],
+          "optimised_oos_rps": 0.19850283992175224,
+          "equal_oos_rps": 0.20266737918826394,
+          "delta_optimised_minus_equal": -0.0041645392665116965,
+          "optimised_beats_equal_oos": true,
+          "selected_oos_rps": 0.19850283992175224,
+          "selected_weight_set": "optimised"
+        },
+        "historical_calibration": {
+          "mean_rps": 0.19571454656013199,
+          "mean_brier": 0.557217494990117,
+          "mean_log_loss": 0.9457753345357909,
+          "ece_6_bins": 0.014086101414665523,
+          "mean_entropy": 0.9514687029102925,
+          "mean_max_probability": 0.5645937936530422
+        },
+        "unconstrained_weights": {
+          "goal": 4.34011211843631e-17,
+          "yield_named": 0.01135533863960237,
+          "socioeconomic": 0.30649363835871746,
+          "market": 0.6821510230016802
+        },
+        "optimised_weights": {
+          "goal": 0.05000000000000003,
+          "yield_named": 0.05,
+          "socioeconomic": 0.24366553270263575,
+          "market": 0.6563344672973642
+        },
+        "ship_weights": {
+          "goal": 0.05000000000000003,
+          "yield_named": 0.05,
+          "socioeconomic": 0.24366553270263575,
+          "market": 0.6563344672973642
+        }
+      },
+      "log": {
+        "historical_rps_equal": 0.20007711040420126,
+        "historical_rps_unconstrained": 0.19544021341329634,
+        "historical_rps_optimised": 0.19555275123845287,
+        "ship_reason": "optimised_weights_loto_beats_equal",
+        "leave_one_tournament_out": {
+          "folds": [
+            {
+              "holdout_year": 2014,
+              "train_years": [
+                2018,
+                2022
+              ],
+              "n_holdout_matches": 64,
+              "optimised_holdout_rps": 0.186343848469008,
+              "equal_holdout_rps": 0.19187670134526252,
+              "delta_optimised_minus_equal": -0.005532852876254518,
+              "train_optimised_weights": {
+                "goal": 0.05,
+                "yield_named": 0.05000000000000002,
+                "socioeconomic": 0.37449385239394833,
+                "market": 0.5255061476060516
+              },
+              "optimizer": {
+                "success": true,
+                "message": "Optimization terminated successfully",
+                "nit": 16,
+                "fun": 0.20031038255229391,
+                "min_weight": 0.05
+              }
+            },
+            {
+              "holdout_year": 2018,
+              "train_years": [
+                2014,
+                2022
+              ],
+              "n_holdout_matches": 64,
+              "optimised_holdout_rps": 0.195167983497096,
+              "equal_holdout_rps": 0.2008229300710987,
+              "delta_optimised_minus_equal": -0.0056549465740027005,
+              "train_optimised_weights": {
+                "goal": 0.05,
+                "yield_named": 0.05,
+                "socioeconomic": 0.4049414517054073,
+                "market": 0.4950585482945927
+              },
+              "optimizer": {
+                "success": true,
+                "message": "Optimization terminated successfully",
+                "nit": 16,
+                "fun": 0.19620146922714368,
+                "min_weight": 0.05
+              }
+            },
+            {
+              "holdout_year": 2022,
+              "train_years": [
+                2014,
+                2018
+              ],
+              "n_holdout_matches": 64,
+              "optimised_holdout_rps": 0.21406623514602707,
+              "equal_holdout_rps": 0.2075316997962426,
+              "delta_optimised_minus_equal": 0.006534535349784459,
+              "train_optimised_weights": {
+                "goal": 0.05,
+                "yield_named": 0.28161451561701417,
+                "socioeconomic": 0.05,
+                "market": 0.6183854843829859
+              },
+              "optimizer": {
+                "success": true,
+                "message": "Optimization terminated successfully",
+                "nit": 15,
+                "fun": 0.18815867699812,
+                "min_weight": 0.05
+              }
+            }
+          ],
+          "optimised_oos_rps": 0.19852602237071038,
+          "equal_oos_rps": 0.20007711040420129,
+          "delta_optimised_minus_equal": -0.0015510880334909105,
+          "optimised_beats_equal_oos": true,
+          "selected_oos_rps": 0.19852602237071038,
+          "selected_weight_set": "optimised"
+        },
+        "historical_calibration": {
+          "mean_rps": 0.19555275123845287,
+          "mean_brier": 0.5566120813242076,
+          "mean_log_loss": 0.9464213905298141,
+          "ece_6_bins": 0.03056043745465827,
+          "mean_entropy": 0.9498054439309024,
+          "mean_max_probability": 0.5595302117620136
+        },
+        "unconstrained_weights": {
+          "goal": 9.791277353786085e-18,
+          "yield_named": 0.12032465627916199,
+          "socioeconomic": 0.32502882126913885,
+          "market": 0.5546465224516992
+        },
+        "optimised_weights": {
+          "goal": 0.05000000000000002,
+          "yield_named": 0.08045384708206452,
+          "socioeconomic": 0.31371005843543587,
+          "market": 0.5558360944824996
+        },
+        "ship_weights": {
+          "goal": 0.05000000000000002,
+          "yield_named": 0.08045384708206452,
+          "socioeconomic": 0.31371005843543587,
+          "market": 0.5558360944824996
+        }
+      }
+    },
+    "match_validation_scores": {
+      "mean_rps": 0.17726057145228846,
+      "mean_brier": 0.553684977047448,
+      "mean_log_loss": 0.9256107361284233
+    },
+    "market_scores": {
+      "available": true,
+      "reason": "market included through D15 historical W/D/L calibration and live 2026 outright board",
+      "champion_sum": 1.0
+    },
+    "market_source_divergence": {
+      "available": true,
+      "threshold": 0.08,
+      "max_abs_delta": 0.003915934621312761,
+      "limitation_note_required": false,
+      "top_moves": [
+        {
+          "team": "Spain",
+          "proxy_p_champion": 0.17038346675009775,
+          "live_p_champion": 0.1742994013714105,
+          "delta_live_minus_proxy": 0.003915934621312761,
+          "abs_delta": 0.003915934621312761
+        },
+        {
+          "team": "Portugal",
+          "proxy_p_champion": 0.09517411727302243,
+          "live_p_champion": 0.09867716033680785,
+          "delta_live_minus_proxy": 0.0035030430637854187,
+          "abs_delta": 0.0035030430637854187
+        },
+        {
+          "team": "Germany",
+          "proxy_p_champion": 0.06374967840968294,
+          "live_p_champion": 0.06201794339448718,
+          "delta_live_minus_proxy": -0.0017317350151957664,
+          "abs_delta": 0.0017317350151957664
+        },
+        {
+          "team": "Japan",
+          "proxy_p_champion": 0.013098072330389626,
+          "live_p_champion": 0.011483559484573585,
+          "delta_live_minus_proxy": -0.0016145128458160407,
+          "abs_delta": 0.0016145128458160407
+        },
+        {
+          "team": "Brazil",
+          "proxy_p_champion": 0.09265565592879768,
+          "live_p_champion": 0.0938980046944742,
+          "delta_live_minus_proxy": 0.0012423487656765125,
+          "abs_delta": 0.0012423487656765125
+        },
+        {
+          "team": "France",
+          "proxy_p_champion": 0.15119454445823874,
+          "live_p_champion": 0.14995354983271034,
+          "delta_live_minus_proxy": -0.0012409946255284021,
+          "abs_delta": 0.0012409946255284021
+        }
+      ]
+    },
+    "market_stage_engine_shape": {
+      "non_champion_stages_are_scaled_engine_shape": true,
+      "max_abs_reconstruction_error": {
+        "p_reach_R32": 0.0,
+        "p_reach_R16": 0.0,
+        "p_reach_QF": 0.0,
+        "p_reach_SF": 0.0,
+        "p_reach_final": 0.0
+      },
+      "market_stage_sums": {
+        "p_reach_R32": 33.62388288986688,
+        "p_reach_R16": 24.5411716059733,
+        "p_reach_QF": 14.632063111296084,
+        "p_reach_SF": 6.388407943034438,
+        "p_reach_final": 3.0451931754736985,
+        "p_champion": 1.0
+      },
+      "engine_stage_sums": {
+        "p_reach_R32": 32.0,
+        "p_reach_R16": 16.0,
+        "p_reach_QF": 8.0,
+        "p_reach_SF": 4.0,
+        "p_reach_final": 2.0,
+        "p_champion": 1.0
+      },
+      "audit_table": "/Users/rofy/Documents/gyan-wc-model/outputs/tables/market_stage_engine_shape_audit_latest.csv"
+    },
+    "expert_correlation": {
+      "table": "/Users/rofy/Documents/gyan-wc-model/outputs/tables/expert_board_correlation_diagnostics_latest.csv",
+      "socioeconomic_market_champion_pearson": 0.6386440326315546,
+      "socioeconomic_market_champion_spearman": 0.6969905346251586,
+      "socioeconomic_market_champion_top12_overlap": 7,
+      "socioeconomic_market_champion_top12_jaccard": 0.4117647058823529,
+      "socioeconomic_market_high_correlation_flag": false
+    },
+    "yield_named_scores": {
+      "mean_rps": 0.21818392861679964,
+      "mean_brier": 0.6491498276093104,
+      "mean_log_loss": 1.0725398007228286
+    },
+    "yield_nominal_scores": {
+      "mean_rps": 0.21809744223797708,
+      "mean_brier": 0.6487753633482531,
+      "mean_log_loss": 1.071924882990059
+    },
+    "yield_named_minus_nominal_rps": 8.648637882255339e-05,
+    "t_g4": {
+      "threshold": 0.08,
+      "comparisons": [
+        {
+          "team": "Spain",
+          "gyan_p_champion": 0.13204217656774345,
+          "goldman_p_champion": 0.257,
+          "market_p_champion": 0.1742994013714105,
+          "abs_delta_vs_goldman": 0.12495782343225656,
+          "abs_delta_vs_market": 0.04225722480366706,
+          "diverges_from_both": false
+        },
+        {
+          "team": "France",
+          "gyan_p_champion": 0.11223023785674147,
+          "goldman_p_champion": 0.189,
+          "market_p_champion": 0.14995354983271034,
+          "abs_delta_vs_goldman": 0.07676976214325854,
+          "abs_delta_vs_market": 0.03772331197596887,
+          "diverges_from_both": false
+        },
+        {
+          "team": "Argentina",
+          "gyan_p_champion": 0.08639340907639419,
+          "goldman_p_champion": 0.143,
+          "market_p_champion": 0.09513696810978045,
+          "abs_delta_vs_goldman": 0.0566065909236058,
+          "abs_delta_vs_market": 0.008743559033386264,
+          "diverges_from_both": false
+        },
+        {
+          "team": "Brazil",
+          "gyan_p_champion": 0.07682472797222484,
+          "goldman_p_champion": 0.076,
+          "market_p_champion": 0.0938980046944742,
+          "abs_delta_vs_goldman": 0.0008247279722248396,
+          "abs_delta_vs_market": 0.017073276722249356,
+          "diverges_from_both": false
+        },
+        {
+          "team": "England",
+          "gyan_p_champion": 0.09211039081698569,
+          "goldman_p_champion": 0.05,
+          "market_p_champion": 0.12071088904441171,
+          "abs_delta_vs_goldman": 0.042110390816985685,
+          "abs_delta_vs_market": 0.028600498227426024,
+          "diverges_from_both": false
+        }
+      ],
+      "tripped": false,
+      "tripped_teams": [],
+      "action": "none"
+    },
+    "board_validations": {
+      "goal": {
+        "rows": 48,
+        "champion_sum": 1.0,
+        "in_range": true,
+        "monotone": true
+      },
+      "yield_named": {
+        "rows": 48,
+        "champion_sum": 1.0,
+        "in_range": true,
+        "monotone": true
+      },
+      "yield_nominal": {
+        "rows": 48,
+        "champion_sum": 1.0,
+        "in_range": true,
+        "monotone": true
+      },
+      "socioeconomic": {
+        "rows": 48,
+        "champion_sum": 1.0,
+        "in_range": true,
+        "monotone": true
+      },
+      "market": {
+        "rows": 48,
+        "champion_sum": 1.0,
+        "in_range": true,
+        "monotone": true
+      }
+    },
+    "top10_champion": [
+      {
+        "team": "Spain",
+        "p_champion": 0.13204217656774345
+      },
+      {
+        "team": "France",
+        "p_champion": 0.11223023785674147
+      },
+      {
+        "team": "England",
+        "p_champion": 0.09211039081698569
+      },
+      {
+        "team": "Argentina",
+        "p_champion": 0.08639340907639419
+      },
+      {
+        "team": "Portugal",
+        "p_champion": 0.07707158355617874
+      },
+      {
+        "team": "Brazil",
+        "p_champion": 0.07682472797222484
+      },
+      {
+        "team": "Germany",
+        "p_champion": 0.04983864627455416
+      },
+      {
+        "team": "Netherlands",
+        "p_champion": 0.036721863991224304
+      },
+      {
+        "team": "Colombia",
+        "p_champion": 0.01953425115759337
+      },
+      {
+        "team": "Morocco",
+        "p_champion": 0.019151617671034484
+      }
+    ],
+    "max_abs_yield_named_delta": 0.00238,
+    "market_source_divergence_rows": 48,
+    "market_stage_engine_shape_audit_rows": 48,
+    "expert_correlation_diagnostics_rows": 60
+  },
+  "outputs": [
+    "./logs/stage3_build_ensemble_20260610_191017.log",
+    "./data/processed/market_implied_live.parquet",
+    "./outputs/tables/expert_boards_2026_20260610_191017.parquet",
+    "./outputs/tables/expert_boards_2026_20260610_191017.csv",
+    "./outputs/tables/expert_boards_2026_latest.csv",
+    "./outputs/tables/ensemble_weights_20260610_191017.parquet",
+    "./outputs/tables/ensemble_weights_20260610_191017.csv",
+    "./outputs/tables/ensemble_weights_latest.csv",
+    "./outputs/tables/gyan_forecast_2026_20260610_191017.parquet",
+    "./outputs/tables/gyan_forecast_2026_20260610_191017.csv",
+    "./outputs/tables/gyan_forecast_2026_latest.csv",
+    "./outputs/tables/yield_named_vs_nominal_delta_2026.csv",
+    "./outputs/tables/market_source_divergence_latest.csv",
+    "./outputs/tables/market_stage_engine_shape_audit_latest.csv",
+    "./outputs/tables/expert_board_correlation_diagnostics_20260610_191017.csv",
+    "./outputs/tables/expert_board_correlation_diagnostics_latest.csv",
+    "./outputs/tables/t_g4_divergence_diagnostics_20260610_191017.csv",
+    "./outputs/tables/t_g4_divergence_diagnostics_latest.csv",
+    "./outputs/figures/stage3_reliability_diagram.png",
+    "./outputs/figures/stage3_reliability_diagram.pdf",
+    "./outputs/figures/stage3_reliability_diagram.txt",
+    "./outputs/reports/stage3_summary.md"
+  ],
+  "output_artifacts": [
+    {
+      "path": "./data/processed/market_implied_live.parquet",
+      "sha256": "6f7aff480faa798e2165b05319c5cb8d58cd445152b99b447b3a7a4e9ec049e5",
+      "bytes": 4003
+    },
+    {
+      "path": "./outputs/tables/expert_boards_2026_20260610_191017.parquet",
+      "sha256": "a8bcdb7d4c7f675b3f2150253964e0db4221349d6d1b336ebef10680ff3c2dcb",
+      "bytes": 18331
+    },
+    {
+      "path": "./outputs/tables/expert_boards_2026_20260610_191017.csv",
+      "sha256": "ec16b5cc49a2a1f9be588d688d322cc7ae997b875fcb303ba4bbd0fdaffe0bc5",
+      "bytes": 18992
+    },
+    {
+      "path": "./outputs/tables/expert_boards_2026_latest.csv",
+      "sha256": "ec16b5cc49a2a1f9be588d688d322cc7ae997b875fcb303ba4bbd0fdaffe0bc5",
+      "bytes": 18992
+    },
+    {
+      "path": "./outputs/tables/ensemble_weights_20260610_191017.parquet",
+      "sha256": "2e721f14d49523ad35166d50b7c3aeba73efde7bb65cff7375187dab702491db",
+      "bytes": 3533
+    },
+    {
+      "path": "./outputs/tables/ensemble_weights_20260610_191017.csv",
+      "sha256": "c7f3760372bf6d48d71ed502b45123e7073f6810771b1b5af0b6db87ded2a299",
+      "bytes": 1297
+    },
+    {
+      "path": "./outputs/tables/ensemble_weights_latest.csv",
+      "sha256": "c7f3760372bf6d48d71ed502b45123e7073f6810771b1b5af0b6db87ded2a299",
+      "bytes": 1297
+    },
+    {
+      "path": "./outputs/tables/gyan_forecast_2026_20260610_191017.parquet",
+      "sha256": "a9042fec13ce698eeffda943c94bfc186f9e79ce0a37be7871caec6f77e6aab4",
+      "bytes": 7733
+    },
+    {
+      "path": "./outputs/tables/gyan_forecast_2026_20260610_191017.csv",
+      "sha256": "5d7814edd9513cbf8bb9a9eb1ae826c9e5b961b4cfe58199154cdbe46c0d1b2c",
+      "bytes": 6241
+    },
+    {
+      "path": "./outputs/tables/gyan_forecast_2026_latest.csv",
+      "sha256": "5d7814edd9513cbf8bb9a9eb1ae826c9e5b961b4cfe58199154cdbe46c0d1b2c",
+      "bytes": 6241
+    },
+    {
+      "path": "./outputs/tables/yield_named_vs_nominal_delta_2026.csv",
+      "sha256": "2ca2ecb18ac7092144470c4db8513fa1947bea98bb28b6a278e5a29134ec2cc1",
+      "bytes": 3358
+    },
+    {
+      "path": "./outputs/tables/market_source_divergence_latest.csv",
+      "sha256": "adde76137a070d0bb3ea0c64a77dfb1fff60096ea9eea686f8370d135e14bd7a",
+      "bytes": 4750
+    },
+    {
+      "path": "./outputs/tables/market_stage_engine_shape_audit_latest.csv",
+      "sha256": "818b11ca46d225ea36da78ba027efb48d38072d826d5ae6db275948eaa69147b",
+      "bytes": 18871
+    },
+    {
+      "path": "./outputs/tables/expert_board_correlation_diagnostics_20260610_191017.csv",
+      "sha256": "dc1cf90d590a29cb23b442ce010cdd117c1ad4e8d684a82858728252e907e94b",
+      "bytes": 4834
+    },
+    {
+      "path": "./outputs/tables/expert_board_correlation_diagnostics_latest.csv",
+      "sha256": "dc1cf90d590a29cb23b442ce010cdd117c1ad4e8d684a82858728252e907e94b",
+      "bytes": 4834
+    },
+    {
+      "path": "./outputs/tables/t_g4_divergence_diagnostics_20260610_191017.csv",
+      "sha256": "381ac68474b9ea8cc24bbac3c33b6e51764eac8be5c654ea46e63001f6a8aef5",
+      "bytes": 1815
+    },
+    {
+      "path": "./outputs/tables/t_g4_divergence_diagnostics_latest.csv",
+      "sha256": "381ac68474b9ea8cc24bbac3c33b6e51764eac8be5c654ea46e63001f6a8aef5",
+      "bytes": 1815
+    },
+    {
+      "path": "./outputs/figures/stage3_reliability_diagram.png",
+      "sha256": "e5daf3db5e35b29a95ae58ebb8ba82a8b572b930eb4a11a64d21995beb02f454",
+      "bytes": 140593
+    },
+    {
+      "path": "./outputs/figures/stage3_reliability_diagram.pdf",
+      "sha256": "a9f70c3b0bc5d459af6596275ce5538314a32a8a9c2a81feb9cb13205a7f2ad9",
+      "bytes": 15232
+    },
+    {
+      "path": "./outputs/figures/stage3_reliability_diagram.txt",
+      "sha256": "9821b6d5b44d70b3acda16fd2792abb4f6cf22496543cfe2d32aae122798f099",
+      "bytes": 135
+    },
+    {
+      "path": "./outputs/reports/stage3_summary.md",
+      "sha256": "80121b970ac3f3b1fe6b2cae2e8ce01de96f1cf75f18aa611fddecda83d7d9c4",
+      "bytes": 11082
+    }
+  ],
+  "status": "ok",
+  "duration_seconds": 114.805161
+}

@@ -1,0 +1,129 @@
+{
+  "timestamp_utc": "2026-06-10T19:06:14.221519+00:00",
+  "stage": "stage1",
+  "step": "build_socioeconomic",
+  "script_path": "./scripts/s1_build_socioeconomic.py",
+  "git_commit": "eee0a29",
+  "git_tags": [
+    "gyan-v1.0-final"
+  ],
+  "python_version": "3.14.5",
+  "package_versions": {
+    "gyan": "0.1.0",
+    "numpy": "2.4.6",
+    "pandas": "3.0.3",
+    "pyarrow": "24.0.0",
+    "scipy": "1.17.1",
+    "statsmodels": "0.14.6",
+    "penaltyblog": "1.11.0",
+    "numba": "0.65.1",
+    "joblib": "1.5.3",
+    "scikit-learn": "1.9.0",
+    "matplotlib": "3.10.9",
+    "seaborn": "0.13.2",
+    "pydantic": "2.13.4",
+    "httpx": "0.28.1",
+    "requests": "2.34.2",
+    "beautifulsoup4": "4.14.3",
+    "lxml": "6.1.1",
+    "soccerdata": "1.9.0",
+    "python-json-logger": "4.1.0",
+    "pytest": "9.0.3",
+    "pytest-cov": "7.1.0",
+    "tqdm": "4.68.1"
+  },
+  "global_seed": 20260611,
+  "n_workers": null,
+  "n_simulations": null,
+  "inputs": [
+    {
+      "path": "./data/raw/d5_fifa_rankings_api.json",
+      "sha256": "15286d56df33456e66b7cef1891c0eaa36979cc1b693ff68db9e939e083fa824",
+      "bytes": 126799
+    },
+    {
+      "path": "./data/raw/d11_world_bank_gdp_per_capita_ppp.json",
+      "sha256": "235cfaea47a6a71e7a134ad86a55f9f9b08d48940b25f153edd2e117775caa8d",
+      "bytes": 4167217
+    },
+    {
+      "path": "./data/raw/d11_world_bank_population.json",
+      "sha256": "2bb1839c140419b1cf1aebe61a140bed870917d2d2ba5a3d5afaa342cb50e3a0",
+      "bytes": 3526530
+    },
+    {
+      "path": "./data/raw/d12_country_average_yearly_temperature_wikipedia.html",
+      "sha256": "913b57cabf0b876d3a33ab129aec1ff27372b002724d90d0366aa6059ba8d8b0",
+      "bytes": 234673
+    },
+    {
+      "path": "./outputs/tables/elo_current_ratings_from_d1.csv",
+      "sha256": "80a83aeb482e86ccf1abc583692eea34b3d4e2d9824a84deb33f91bc2d52ed49",
+      "bytes": 9576
+    }
+  ],
+  "params": {
+    "ols_target": "elo_rating",
+    "temperature_source": "country_mean_annual_temperature",
+    "pure_hoffmann_reference_r_squared": 0.318,
+    "augmented_reference_r_squared": 0.55
+  },
+  "metrics": {
+    "rows": 211,
+    "complete_feature_rows": 193,
+    "complete_model_rows": 193,
+    "missing_gdp": 16,
+    "missing_population": 8,
+    "missing_temperature": 4,
+    "missing_elo": 0,
+    "pure_hoffmann_r_squared": 0.23442660189039954,
+    "augmented_fifa_points_r_squared": 0.9349875920046284,
+    "r_squared_diagnosis": "OLS target is current final Elo because FIFA points are an augmented predictor; the PRD reference R^2 values are therefore diagnostic, not directly comparable. Country mean annual temperature is used directly as the documented D12 climate feature."
+  },
+  "outputs": [
+    "./logs/stage1_build_socioeconomic_20260610_190614.log",
+    "./data/processed/socioeconomic_features.parquet",
+    "./outputs/tables/socioeconomic_features.csv"
+  ],
+  "output_artifacts": [
+    {
+      "path": "./data/processed/socioeconomic_features.parquet",
+      "sha256": "df5fd5492aec870fae1c46e27ba8803053c75b043334b2a2ff5462e339e604d1",
+      "bytes": 45079
+    },
+    {
+      "path": "./outputs/tables/socioeconomic_features.csv",
+      "sha256": "ed7f34924dd96b4f25020168f96a34f6278eecf527442c0bcd65702ce74c5c3a",
+      "bytes": 50285
+    }
+  ],
+  "status": "ok",
+  "model_summaries": {
+    "pure_hoffmann": {
+      "n_obs": 193,
+      "r_squared": 0.23442660189039954,
+      "coefficients": {
+        "const": 1531.9906835811225,
+        "gdp_per_capita_ppp": 0.005130629669520167,
+        "gdp_per_capita_ppp_sq": -3.270887611177612e-08,
+        "temp_dev_sq": -1.0730139668347929,
+        "host": 176.70901781816585,
+        "latin_x_population_share": 31208.806250530477
+      }
+    },
+    "augmented_fifa_points": {
+      "n_obs": 193,
+      "r_squared": 0.9349875920046284,
+      "coefficients": {
+        "const": 218.0804668015246,
+        "gdp_per_capita_ppp": -0.00044357349426647156,
+        "gdp_per_capita_ppp_sq": 8.990690391537828e-10,
+        "temp_dev_sq": -0.017786011268412394,
+        "host": -45.46277453009577,
+        "latin_x_population_share": 1710.6290524734573,
+        "fifa_points": 1.0641447802218214
+      }
+    }
+  },
+  "duration_seconds": 0.18594
+}

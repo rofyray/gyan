@@ -1,0 +1,84 @@
+{
+  "tag": "20260610_191222",
+  "checks": {
+    "final_board_has_48_unique_teams": true,
+    "final_board_probabilities_in_range": true,
+    "final_board_probabilities_monotone": true,
+    "champion_probability_sum_close_to_one": true,
+    "final_board_matches_latest_forecast": true,
+    "benchmark_matches_final_board": true,
+    "backtest_tournament_coverage": true,
+    "backtest_model_coverage": true,
+    "ablation_model_coverage": true,
+    "modal_bracket_coherent": true,
+    "output_files_exist": true
+  },
+  "all_passed": true,
+  "details": {
+    "champion_probability_sum": 0.9999999999999978,
+    "max_final_board_vs_latest_forecast_abs_diff": 0.0,
+    "benchmark_max_abs_diff": 0.0,
+    "backtest_model_coverage": {
+      "2014": [
+        "GYAN",
+        "goal",
+        "market",
+        "socioeconomic",
+        "yield_named"
+      ],
+      "2018": [
+        "GYAN",
+        "goal",
+        "market",
+        "socioeconomic",
+        "yield_named"
+      ],
+      "2022": [
+        "GYAN",
+        "goal",
+        "market",
+        "socioeconomic",
+        "yield_named"
+      ]
+    },
+    "ablation_model_coverage": {
+      "2014": [
+        "full_gyan_equal",
+        "goal_only",
+        "goal_yield",
+        "goal_yield_market",
+        "goal_yield_socioeconomic",
+        "shipped_gyan",
+        "yield_named_vs_nominal"
+      ],
+      "2018": [
+        "full_gyan_equal",
+        "goal_only",
+        "goal_yield",
+        "goal_yield_market",
+        "goal_yield_socioeconomic",
+        "shipped_gyan",
+        "yield_named_vs_nominal"
+      ],
+      "2022": [
+        "full_gyan_equal",
+        "goal_only",
+        "goal_yield",
+        "goal_yield_market",
+        "goal_yield_socioeconomic",
+        "shipped_gyan",
+        "yield_named_vs_nominal"
+      ]
+    },
+    "modal_bracket": {
+      "all_match_ids_present": true,
+      "winners_in_own_match": true,
+      "qf_winners_are_semifinalists": true,
+      "semifinal_winners_are_finalists": true,
+      "champion_is_finalist": true,
+      "unresolved_matchups": 0,
+      "coherent": true
+    },
+    "modal_champion": "Spain"
+  }
+}

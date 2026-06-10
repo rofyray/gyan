@@ -1,0 +1,156 @@
+{
+  "timestamp_utc": "2026-06-10T19:08:14.228028+00:00",
+  "stage": "stage1",
+  "step": "validate_engine",
+  "script_path": "./scripts/s1_validate_engine.py",
+  "git_commit": "eee0a29",
+  "git_tags": [
+    "gyan-v1.0-final"
+  ],
+  "python_version": "3.14.5",
+  "package_versions": {
+    "gyan": "0.1.0",
+    "numpy": "2.4.6",
+    "pandas": "3.0.3",
+    "pyarrow": "24.0.0",
+    "scipy": "1.17.1",
+    "statsmodels": "0.14.6",
+    "penaltyblog": "1.11.0",
+    "numba": "0.65.1",
+    "joblib": "1.5.3",
+    "scikit-learn": "1.9.0",
+    "matplotlib": "3.10.9",
+    "seaborn": "0.13.2",
+    "pydantic": "2.13.4",
+    "httpx": "0.28.1",
+    "requests": "2.34.2",
+    "beautifulsoup4": "4.14.3",
+    "lxml": "6.1.1",
+    "soccerdata": "1.9.0",
+    "python-json-logger": "4.1.0",
+    "pytest": "9.0.3",
+    "pytest-cov": "7.1.0",
+    "tqdm": "4.68.1"
+  },
+  "global_seed": 20260611,
+  "n_workers": null,
+  "n_simulations": null,
+  "inputs": [
+    {
+      "path": "./data/processed/matches_with_elo.parquet",
+      "sha256": "803ae808e76c33cdea537a7acd69502034cf151b23d14eadcab51407c6f0e317",
+      "bytes": 850364
+    },
+    {
+      "path": "./data/raw/d3_spi_matches_intl.csv",
+      "sha256": "b2440b150e5e9aef51019b557dd23d41d78183d1179302fb72c662b2188738b7",
+      "bytes": 594891
+    },
+    {
+      "path": "./data/processed/dixon_coles_params_dixon_coles_latest.json",
+      "sha256": "8fd5e5c0763f079ddbf0e21fc566c387140e04116c03e7e8faa478784ff9312d",
+      "bytes": 28627
+    },
+    {
+      "path": "./data/processed/dixon_coles_params_plain_poisson_latest.json",
+      "sha256": "944cd646c85ad6c99e5cb50f17405190ba5202312d275bd744eb795113887de8",
+      "bytes": 28593
+    }
+  ],
+  "params": {
+    "validation_cutoff": "2024-01-01",
+    "recent_min_date": "2014-01-01",
+    "xi_dixon_coles": 0.0018,
+    "xi_plain_poisson": 0.0018,
+    "validation_maxiter": 90,
+    "validation_source": "D1 heldout for engine selection plus archived D3 international SPI scored benchmark",
+    "spi_benchmark_cutoff": "2022-01-01"
+  },
+  "metrics": {
+    "train_rows": 9302,
+    "heldout_rows": 2538,
+    "mean_rps_dixon_coles": 0.16690512585956427,
+    "mean_rps_plain_poisson": 0.16678002891512475,
+    "mean_rps_calibrated_score_matrix": 0.1667035874708901,
+    "selected_engine": "plain_poisson",
+    "t_g3_actioned": true,
+    "score_distribution": "correlated_negative_binomial",
+    "score_dispersion": 8.0,
+    "observed_draw_rate": 0.2371946414499606,
+    "plain_poisson_predicted_draw_rate": 0.21846927696054572,
+    "plain_poisson_draw_delta": -0.018725364489414892,
+    "plain_poisson_draw_frequency_passed": false,
+    "calibrated_predicted_draw_rate": 0.23842441012416482,
+    "calibrated_draw_delta": 0.0012297686742042124,
+    "calibrated_draw_frequency_passed": true,
+    "spi_international_rows": 1191,
+    "spi_benchmark_cutoff": "2022-01-01",
+    "mean_rps_model_on_spi_benchmark": 0.19221739577506078,
+    "mean_rps_spi_benchmark": 0.18940435190176322,
+    "mean_rps_delta_model_minus_spi": 0.00281304387329759
+  },
+  "outputs": [
+    "./logs/stage1_validate_engine_20260610_190814.log",
+    "./outputs/tables/engine_validation_20260610_190814.csv",
+    "./outputs/tables/engine_validation_latest.csv",
+    "./outputs/tables/engine_validation_spi_benchmark_latest.csv",
+    "./outputs/tables/engine_draw_calibration_latest.csv"
+  ],
+  "output_artifacts": [
+    {
+      "path": "./outputs/tables/engine_validation_20260610_190814.csv",
+      "sha256": "6f4342ea367ad2bb4db149d03fa988b91b5296b13ef49e0a90fa86bd803f6e79",
+      "bytes": 752503
+    },
+    {
+      "path": "./outputs/tables/engine_validation_latest.csv",
+      "sha256": "6f4342ea367ad2bb4db149d03fa988b91b5296b13ef49e0a90fa86bd803f6e79",
+      "bytes": 752503
+    },
+    {
+      "path": "./outputs/tables/engine_validation_spi_benchmark_latest.csv",
+      "sha256": "0f8633359cfd4c78b0e779907ae294e4f7d24d2493bfc92a74fa52f73bd339b9",
+      "bytes": 235689
+    },
+    {
+      "path": "./outputs/tables/engine_draw_calibration_latest.csv",
+      "sha256": "c130dce08c11bda8dc90f189b4ce27c2d3deb7d76e64be22bb7a44d827400299",
+      "bytes": 447
+    }
+  ],
+  "status": "ok",
+  "dixon_coles_fit_diagnostics": {
+    "success": true,
+    "optimizer_success": false,
+    "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+    "nit": 90,
+    "fun": 24632.729082636113,
+    "n_train_matches": 9302,
+    "n_teams": 299,
+    "reference_date": "2023-12-16",
+    "fit_rho": true
+  },
+  "plain_poisson_fit_diagnostics": {
+    "success": true,
+    "optimizer_success": false,
+    "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+    "nit": 90,
+    "fun": 24630.273214553996,
+    "n_train_matches": 9302,
+    "n_teams": 299,
+    "reference_date": "2023-12-16",
+    "fit_rho": false
+  },
+  "spi_benchmark_fit_diagnostics": {
+    "success": true,
+    "optimizer_success": false,
+    "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+    "nit": 90,
+    "fun": 19166.377648470934,
+    "n_train_matches": 7279,
+    "n_teams": 289,
+    "reference_date": "2021-12-31",
+    "fit_rho": false
+  },
+  "duration_seconds": 64.596943
+}

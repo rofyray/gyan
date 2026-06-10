@@ -1,0 +1,140 @@
+{
+  "timestamp_utc": "2026-06-10T19:06:26.134960+00:00",
+  "stage": "stage1",
+  "step": "fit_dixon_coles",
+  "script_path": "./scripts/s1_fit_dixon_coles.py",
+  "git_commit": "eee0a29",
+  "git_tags": [
+    "gyan-v1.0-final"
+  ],
+  "python_version": "3.14.5",
+  "package_versions": {
+    "gyan": "0.1.0",
+    "numpy": "2.4.6",
+    "pandas": "3.0.3",
+    "pyarrow": "24.0.0",
+    "scipy": "1.17.1",
+    "statsmodels": "0.14.6",
+    "penaltyblog": "1.11.0",
+    "numba": "0.65.1",
+    "joblib": "1.5.3",
+    "scikit-learn": "1.9.0",
+    "matplotlib": "3.10.9",
+    "seaborn": "0.13.2",
+    "pydantic": "2.13.4",
+    "httpx": "0.28.1",
+    "requests": "2.34.2",
+    "beautifulsoup4": "4.14.3",
+    "lxml": "6.1.1",
+    "soccerdata": "1.9.0",
+    "python-json-logger": "4.1.0",
+    "pytest": "9.0.3",
+    "pytest-cov": "7.1.0",
+    "tqdm": "4.68.1"
+  },
+  "global_seed": 20260611,
+  "n_workers": null,
+  "n_simulations": null,
+  "inputs": [
+    {
+      "path": "./data/processed/matches_with_elo.parquet",
+      "sha256": "803ae808e76c33cdea537a7acd69502034cf151b23d14eadcab51407c6f0e317",
+      "bytes": 850364
+    },
+    {
+      "path": "./outputs/tables/elo_current_ratings_from_d1.csv",
+      "sha256": "80a83aeb482e86ccf1abc583692eea34b3d4e2d9824a84deb33f91bc2d52ed49",
+      "bytes": 9576
+    }
+  ],
+  "params": {
+    "xi": 0.0018,
+    "recent_min_date": "2014-01-01",
+    "max_train_matches": 12000,
+    "maxiter": 150,
+    "ridge": 0.002
+  },
+  "metrics": {
+    "success": true,
+    "optimizer_success": false,
+    "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+    "nit": 150,
+    "fun": 31880.716482266806,
+    "n_train_matches": 11842,
+    "n_teams": 300,
+    "reference_date": "2026-06-09",
+    "fit_rho": true,
+    "plain_poisson_fit": {
+      "success": true,
+      "optimizer_success": false,
+      "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+      "nit": 150,
+      "fun": 31892.51199587255,
+      "n_train_matches": 11842,
+      "n_teams": 300,
+      "reference_date": "2026-06-09",
+      "fit_rho": false
+    }
+  },
+  "outputs": [
+    "./logs/stage1_fit_dixon_coles_20260610_190626.log",
+    "./data/processed/dixon_coles_params_20260610_190626.json",
+    "./data/processed/dixon_coles_params_dixon_coles_20260610_190626.json",
+    "./data/processed/dixon_coles_params_plain_poisson_20260610_190626.json",
+    "./data/processed/dixon_coles_params_dixon_coles_latest.json",
+    "./data/processed/dixon_coles_params_plain_poisson_latest.json",
+    "./data/processed/dixon_coles_params_latest.json",
+    "./outputs/figures/attack_defense_top20.png",
+    "./outputs/figures/attack_defense_top20.pdf",
+    "./outputs/figures/attack_defense_top20.txt"
+  ],
+  "output_artifacts": [
+    {
+      "path": "./data/processed/dixon_coles_params_20260610_190626.json",
+      "sha256": "8fd5e5c0763f079ddbf0e21fc566c387140e04116c03e7e8faa478784ff9312d",
+      "bytes": 28627
+    },
+    {
+      "path": "./data/processed/dixon_coles_params_dixon_coles_20260610_190626.json",
+      "sha256": "8fd5e5c0763f079ddbf0e21fc566c387140e04116c03e7e8faa478784ff9312d",
+      "bytes": 28627
+    },
+    {
+      "path": "./data/processed/dixon_coles_params_plain_poisson_20260610_190626.json",
+      "sha256": "944cd646c85ad6c99e5cb50f17405190ba5202312d275bd744eb795113887de8",
+      "bytes": 28593
+    },
+    {
+      "path": "./data/processed/dixon_coles_params_dixon_coles_latest.json",
+      "sha256": "8fd5e5c0763f079ddbf0e21fc566c387140e04116c03e7e8faa478784ff9312d",
+      "bytes": 28627
+    },
+    {
+      "path": "./data/processed/dixon_coles_params_plain_poisson_latest.json",
+      "sha256": "944cd646c85ad6c99e5cb50f17405190ba5202312d275bd744eb795113887de8",
+      "bytes": 28593
+    },
+    {
+      "path": "./data/processed/dixon_coles_params_latest.json",
+      "sha256": "8fd5e5c0763f079ddbf0e21fc566c387140e04116c03e7e8faa478784ff9312d",
+      "bytes": 28627
+    },
+    {
+      "path": "./outputs/figures/attack_defense_top20.png",
+      "sha256": "c3a4c8e5aa86c3c5545ffa62f38c4246faf76d94d6efd6972c2c5857d718e2b4",
+      "bytes": 165878
+    },
+    {
+      "path": "./outputs/figures/attack_defense_top20.pdf",
+      "sha256": "e5266df5eea71aa9aeb88af186105e7848b98f2d285fc2e909b294ce0de2c749",
+      "bytes": 19599
+    },
+    {
+      "path": "./outputs/figures/attack_defense_top20.txt",
+      "sha256": "1f4102240f45a0d658d0a293e2cd838e12093734e6eb8a196b853e2211cc0846",
+      "bytes": 151
+    }
+  ],
+  "status": "ok",
+  "duration_seconds": 103.393142
+}

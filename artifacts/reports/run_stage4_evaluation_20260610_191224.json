@@ -1,0 +1,533 @@
+{
+  "timestamp_utc": "2026-06-10T19:12:22.624874+00:00",
+  "stage": "stage4",
+  "step": "evaluation",
+  "script_path": "./scripts/s4_backtest.py",
+  "git_commit": "eee0a29",
+  "git_tags": [
+    "gyan-v1.0-final"
+  ],
+  "python_version": "3.14.5",
+  "package_versions": {
+    "gyan": "0.1.0",
+    "numpy": "2.4.6",
+    "pandas": "3.0.3",
+    "pyarrow": "24.0.0",
+    "scipy": "1.17.1",
+    "statsmodels": "0.14.6",
+    "penaltyblog": "1.11.0",
+    "numba": "0.65.1",
+    "joblib": "1.5.3",
+    "scikit-learn": "1.9.0",
+    "matplotlib": "3.10.9",
+    "seaborn": "0.13.2",
+    "pydantic": "2.13.4",
+    "httpx": "0.28.1",
+    "requests": "2.34.2",
+    "beautifulsoup4": "4.14.3",
+    "lxml": "6.1.1",
+    "soccerdata": "1.9.0",
+    "python-json-logger": "4.1.0",
+    "pytest": "9.0.3",
+    "pytest-cov": "7.1.0",
+    "tqdm": "4.68.1"
+  },
+  "global_seed": 20260611,
+  "n_workers": null,
+  "n_simulations": null,
+  "inputs": [
+    {
+      "path": "./data/processed/matches_with_elo.parquet",
+      "sha256": "803ae808e76c33cdea537a7acd69502034cf151b23d14eadcab51407c6f0e317",
+      "bytes": 850364
+    },
+    {
+      "path": "./data/processed/socioeconomic_features.parquet",
+      "sha256": "df5fd5492aec870fae1c46e27ba8803053c75b043334b2a2ff5462e339e604d1",
+      "bytes": 45079
+    },
+    {
+      "path": "./data/raw/d11_world_bank_gdp_per_capita_ppp.json",
+      "sha256": "235cfaea47a6a71e7a134ad86a55f9f9b08d48940b25f153edd2e117775caa8d",
+      "bytes": 4167217
+    },
+    {
+      "path": "./data/raw/d11_world_bank_population.json",
+      "sha256": "2bb1839c140419b1cf1aebe61a140bed870917d2d2ba5a3d5afaa342cb50e3a0",
+      "bytes": 3526530
+    },
+    {
+      "path": "./outputs/tables/gyan_forecast_2026_latest.csv",
+      "sha256": "5d7814edd9513cbf8bb9a9eb1ae826c9e5b961b4cfe58199154cdbe46c0d1b2c",
+      "bytes": 6241
+    },
+    {
+      "path": "./data/processed/market_implied_live.parquet",
+      "sha256": "6f7aff480faa798e2165b05319c5cb8d58cd445152b99b447b3a7a4e9ec049e5",
+      "bytes": 4003
+    },
+    {
+      "path": "./outputs/tables/expert_board_correlation_diagnostics_latest.csv",
+      "sha256": "dc1cf90d590a29cb23b442ce010cdd117c1ad4e8d684a82858728252e907e94b",
+      "bytes": 4834
+    },
+    {
+      "path": "./outputs/tables/expert_boards_2026_latest.csv",
+      "sha256": "ec16b5cc49a2a1f9be588d688d322cc7ae997b875fcb303ba4bbd0fdaffe0bc5",
+      "bytes": 18992
+    },
+    {
+      "path": "./outputs/tables/ensemble_weights_latest.csv",
+      "sha256": "c7f3760372bf6d48d71ed502b45123e7073f6810771b1b5af0b6db87ded2a299",
+      "bytes": 1297
+    },
+    {
+      "path": "./outputs/tables/elo_current_ratings_from_d1.csv",
+      "sha256": "80a83aeb482e86ccf1abc583692eea34b3d4e2d9824a84deb33f91bc2d52ed49",
+      "bytes": 9576
+    },
+    {
+      "path": "./data/raw/d1_martj42_shootouts.csv",
+      "sha256": "e52e503badc11021d5d243ddf2288346f63ad028bf8de75ae9cfb72c5475d807",
+      "bytes": 28809
+    },
+    {
+      "path": "./data/raw/d15_historical_world_cup_outrights.csv",
+      "sha256": "d20037fb79fdacda8228bf7e64e115d19166e3020df164eac0a618b51ab66828",
+      "bytes": 7526
+    }
+  ],
+  "params": {
+    "backtest_tournaments": [
+      2014,
+      2018,
+      2022
+    ],
+    "shipped_weights": {
+      "goal": 0.05000000000000001,
+      "yield_named": 0.05000000000000001,
+      "socioeconomic": 0.24366553270263572,
+      "market": 0.6563344672973643
+    },
+    "final_freeze_timestamp_utc": "2026-06-10T19:00:00Z",
+    "expected_release_tag": "gyan-v1.0-final",
+    "no_post_freeze_inputs_statement": "Final paper run must use no inputs after 2026-06-10T19:00:00Z.",
+    "historical_market_sources": {
+      "2014": "zeileis_2014_bookmaker_consensus_22_books",
+      "2018": "zeileis_2018_bookmaker_consensus_26_books",
+      "2022": "sportstatist_2022_william_hill_2022_09_01"
+    },
+    "historical_market_note": "Backtest market uses cached D15 historical outright boards; 2022 Polymarket exists but lacks a complete public pre-kickoff price vector."
+  },
+  "metrics": {
+    "runtime_seconds": 1.4532794160186313,
+    "leakage_audits": {
+      "2014": {
+        "passed": true,
+        "max_training_date": "2014-06-10",
+        "tournament_start": "2014-06-12",
+        "training_rows": 37861,
+        "tournament_rows": 64
+      },
+      "2018": {
+        "passed": true,
+        "max_training_date": "2018-06-12",
+        "tournament_start": "2018-06-14",
+        "training_rows": 41639,
+        "tournament_rows": 64
+      },
+      "2022": {
+        "passed": true,
+        "max_training_date": "2022-11-19",
+        "tournament_start": "2022-11-20",
+        "training_rows": 45699,
+        "tournament_rows": 64
+      }
+    },
+    "gyan_backtest": [
+      {
+        "tournament": 2014,
+        "mean_match_rps": 0.18498897874395825,
+        "champion_log_loss": 2.235514787455148,
+        "finalist_hit_rate": 0.5,
+        "semifinalist_hit_rate": 0.75
+      },
+      {
+        "tournament": 2018,
+        "mean_match_rps": 0.19249342728728708,
+        "champion_log_loss": 2.3387520564036515,
+        "finalist_hit_rate": 0.0,
+        "semifinalist_hit_rate": 0.25
+      },
+      {
+        "tournament": 2022,
+        "mean_match_rps": 0.2096260811930556,
+        "champion_log_loss": 2.221326919084566,
+        "finalist_hit_rate": 0.5,
+        "semifinalist_hit_rate": 0.5
+      }
+    ],
+    "ablation_mean_rps": {
+      "shipped_gyan": 0.19570282907476697,
+      "goal_yield_market": 0.198709142984125,
+      "full_gyan_equal": 0.20015767020231556,
+      "yield_named_vs_nominal": 0.20921682260963595,
+      "goal_yield": 0.21156672449016475,
+      "goal_yield_socioeconomic": 0.2131034021342614,
+      "goal_only": 0.21560113249102542
+    },
+    "shipped_vs_best_ablation": {
+      "shipped_gyan_mean_rps": 0.19570282907476697,
+      "best_non_shipped_ablation": "goal_yield_market",
+      "best_non_shipped_mean_rps": 0.198709142984125,
+      "delta_shipped_minus_best_non_shipped": -0.0030063139093580438,
+      "blocker_resolved": true
+    },
+    "top_team_divergence": {
+      "threshold": 0.08,
+      "comparisons": [
+        {
+          "team": "Spain",
+          "gyan_p_champion": 0.1320421765677434,
+          "goldman_p_champion": 0.257,
+          "market_p_champion": 0.1742994013714105,
+          "abs_delta_vs_goldman": 0.12495782343225662,
+          "abs_delta_vs_market": 0.042257224803667115,
+          "diverges_from_both": false
+        },
+        {
+          "team": "France",
+          "gyan_p_champion": 0.1122302378567414,
+          "goldman_p_champion": 0.189,
+          "market_p_champion": 0.1499535498327103,
+          "abs_delta_vs_goldman": 0.0767697621432586,
+          "abs_delta_vs_market": 0.03772331197596891,
+          "diverges_from_both": false
+        },
+        {
+          "team": "England",
+          "gyan_p_champion": 0.0921103908169856,
+          "goldman_p_champion": 0.05,
+          "market_p_champion": 0.1207108890444117,
+          "abs_delta_vs_goldman": 0.0421103908169856,
+          "abs_delta_vs_market": 0.028600498227426094,
+          "diverges_from_both": false
+        },
+        {
+          "team": "Argentina",
+          "gyan_p_champion": 0.0863934090763941,
+          "goldman_p_champion": 0.143,
+          "market_p_champion": 0.0951369681097804,
+          "abs_delta_vs_goldman": 0.056606590923605885,
+          "abs_delta_vs_market": 0.008743559033386292,
+          "diverges_from_both": false
+        },
+        {
+          "team": "Brazil",
+          "gyan_p_champion": 0.0768247279722248,
+          "goldman_p_champion": 0.076,
+          "market_p_champion": 0.0938980046944742,
+          "abs_delta_vs_goldman": 0.000824727972224798,
+          "abs_delta_vs_market": 0.017073276722249398,
+          "diverges_from_both": false
+        }
+      ],
+      "tripped": false,
+      "tripped_teams": [],
+      "france": {
+        "team": "France",
+        "gyan_p_champion": 0.1122302378567414,
+        "goldman_p_champion": 0.189,
+        "market_p_champion": 0.1499535498327103,
+        "abs_delta_vs_goldman": 0.0767697621432586,
+        "abs_delta_vs_market": 0.03772331197596891,
+        "diverges_from_both": false
+      },
+      "france_blocker_resolved": true
+    },
+    "output_validation": {
+      "tag": "20260610_191222",
+      "checks": {
+        "final_board_has_48_unique_teams": true,
+        "final_board_probabilities_in_range": true,
+        "final_board_probabilities_monotone": true,
+        "champion_probability_sum_close_to_one": true,
+        "final_board_matches_latest_forecast": true,
+        "benchmark_matches_final_board": true,
+        "backtest_tournament_coverage": true,
+        "backtest_model_coverage": true,
+        "ablation_model_coverage": true,
+        "modal_bracket_coherent": true,
+        "output_files_exist": true
+      },
+      "all_passed": true,
+      "details": {
+        "champion_probability_sum": 0.9999999999999978,
+        "max_final_board_vs_latest_forecast_abs_diff": 0.0,
+        "benchmark_max_abs_diff": 0.0,
+        "backtest_model_coverage": {
+          "2014": [
+            "GYAN",
+            "goal",
+            "market",
+            "socioeconomic",
+            "yield_named"
+          ],
+          "2018": [
+            "GYAN",
+            "goal",
+            "market",
+            "socioeconomic",
+            "yield_named"
+          ],
+          "2022": [
+            "GYAN",
+            "goal",
+            "market",
+            "socioeconomic",
+            "yield_named"
+          ]
+        },
+        "ablation_model_coverage": {
+          "2014": [
+            "full_gyan_equal",
+            "goal_only",
+            "goal_yield",
+            "goal_yield_market",
+            "goal_yield_socioeconomic",
+            "shipped_gyan",
+            "yield_named_vs_nominal"
+          ],
+          "2018": [
+            "full_gyan_equal",
+            "goal_only",
+            "goal_yield",
+            "goal_yield_market",
+            "goal_yield_socioeconomic",
+            "shipped_gyan",
+            "yield_named_vs_nominal"
+          ],
+          "2022": [
+            "full_gyan_equal",
+            "goal_only",
+            "goal_yield",
+            "goal_yield_market",
+            "goal_yield_socioeconomic",
+            "shipped_gyan",
+            "yield_named_vs_nominal"
+          ]
+        },
+        "modal_bracket": {
+          "all_match_ids_present": true,
+          "winners_in_own_match": true,
+          "qf_winners_are_semifinalists": true,
+          "semifinal_winners_are_finalists": true,
+          "champion_is_finalist": true,
+          "unresolved_matchups": 0,
+          "coherent": true
+        },
+        "modal_champion": "Spain"
+      }
+    },
+    "top10_champion": [
+      {
+        "team": "Spain",
+        "p_champion": 0.1320421765677434
+      },
+      {
+        "team": "France",
+        "p_champion": 0.1122302378567414
+      },
+      {
+        "team": "England",
+        "p_champion": 0.0921103908169856
+      },
+      {
+        "team": "Argentina",
+        "p_champion": 0.0863934090763941
+      },
+      {
+        "team": "Portugal",
+        "p_champion": 0.0770715835561787
+      },
+      {
+        "team": "Brazil",
+        "p_champion": 0.0768247279722248
+      },
+      {
+        "team": "Germany",
+        "p_champion": 0.0498386462745541
+      },
+      {
+        "team": "Netherlands",
+        "p_champion": 0.0367218639912243
+      },
+      {
+        "team": "Colombia",
+        "p_champion": 0.0195342511575933
+      },
+      {
+        "team": "Morocco",
+        "p_champion": 0.0191516176710344
+      }
+    ],
+    "champion_probability_sum": 0.9999999999999978
+  },
+  "outputs": [
+    "./logs/stage4_evaluation_20260610_191222.log",
+    "./outputs/tables/backtest_metrics_20260610_191222.csv",
+    "./outputs/tables/ablation_20260610_191222.csv",
+    "./outputs/tables/backtest_calibration_20260610_191222.csv",
+    "./outputs/figures/backtest_calibration_20260610_191222.png",
+    "./outputs/figures/backtest_calibration_20260610_191222.pdf",
+    "./outputs/figures/backtest_calibration_20260610_191222.txt",
+    "./outputs/figures/ablation_20260610_191222.png",
+    "./outputs/figures/ablation_20260610_191222.pdf",
+    "./outputs/figures/ablation_20260610_191222.txt",
+    "./outputs/tables/benchmark_2026_20260610_191222.csv",
+    "./outputs/tables/gyan_2026_predictions_20260610_191222.csv",
+    "./outputs/figures/benchmark_2026_20260610_191222.png",
+    "./outputs/figures/benchmark_2026_20260610_191222.pdf",
+    "./outputs/figures/benchmark_2026_20260610_191222.txt",
+    "./outputs/figures/gyan_2026_champion_top12_20260610_191222.png",
+    "./outputs/figures/gyan_2026_champion_top12_20260610_191222.pdf",
+    "./outputs/figures/gyan_2026_champion_top12_20260610_191222.txt",
+    "./outputs/tables/modal_bracket_2026_20260610_191222.csv",
+    "./outputs/figures/modal_bracket_2026_20260610_191222.png",
+    "./outputs/figures/modal_bracket_2026_20260610_191222.pdf",
+    "./outputs/figures/modal_bracket_2026_20260610_191222.txt",
+    "./outputs/reports/stage4_output_validation_20260610_191222.json",
+    "./paper/manuscript.md",
+    "./paper/reproducibility.md",
+    "./outputs/reports/stage4_summary.md"
+  ],
+  "output_artifacts": [
+    {
+      "path": "./outputs/tables/backtest_metrics_20260610_191222.csv",
+      "sha256": "b72a92ca3e39caeee74c07dca417093784e86594b211d9008f44ffcbe7d76771",
+      "bytes": 2614
+    },
+    {
+      "path": "./outputs/tables/ablation_20260610_191222.csv",
+      "sha256": "89cdd04d9e94c2aed65dc918a85493e3eb5181ecb7c2376070647967bab6d05a",
+      "bytes": 3955
+    },
+    {
+      "path": "./outputs/tables/backtest_calibration_20260610_191222.csv",
+      "sha256": "e4a1e99f400ac52ec1a6d2e8b25c57edcdabfa40109e97f4ebfca14615fc5d21",
+      "bytes": 1217
+    },
+    {
+      "path": "./outputs/figures/backtest_calibration_20260610_191222.png",
+      "sha256": "85c0e3e954c9c21c266e88b38c1022deaea63a0c218284db73f5366bdf81f2a7",
+      "bytes": 154064
+    },
+    {
+      "path": "./outputs/figures/backtest_calibration_20260610_191222.pdf",
+      "sha256": "a90d6c254e8b9aa3480747740cbf5cad38d792a726bf99f5bf219cb8c5d89b30",
+      "bytes": 14809
+    },
+    {
+      "path": "./outputs/figures/backtest_calibration_20260610_191222.txt",
+      "sha256": "45c99cd8b49cc4708b763e11115507c1a8091ce372fbce77b6622e9ebd67017a",
+      "bytes": 134
+    },
+    {
+      "path": "./outputs/figures/ablation_20260610_191222.png",
+      "sha256": "52424a3c8fb147d6d530fdcc4c2c8dff2d7a9ba307dc5939a1628772752f5df9",
+      "bytes": 74706
+    },
+    {
+      "path": "./outputs/figures/ablation_20260610_191222.pdf",
+      "sha256": "3fda4741e8f419c5987d0b9f8d3f5803710c6cb2aa61163245e95e6ab62ec534",
+      "bytes": 13757
+    },
+    {
+      "path": "./outputs/figures/ablation_20260610_191222.txt",
+      "sha256": "1b56e6a574eb9697c4f537923b5b7059d831bc4b2c048236431afafa9e67656b",
+      "bytes": 192
+    },
+    {
+      "path": "./outputs/tables/benchmark_2026_20260610_191222.csv",
+      "sha256": "41cb4c8545427684ecd108db6bc88924a40509f28db97eebb239f433ad854abc",
+      "bytes": 2958
+    },
+    {
+      "path": "./outputs/tables/gyan_2026_predictions_20260610_191222.csv",
+      "sha256": "666cc11324fc2a2c97dc7f6e4cfdc3847eec02c3c91db967f48fc6f5b48b126b",
+      "bytes": 5965
+    },
+    {
+      "path": "./outputs/figures/benchmark_2026_20260610_191222.png",
+      "sha256": "29ca559e996a035f76c046715937a968bc2398a1c8e8e6851d221bf621ae2283",
+      "bytes": 149210
+    },
+    {
+      "path": "./outputs/figures/benchmark_2026_20260610_191222.pdf",
+      "sha256": "a0d04e3ceaa5732774cf9c01eb8b2e0560313f624b0791871eb75ec5687406b3",
+      "bytes": 16848
+    },
+    {
+      "path": "./outputs/figures/benchmark_2026_20260610_191222.txt",
+      "sha256": "db4f1e23380e04bf2895491291d06035e22336d03b679ce581cef7d4c766ec89",
+      "bytes": 184
+    },
+    {
+      "path": "./outputs/figures/gyan_2026_champion_top12_20260610_191222.png",
+      "sha256": "ca6ddba9bc3597e0e21e0326a6718dd3c877bc431de9547da31b0677d8b8661a",
+      "bytes": 95174
+    },
+    {
+      "path": "./outputs/figures/gyan_2026_champion_top12_20260610_191222.pdf",
+      "sha256": "307e0c4c592d1b40811f1748c9eb3182c8bef6884d2da9844779b618822e936a",
+      "bytes": 15543
+    },
+    {
+      "path": "./outputs/figures/gyan_2026_champion_top12_20260610_191222.txt",
+      "sha256": "20dc56ba799da7681b0b06cc60ca9424c7bd7dcbeefdcb9600a8e0bf8afe0273",
+      "bytes": 175
+    },
+    {
+      "path": "./outputs/tables/modal_bracket_2026_20260610_191222.csv",
+      "sha256": "874319e611a6a5379770205016643964bcfc3eef4a0c28aa2cb30655de6dce9a",
+      "bytes": 5155
+    },
+    {
+      "path": "./outputs/figures/modal_bracket_2026_20260610_191222.png",
+      "sha256": "eabd7732d7889b813a9b541e8cd2e610a18d435168014c9f5e93ac27d9ba36de",
+      "bytes": 442592
+    },
+    {
+      "path": "./outputs/figures/modal_bracket_2026_20260610_191222.pdf",
+      "sha256": "f4d7e74436ecd730956df6799262d0477926f7d5946a3b9534e6b7cffa2be0f1",
+      "bytes": 32380
+    },
+    {
+      "path": "./outputs/figures/modal_bracket_2026_20260610_191222.txt",
+      "sha256": "5c9941d21011a45c406a8c42e4c64e9a139f96664e1136bdfa55181ebd0ce887",
+      "bytes": 353
+    },
+    {
+      "path": "./outputs/reports/stage4_output_validation_20260610_191222.json",
+      "sha256": "331456bd962b8942525861f9634044cd92378e90dc8c80ac492a2e7b91a578fe",
+      "bytes": 2111
+    },
+    {
+      "path": "./paper/manuscript.md",
+      "sha256": "b7b95a9450a98b65fb9772fef0d2edd8b365bd7c42d7e3361652cd8104a67bbe",
+      "bytes": 8692
+    },
+    {
+      "path": "./paper/reproducibility.md",
+      "sha256": "03d2d9a49c1a1266ec124be8b913c1e8bb77a8c2c2426383ed28d6a8de1c6931",
+      "bytes": 1232
+    },
+    {
+      "path": "./outputs/reports/stage4_summary.md",
+      "sha256": "cc0cf8f7c12a6750cc20a2424b5bfcad28a789b66db999fd894487c45d2c075e",
+      "bytes": 6260
+    }
+  ],
+  "status": "ok",
+  "duration_seconds": 1.490144
+}

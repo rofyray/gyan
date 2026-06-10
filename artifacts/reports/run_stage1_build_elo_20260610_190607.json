@@ -1,0 +1,101 @@
+{
+  "timestamp_utc": "2026-06-10T19:06:07.047692+00:00",
+  "stage": "stage1",
+  "step": "build_elo",
+  "script_path": "./scripts/s1_build_elo.py",
+  "git_commit": "eee0a29",
+  "git_tags": [
+    "gyan-v1.0-final"
+  ],
+  "python_version": "3.14.5",
+  "package_versions": {
+    "gyan": "0.1.0",
+    "numpy": "2.4.6",
+    "pandas": "3.0.3",
+    "pyarrow": "24.0.0",
+    "scipy": "1.17.1",
+    "statsmodels": "0.14.6",
+    "penaltyblog": "1.11.0",
+    "numba": "0.65.1",
+    "joblib": "1.5.3",
+    "scikit-learn": "1.9.0",
+    "matplotlib": "3.10.9",
+    "seaborn": "0.13.2",
+    "pydantic": "2.13.4",
+    "httpx": "0.28.1",
+    "requests": "2.34.2",
+    "beautifulsoup4": "4.14.3",
+    "lxml": "6.1.1",
+    "soccerdata": "1.9.0",
+    "python-json-logger": "4.1.0",
+    "pytest": "9.0.3",
+    "pytest-cov": "7.1.0",
+    "tqdm": "4.68.1"
+  },
+  "global_seed": 20260611,
+  "n_workers": null,
+  "n_simulations": null,
+  "inputs": [
+    {
+      "path": "./data/interim/matches_clean.parquet",
+      "sha256": "94e024581d8af6093e3f5c9ad6f93d369e93b4e2d8764b38db748cbba780197d",
+      "bytes": 465082
+    },
+    {
+      "path": "./data/raw/d2_eloratings_world.tsv",
+      "sha256": "fd5bfebd23de530a5407ed223cf8ecb39fcea542220cf0a81215efe8ade4e85c",
+      "bytes": 30451
+    },
+    {
+      "path": "./data/raw/d2_eloratings_en_teams.tsv",
+      "sha256": "ff4b8c9c7bcdad56e81a007726c1a655c6dabdf77bca151b1d619f24125dbc90",
+      "bytes": 7277
+    }
+  ],
+  "params": {
+    "round_changes": true,
+    "spotcheck_tolerance": 75.0,
+    "selected_spotcheck_teams": [
+      "Spain",
+      "Argentina",
+      "France",
+      "England",
+      "Portugal",
+      "Germany",
+      "Netherlands",
+      "Croatia"
+    ]
+  },
+  "metrics": {
+    "rows": 49400,
+    "unique_teams": 338,
+    "current_rating_alias_rows_added": 2,
+    "max_selected_abs_delta": 72.0,
+    "n_selected_failures": 0
+  },
+  "outputs": [
+    "./logs/stage1_build_elo_20260610_190607.log",
+    "./data/processed/matches_with_elo.parquet",
+    "./outputs/tables/elo_current_ratings_from_d1.csv",
+    "./outputs/tables/elo_reference_spotcheck.csv"
+  ],
+  "output_artifacts": [
+    {
+      "path": "./data/processed/matches_with_elo.parquet",
+      "sha256": "803ae808e76c33cdea537a7acd69502034cf151b23d14eadcab51407c6f0e317",
+      "bytes": 850364
+    },
+    {
+      "path": "./outputs/tables/elo_current_ratings_from_d1.csv",
+      "sha256": "80a83aeb482e86ccf1abc583692eea34b3d4e2d9824a84deb33f91bc2d52ed49",
+      "bytes": 9576
+    },
+    {
+      "path": "./outputs/tables/elo_reference_spotcheck.csv",
+      "sha256": "a2fc60f470f29a687bdca5ef52092b9410d423e3078c7906585a644ae62cb9b8",
+      "bytes": 14706
+    }
+  ],
+  "status": "ok",
+  "duration_seconds": 0.316652
+}

@@ -1,0 +1,248 @@
+{
+  "timestamp_utc": "2026-06-10T19:05:55.915628+00:00",
+  "stage": "stage1",
+  "step": "download_data",
+  "script_path": "./scripts/s1_download_data.py",
+  "git_commit": "eee0a29",
+  "git_tags": [
+    "gyan-v1.0-final"
+  ],
+  "python_version": "3.14.5",
+  "package_versions": {
+    "gyan": "0.1.0",
+    "numpy": "2.4.6",
+    "pandas": "3.0.3",
+    "pyarrow": "24.0.0",
+    "scipy": "1.17.1",
+    "statsmodels": "0.14.6",
+    "penaltyblog": "1.11.0",
+    "numba": "0.65.1",
+    "joblib": "1.5.3",
+    "scikit-learn": "1.9.0",
+    "matplotlib": "3.10.9",
+    "seaborn": "0.13.2",
+    "pydantic": "2.13.4",
+    "httpx": "0.28.1",
+    "requests": "2.34.2",
+    "beautifulsoup4": "4.14.3",
+    "lxml": "6.1.1",
+    "soccerdata": "1.9.0",
+    "python-json-logger": "4.1.0",
+    "pytest": "9.0.3",
+    "pytest-cov": "7.1.0",
+    "tqdm": "4.68.1"
+  },
+  "global_seed": 20260611,
+  "n_workers": null,
+  "n_simulations": null,
+  "inputs": [
+    {
+      "path": "./data/raw/d1_martj42_results.csv",
+      "sha256": "8de6fabc5a5aaebc01661368ab6442c90cac4d8e85a37a2ce4ef3d2de16ced91",
+      "bytes": 3724003
+    },
+    {
+      "path": "./data/raw/d1_martj42_shootouts.csv",
+      "sha256": "e52e503badc11021d5d243ddf2288346f63ad028bf8de75ae9cfb72c5475d807",
+      "bytes": 28809
+    },
+    {
+      "path": "./data/raw/d1_martj42_former_names.csv",
+      "sha256": "2d57f59a3ac13b24c2fcf208ced5a38710529d122da38929838d0980b002677e",
+      "bytes": 1691
+    },
+    {
+      "path": "./data/raw/d2_eloratings_about.html",
+      "sha256": "ea88c5e6bef0eacfcf799502a28af5d1b4d04e272141545ed45c2871dde2db5c",
+      "bytes": 1815
+    },
+    {
+      "path": "./data/raw/d2_eloratings_current_ratings.js",
+      "sha256": "5d452771f1702e92d0bd765464b827ce9b3879a134bcd4268ea84f53d3e35500",
+      "bytes": 102156
+    },
+    {
+      "path": "./data/raw/d2_eloratings_world.tsv",
+      "sha256": "fd5bfebd23de530a5407ed223cf8ecb39fcea542220cf0a81215efe8ade4e85c",
+      "bytes": 30451
+    },
+    {
+      "path": "./data/raw/d2_eloratings_teams.tsv",
+      "sha256": "47e4391e33bd6adc64915f8676ce749bb1ae88c9d62953d7a17c22bfdafa70bd",
+      "bytes": 335
+    },
+    {
+      "path": "./data/raw/d2_eloratings_en_teams.tsv",
+      "sha256": "ff4b8c9c7bcdad56e81a007726c1a655c6dabdf77bca151b1d619f24125dbc90",
+      "bytes": 7277
+    },
+    {
+      "path": "./data/raw/d2b_demetriodor_football_elo_ratings.html",
+      "sha256": "008ccf174765b690feb4b6e75a88d4e0edaf82a1faffaca5736fdbc4d922cd70",
+      "bytes": 240551
+    },
+    {
+      "path": "./data/raw/d2b_jgravier_soccer_elo.html",
+      "sha256": "ef6328f884f872084cbc157be5378d53ac44a9ebb1c15956c3536407ee00cc57",
+      "bytes": 253825
+    },
+    {
+      "path": "./data/raw/d3_spi_matches_intl.csv",
+      "sha256": "b2440b150e5e9aef51019b557dd23d41d78183d1179302fb72c662b2188738b7",
+      "bytes": 594891
+    },
+    {
+      "path": "./data/raw/d3_spi_global_rankings.csv",
+      "sha256": "8e74d536bd1af90b060c7b91c81e9e278abf8d52b5281f23f695c9124ea32532",
+      "bytes": 25147
+    },
+    {
+      "path": "./data/raw/d3b_world_cup_predictions_datapackage.json",
+      "sha256": "904beb635b60d3f92b61290a0e7865858212a0ae3b495a91dc47c5d48fe30f3e",
+      "bytes": 213726
+    },
+    {
+      "path": "./data/raw/d3b_wc_20140609_140000.csv",
+      "sha256": "d878c9966bb436e3dcf7c8542d4290e7c2b78d4b3d2596c7e146aa2aea2fa2d2",
+      "bytes": 4646
+    },
+    {
+      "path": "./data/raw/d4_transfermarkt_players.csv.gz",
+      "sha256": "8b0494d6141c18c23056069bd63c6f4e6b68baf5a74f4105605b6da9705c1bdf",
+      "bytes": 4029560
+    },
+    {
+      "path": "./data/raw/d4_transfermarkt_national_teams.csv.gz",
+      "sha256": "860f137dfc2e25b3eb423d61879d69a763d7f104dcad371941c2e135921045e7",
+      "bytes": 5549
+    },
+    {
+      "path": "./data/raw/d4_transfermarkt_national_team_values.html",
+      "sha256": "a4ea73b77c11ab4c95d80a3a4ced670343f86fbe6c51601f88d3d7bae52517cc",
+      "bytes": 167203
+    },
+    {
+      "path": "./data/raw/d5_fifa_mens_ranking.html",
+      "sha256": "fa01cf6026ecf88bb852954f016876c17bc55a8ddf4f2c22096fe5df3d89c28a",
+      "bytes": 212780
+    },
+    {
+      "path": "./data/raw/d5_fifa_rankings_api.json",
+      "sha256": "15286d56df33456e66b7cef1891c0eaa36979cc1b693ff68db9e939e083fa824",
+      "bytes": 126799
+    },
+    {
+      "path": "./data/raw/d6_wikipedia_2026_world_cup_squads.html",
+      "sha256": "e43108b16216acd1de01320d1a78afc0eec7e649a51fe644302f330813130b9b",
+      "bytes": 1892924
+    },
+    {
+      "path": "./data/raw/d6_espn_2026_world_cup_squad_lists.html",
+      "sha256": "32a01b39cda7145befa1aa8d85169b742c89e1cbe39811789948f95a6548fc22",
+      "bytes": 348337
+    },
+    {
+      "path": "./data/raw/d7_wikipedia_2026_world_cup.html",
+      "sha256": "877244a1a57723b8be6c52f1eb96f4ec6d8f108e6daa5113ec68f3bf8075eb60",
+      "bytes": 1433938
+    },
+    {
+      "path": "./data/raw/d7_fifa_official_2026_world_cup.html",
+      "sha256": "ae34bb4cf4d00d9b73d0f41cb4d88b587198244003a10cb2fe21efbf5ad19a5f",
+      "bytes": 5021
+    },
+    {
+      "path": "./data/raw/d7_fifa_official_2026_match_schedule.pdf",
+      "sha256": "bff0c19620860f5f917dee4ea139ad1706dfcd2ad74a70ad0d01ba456eec3c60",
+      "bytes": 150777
+    },
+    {
+      "path": "./data/raw/d7_wikipedia_2026_world_cup_knockout_stage.html",
+      "sha256": "94f16c4ff2c3402a1bf88bfe3961c51d301743931e5332a51a701cbce93acddc",
+      "bytes": 386524
+    },
+    {
+      "path": "./data/raw/d8_hoffmann_ging_ramasamy_2002.pdf",
+      "sha256": "11a58ccc170505f5473f13d99ad46a7a038c428acef71b5c3758df490e422db3",
+      "bytes": 101700
+    },
+    {
+      "path": "./data/raw/d9_goldman_2026_world_cup_report.pdf",
+      "sha256": "385ec962848cf33e46e07cd5530d9436cbbc2d687dce261d08e939f70ddc30dc",
+      "bytes": 3319708
+    },
+    {
+      "path": "./data/raw/d10_klement_panmure_liberum_2026.pdf",
+      "sha256": "4f3e439a33eef51cc99f0de146ea7e812ab2c4d0d5f833e03d84e0c365defa96",
+      "bytes": 897981
+    },
+    {
+      "path": "./data/raw/d11_world_bank_gdp_per_capita_ppp.json",
+      "sha256": "235cfaea47a6a71e7a134ad86a55f9f9b08d48940b25f153edd2e117775caa8d",
+      "bytes": 4167217
+    },
+    {
+      "path": "./data/raw/d11_world_bank_population.json",
+      "sha256": "2bb1839c140419b1cf1aebe61a140bed870917d2d2ba5a3d5afaa342cb50e3a0",
+      "bytes": 3526530
+    },
+    {
+      "path": "./data/raw/d12_world_bank_climate_data_collections_readme.html",
+      "sha256": "a2e065b6a85eb73868d6fd9b0c0a85b15eb3110a61d1c24eccf0d76805a20499",
+      "bytes": 37342
+    },
+    {
+      "path": "./data/raw/d12_country_average_yearly_temperature_wikipedia.html",
+      "sha256": "913b57cabf0b876d3a33ab129aec1ff27372b002724d90d0366aa6059ba8d8b0",
+      "bytes": 234673
+    }
+  ],
+  "params": {
+    "n_source_files": 32
+  },
+  "metrics": {
+    "n_downloaded": 0,
+    "n_cached": 32,
+    "n_failed": 0,
+    "n_failed_required": 0
+  },
+  "outputs": [
+    "./logs/stage1_download_data_20260610_190555.log",
+    "./data/raw/d1_martj42_results.csv",
+    "./data/raw/d1_martj42_shootouts.csv",
+    "./data/raw/d1_martj42_former_names.csv",
+    "./data/raw/d2_eloratings_about.html",
+    "./data/raw/d2_eloratings_current_ratings.js",
+    "./data/raw/d2_eloratings_world.tsv",
+    "./data/raw/d2_eloratings_teams.tsv",
+    "./data/raw/d2_eloratings_en_teams.tsv",
+    "./data/raw/d2b_demetriodor_football_elo_ratings.html",
+    "./data/raw/d2b_jgravier_soccer_elo.html",
+    "./data/raw/d3_spi_matches_intl.csv",
+    "./data/raw/d3_spi_global_rankings.csv",
+    "./data/raw/d3b_world_cup_predictions_datapackage.json",
+    "./data/raw/d3b_wc_20140609_140000.csv",
+    "./data/raw/d4_transfermarkt_players.csv.gz",
+    "./data/raw/d4_transfermarkt_national_teams.csv.gz",
+    "./data/raw/d4_transfermarkt_national_team_values.html",
+    "./data/raw/d5_fifa_mens_ranking.html",
+    "./data/raw/d5_fifa_rankings_api.json",
+    "./data/raw/d6_wikipedia_2026_world_cup_squads.html",
+    "./data/raw/d6_espn_2026_world_cup_squad_lists.html",
+    "./data/raw/d7_wikipedia_2026_world_cup.html",
+    "./data/raw/d7_fifa_official_2026_world_cup.html",
+    "./data/raw/d7_fifa_official_2026_match_schedule.pdf",
+    "./data/raw/d7_wikipedia_2026_world_cup_knockout_stage.html",
+    "./data/raw/d8_hoffmann_ging_ramasamy_2002.pdf",
+    "./data/raw/d9_goldman_2026_world_cup_report.pdf",
+    "./data/raw/d10_klement_panmure_liberum_2026.pdf",
+    "./data/raw/d11_world_bank_gdp_per_capita_ppp.json",
+    "./data/raw/d11_world_bank_population.json",
+    "./data/raw/d12_world_bank_climate_data_collections_readme.html",
+    "./data/raw/d12_country_average_yearly_temperature_wikipedia.html",
+    "./outputs/reports/stage1_download_manifest.json"
+  ],
+  "output_artifacts": [],
+  "status": "ok",
+  "duration_seconds": 0.134948
+}

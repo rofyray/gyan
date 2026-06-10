@@ -1,0 +1,220 @@
+{
+  "timestamp_utc": "2026-06-10T19:09:33.480882+00:00",
+  "stage": "stage2",
+  "step": "run_simulation",
+  "script_path": "./scripts/s2_run_simulation.py",
+  "git_commit": "eee0a29",
+  "git_tags": [
+    "gyan-v1.0-final"
+  ],
+  "python_version": "3.14.5",
+  "package_versions": {
+    "gyan": "0.1.0",
+    "numpy": "2.4.6",
+    "pandas": "3.0.3",
+    "pyarrow": "24.0.0",
+    "scipy": "1.17.1",
+    "statsmodels": "0.14.6",
+    "penaltyblog": "1.11.0",
+    "numba": "0.65.1",
+    "joblib": "1.5.3",
+    "scikit-learn": "1.9.0",
+    "matplotlib": "3.10.9",
+    "seaborn": "0.13.2",
+    "pydantic": "2.13.4",
+    "httpx": "0.28.1",
+    "requests": "2.34.2",
+    "beautifulsoup4": "4.14.3",
+    "lxml": "6.1.1",
+    "soccerdata": "1.9.0",
+    "python-json-logger": "4.1.0",
+    "pytest": "9.0.3",
+    "pytest-cov": "7.1.0",
+    "tqdm": "4.68.1"
+  },
+  "global_seed": 20260611,
+  "n_workers": 4,
+  "n_simulations": 100000,
+  "inputs": [
+    {
+      "path": "./data/processed/dixon_coles_params_latest.json",
+      "sha256": "9d3b10846f2558a9e5006a3888813f3f8b4e6a919a6072f190f4096a723d0861",
+      "bytes": 29626
+    },
+    {
+      "path": "./outputs/tables/elo_current_ratings_from_d1.csv",
+      "sha256": "80a83aeb482e86ccf1abc583692eea34b3d4e2d9824a84deb33f91bc2d52ed49",
+      "bytes": 9576
+    },
+    {
+      "path": "./data/processed/groups_2026.parquet",
+      "sha256": "8574cb89a2c5db4ceb39aa0a0191f07d231c5200ac4abbd882f68b4197fdaf29",
+      "bytes": 3472
+    },
+    {
+      "path": "./data/processed/schedule_2026.parquet",
+      "sha256": "56d443ed49c81630a70e0f51a3e6819a0e80c890baba51033e707a3798de5ccb",
+      "bytes": 8987
+    },
+    {
+      "path": "./data/processed/bracket_pairings_2026.json",
+      "sha256": "5f0bf7afa3c05647cc37ca9ef5b8ff625febf0820ac4e8ce190ef8a5782f3889",
+      "bytes": 79889
+    }
+  ],
+  "params": {
+    "selected_engine": "plain_poisson",
+    "score_distribution": "correlated_negative_binomial",
+    "score_dispersion": 8.0,
+    "score_matrix_max_goals": 10,
+    "check_sims": 200,
+    "thread_caps": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "VECLIB_MAXIMUM_THREADS": "1"
+    }
+  },
+  "metrics": {
+    "probabilities_in_range": true,
+    "probabilities_monotone": true,
+    "champion_probability_sum": 1.0,
+    "check_sims": 200,
+    "deterministic_same_worker_count": true,
+    "seed_stable_across_worker_counts": true,
+    "alternate_worker_count": 1,
+    "simulation_seconds": 32.066045207961,
+    "draws_per_second": 3118.563556916995,
+    "knockout_upsets": 1088376,
+    "knockout_decisive_matches": 3089605,
+    "knockout_upset_rate": 0.35227027403179373,
+    "group_draws": 1770059,
+    "group_draw_rate": 0.2458415277777778,
+    "knockout_matches": 3100000,
+    "knockout_to_extra_time": 898866,
+    "knockout_to_extra_time_rate": 0.28995677419354837,
+    "knockout_to_penalties": 505293,
+    "knockout_to_penalties_rate": 0.16299774193548386,
+    "upset_rate_delta_vs_reference": 0.018936940698460414,
+    "convergence_50k_100k_available": true,
+    "top4_champion_abs_delta_50k_100k": {
+      "Argentina": 0.0016500000000000126,
+      "Spain": 0.0002899999999999986,
+      "England": 0.0014799999999999952,
+      "Portugal": 0.0001999999999999988
+    },
+    "top4_champion_max_abs_delta_50k_100k": 0.0016500000000000126,
+    "top4_champion_delta_under_0_5pp": true,
+    "t_g6_action": "none",
+    "top10_champion": [
+      {
+        "team": "Argentina",
+        "p_champion": 0.20279
+      },
+      {
+        "team": "Spain",
+        "p_champion": 0.11849
+      },
+      {
+        "team": "England",
+        "p_champion": 0.07198
+      },
+      {
+        "team": "Portugal",
+        "p_champion": 0.06016
+      },
+      {
+        "team": "Brazil",
+        "p_champion": 0.05887
+      },
+      {
+        "team": "France",
+        "p_champion": 0.05351
+      },
+      {
+        "team": "Colombia",
+        "p_champion": 0.04774
+      },
+      {
+        "team": "Morocco",
+        "p_champion": 0.04477
+      },
+      {
+        "team": "Germany",
+        "p_champion": 0.04196
+      },
+      {
+        "team": "Japan",
+        "p_champion": 0.03843
+      }
+    ],
+    "upset_table_rows": 2
+  },
+  "outputs": [
+    "./logs/stage2_run_simulation_20260610_190933.log",
+    "./outputs/tables/team_advancement_probs_engineonly_2026_20260610_190933.parquet",
+    "./outputs/tables/team_advancement_probs_engineonly_2026_20260610_190933.csv",
+    "./outputs/tables/team_advancement_probs_engineonly_2026_latest.csv",
+    "./outputs/tables/upset_rate_engineonly_2026.csv",
+    "./outputs/figures/mc_convergence.png",
+    "./outputs/figures/mc_convergence.pdf",
+    "./outputs/figures/mc_convergence.txt",
+    "./outputs/figures/engine_stage_probability_heatmap.png",
+    "./outputs/figures/engine_stage_probability_heatmap.pdf",
+    "./outputs/reports/stage2_summary.md"
+  ],
+  "output_artifacts": [
+    {
+      "path": "./outputs/tables/team_advancement_probs_engineonly_2026_20260610_190933.parquet",
+      "sha256": "2ce522da5cc26ac516e9eac1706763746898fb729b3d88eb648d2359036d75ae",
+      "bytes": 7638
+    },
+    {
+      "path": "./outputs/tables/team_advancement_probs_engineonly_2026_20260610_190933.csv",
+      "sha256": "b4a3855843c539a7a82cecccc29024fb9ab715cbd45c9170d87eb8f736d0c6c3",
+      "bytes": 2730
+    },
+    {
+      "path": "./outputs/tables/team_advancement_probs_engineonly_2026_latest.csv",
+      "sha256": "b4a3855843c539a7a82cecccc29024fb9ab715cbd45c9170d87eb8f736d0c6c3",
+      "bytes": 2730
+    },
+    {
+      "path": "./outputs/tables/upset_rate_engineonly_2026.csv",
+      "sha256": "122dee51421d91b6fe6ec7f77be751736dec02a651efd7b8124bb9e4c45ca2a3",
+      "bytes": 269
+    },
+    {
+      "path": "./outputs/figures/mc_convergence.png",
+      "sha256": "0c8c8d243668d94e764b33a0e4e070a9d8596a0dbc3c9de8818f1c7912a1b69b",
+      "bytes": 120848
+    },
+    {
+      "path": "./outputs/figures/mc_convergence.pdf",
+      "sha256": "0231b4f62e5969723a50d5fe3063455ccac7c37084d1bcb630b14a9d31ca886d",
+      "bytes": 16456
+    },
+    {
+      "path": "./outputs/figures/mc_convergence.txt",
+      "sha256": "eea42294655133813ae13d5bbb5356726cfa8a217763d320b5707acc753efe7b",
+      "bytes": 102
+    },
+    {
+      "path": "./outputs/figures/engine_stage_probability_heatmap.png",
+      "sha256": "7b5de9fba80c73350d4e7c2c97ee1900eb644925fc51f730f541a52d9e89c59a",
+      "bytes": 203867
+    },
+    {
+      "path": "./outputs/figures/engine_stage_probability_heatmap.pdf",
+      "sha256": "67be54cfc602ea424cdb13133ce12f7a31a27d49aedcf4e4b16f232bce4d8ae0",
+      "bytes": 27007
+    },
+    {
+      "path": "./outputs/reports/stage2_summary.md",
+      "sha256": "f5de9a66d77a7d1406c8e064cd4fb9c9f9decf269964720209d92457c914eab0",
+      "bytes": 2455
+    }
+  ],
+  "status": "ok",
+  "duration_seconds": 34.075471
+}
